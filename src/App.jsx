@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'; 
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-// Hapus atau abaikan import Lenis jika tidak digunakan lagi
-// import Lenis from '@studio-freight/lenis'; 
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,12 +8,10 @@ import Login from './pages/Login';
 import ProfilSekolah from './pages/ProfilSekolah';
 import Hero from './components/Hero';
 import Sambutan from './components/Sambutan';
-import LatestNews from './components/LatestNews';
 import VisiMisi from './components/VisiMisi';
 import ProgramUnggulan from './components/ProgramUnggulan';
 import PrestasiSiswa from './components/PrestasiSiswa';
 import Testimoni from './components/Testimoni';
-import DewanGuru from './components/DewanGuru';
 import StatCounter from './components/StatCounter';
 import BeritaTerbaru from './pages/BeritaTerbaru';
 import NewsDetail from './pages/NewsDetail';
@@ -55,12 +51,10 @@ const AppContent = () => {
               <Hero />
               <StatCounter />
               <Sambutan />
-              <LatestNews />
               <VisiMisi />
               <ProgramUnggulan />
               <PrestasiSiswa />
               <Testimoni />
-              <DewanGuru />
             </>
           } />
           <Route path="/profil" element={<ProfilSekolah />} />

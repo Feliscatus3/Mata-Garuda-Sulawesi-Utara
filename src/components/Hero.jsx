@@ -56,11 +56,11 @@ const Hero = () => {
         }}
       />
 
-      {/* 2. Overlay Gradasi Figma */}
+      {/* 2. Overlay Gradasi - Gold dan Navy Blue untuk MG Sulut */}
       <div 
         className="absolute inset-0 opacity-80" 
         style={{ 
-          background: 'linear-gradient(90deg, #000000 0%, #00B0F1 100%)',
+          background: 'linear-gradient(90deg, #0D1B2A 0%, #B8860B 100%)',
           mixBlendMode: 'multiply' 
         }} 
       />
@@ -78,14 +78,21 @@ const Hero = () => {
             variants={itemVariants}
             className="text-[28px] md:text-[40px] lg:text-[52px] font-[900] text-white leading-[1.2] lg:leading-[1.15] tracking-tight mb-6 lg:mb-8 drop-shadow-2xl text-left"
           >
-            Selamat datang, <br />
-            Di Website SMA Negeri 14 <br />
-            Samarinda
+            Selamat datang di <br />
+            Mata Garuda <br />
+            Sulawesi Utara
           </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 font-medium"
+          >
+            "Sinergi Sam Ratulangi"
+          </motion.p>
           
           <motion.div variants={itemVariants}>
-            <a href="#sambutan" className="inline-block">
-              <button className="group bg-transparent hover:bg-[#587F93] border-2 border-white hover:border-[#587F93] text-white px-6 py-3 lg:px-10 lg:py-3.5 rounded-full font-bold text-[14px] lg:text-[16px] flex items-center gap-2 transition-all duration-300 shadow-lg active:scale-95 cursor-pointer">
+            <a href="#tentang" className="inline-block">
+              <button className="group bg-transparent hover:bg-[#B8860B] border-2 border-white hover:border-[#B8860B] text-white px-6 py-3 lg:px-10 lg:py-3.5 rounded-full font-bold text-[14px] lg:text-[16px] flex items-center gap-2 transition-all duration-300 shadow-lg active:scale-95 cursor-pointer">
                 Selengkapnya
                 <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform duration-300" />
               </button>

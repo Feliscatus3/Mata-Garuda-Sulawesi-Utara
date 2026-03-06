@@ -14,14 +14,14 @@ const Sambutan = () => {
   };
 
   return (
-    <section id="sambutan" className="relative w-full py-16 lg:py-24 bg-[#F8FAFC] font-urbanist scroll-mt-24">
+    <section id="tentang" className="relative w-full py-16 lg:py-24 bg-[#F8FAFC] font-urbanist scroll-mt-24">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-[80px]">
         
         <div className="relative flex flex-col lg:flex-row items-center gap-10 lg:gap-16 p-8 lg:p-14 rounded-3xl bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100">
           
-          {/* SISI KIRI: Foto Kepala Sekolah */}
+          {/* SISI KIRI: Foto Ketua Mata Garuda Sulut */}
           <div className="relative w-full lg:w-1/2 flex justify-center">
-            <div className="absolute w-4/5 h-4/5 bg-[#00B0F1]/10 blur-[100px] rounded-full -z-10" />
+            <div className="absolute w-4/5 h-4/5 bg-[#B8860B]/10 blur-[100px] rounded-full -z-10" />
             
             <motion.div 
               {...fadeInUp}
@@ -29,9 +29,9 @@ const Sambutan = () => {
             >
               <img 
                 src="/kepala-sekolah.webp" 
-                alt="Syawal Arifin, S.S., M.Pd." 
+                alt="Hikam Hulwanullah" 
                 className="w-full h-auto object-cover max-h-[480px] hover:scale-105 transition-transform duration-700"
-                onError={(e) => { e.target.src = "https://via.placeholder.com/600x800?text=Foto+Kepsek+SMA+14"; }}
+                onError={(e) => { e.target.src = "https://via.placeholder.com/600x800?text=Foto+Ketua+MG+Sulut"; }}
               />
             </motion.div>
           </div>
@@ -39,28 +39,28 @@ const Sambutan = () => {
           {/* SISI KANAN: Konten Teks Sambutan */}
           <motion.div 
             {...fadeInUp}
-            transition={{ ...fadeInUp.transition, delay: 0.3 }} // Sedikit jeda setelah foto muncul
+            transition={{ ...fadeInUp.transition, delay: 0.3 }}
             className="w-full lg:w-1/2 flex flex-col justify-center text-left"
           >
             <h2 className="text-[30px] lg:text-[42px] font-[900] text-gray-900 leading-tight mb-2 capitalize tracking-tight">
-              Syawal Arifin, S.S., M.Pd.
+              Hikam Hulwanullah
             </h2>
             
-            <div className="w-16 h-1.5 bg-[#587F93] mb-6 rounded-full" />
+            <div className="w-16 h-1.5 bg-[#B8860B] mb-6 rounded-full" />
             
-            <p className="text-[#587F93] font-bold text-sm lg:text-base uppercase tracking-normal mb-8">
-              Kepala SMA Negeri 14 Samarinda
+            <p className="text-[#B8860B] font-bold text-sm lg:text-base uppercase tracking-normal mb-8">
+              Ketua Mata Garuda Sulawesi Utara Periode 2026-2029
             </p>
 
             <div className="space-y-5">
               <p className="text-gray-500 text-sm lg:text-base leading-relaxed italic">
-                "Assalamu’alaikum Warahmatullahi Wabarakatuh,"
+                "Assalamu'alaikum Warahmatullahi Wabarakatuh,"
               </p>
               <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
-                Selamat datang di website resmi SMA Negeri 14 Samarinda. Platform ini hadir sebagai langkah nyata digitalisasi pendidikan kami untuk memberikan layanan informasi yang transparan, akurat, dan mudah diakses oleh seluruh masyarakat.
+                Selamat datang di website resmi Mata Garuda Sulawesi Utara. Organisasi ini merupakan wadah alumni dan penerima aktif奖学金 LPDP di Sulawesi Utara yang berfokus pada pengabdian, kolaborasi, dan kontribusi nyata bagi pembangunan daerah.
               </p>
               <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
-                Di era transformasi digital ini, kami berkomitmen mengintegrasikan teknologi dalam setiap proses pembelajaran guna memotivasi siswa dan membekali mereka dengan kompetensi yang relevan. Website ini adalah jendela utama untuk mengenal lebih jauh komitmen kami dalam mencetak generasi yang beriman, berakhlak, dan unggul dalam prestasi.
+                Kami mengajak seluruh alumni dan awardee LPDP di Sulawesi Utara untuk bersatu dalam visi "Sinergi Sam Ratulangi". Mari bersama-sama memberikan dampak positif bagi daerah dan bangsa melalui berbagai program kerja yang kreatif, progresif, dan inklusif.
               </p>
             </div>
 
@@ -69,10 +69,10 @@ const Sambutan = () => {
                 navigate('/profil');
                 window.scrollTo(0, 0);
               }}
-              className="mt-10 group flex items-center gap-3 text-gray-900 font-[800] hover:text-[#587F93] transition-all w-fit"
+              className="mt-10 group flex items-center gap-3 text-gray-900 font-[800] hover:text-[#B8860B] transition-all w-fit"
             >
-              <span className="border-b-2 border-gray-900 group-hover:border-[#587F93] pb-1">
-                Profil SMA Negeri 14 Samarinda
+              <span className="border-b-2 border-gray-900 group-hover:border-[#B8860B] pb-1">
+                Pelajari Lebih Lanjut
               </span>
               <span className="text-xl group-hover:translate-x-2 transition-transform duration-300">
                 →

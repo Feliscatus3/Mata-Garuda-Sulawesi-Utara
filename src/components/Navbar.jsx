@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Phone, Mail, Search, LogIn, ChevronDown, Menu, X } from 'lucide-react';
+import { Phone, Mail, Search, ChevronDown, Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
 import { client, urlFor } from '../lib/sanity';
 
 const Navbar = () => {
@@ -14,17 +14,27 @@ const Navbar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef(null);
 
-  // --- 1. DEFINISI MENU (Dipindah ke atas agar bisa diakses Search Engine) ---
+  // --- 1. DEFINISI MENU UNTUK MATA GARUDA SULUT ---
   const menuItems = [
     { name: 'BERANDA', dropdown: false, path: '/' },
     { 
       name: 'TENTANG', 
       dropdown: true, 
       items: [
-        { label: 'Profil Sekolah', path: '/profil' },
-        { label: 'Sarana dan Prasarana', path: '/profil#sarana-prasarana' },
+        { label: 'Profil Organisasi', path: '/profil' },
         { label: 'Visi & Misi', path: '/profil#visi-misi' },
-        { label: 'Struktur Organisasi', path: '/profil#organisasi' }
+        { label: 'Struktur Organisasi', path: '/struktur-organisasi' },
+        { label: 'Sejarah', path: '/profil#sejarah' }
+      ] 
+    },
+    { 
+      name: 'PROGRAM', 
+      dropdown: true, 
+      items: [
+        { label: 'Mata Garuda Institute', path: '/program#institute' },
+        { label: 'Capacity Building', path: '/program#capacity' },
+        { label: 'Community Development', path: '/program#community' },
+        { label: 'Entrepreneurship', path: '/program#entrepreneurship' }
       ] 
     },
     { 
@@ -32,38 +42,21 @@ const Navbar = () => {
       dropdown: true, 
       items: [{ label: 'Daftar Berita', path: '/berita' }] 
     },
-    { 
-      name: 'INFORMASI', 
-      dropdown: true, 
-      items: [
-        { label: 'Pendaftaran', path: '/pendaftaran' },
-        { label: 'Kontak', path: '/kontak' }
-      ] 
-    },
-    { 
-      name: 'DATA', 
-      dropdown: true, 
-      items: [
-        { label: 'Dewan Guru', path: '/dewan-guru' },
-        { label: 'Tenaga Kependidikan', path: '/tenaga-kependidikan' }
-      ] 
-    },
-    { name: 'EKSTRAKURIKULER', dropdown: false, path: '/ekstrakurikuler' },
     { name: 'GALERI', dropdown: false, path: '/galeri' },
+    { name: 'KONTAK', dropdown: false, path: '/kontak' },
   ];
 
-  // --- 2. KATA KUNCI KONTEN & BAGIAN WEBSITE (Static Shortcuts) ---
+  // --- 2. KATA KUNCI KONTEN & BAGIAN WEBSITE ---
   const staticShortcuts = [
-    // Sinonim & Bagian Halaman
-    { keys: ['sambutan', 'kepala', 'kepsek', 'syawal'], url: '/profil#sambutan', title: 'Sambutan Kepala Sekolah', type: 'Profil' },
-    { keys: ['lokasi', 'alamat', 'telepon', 'map', 'peta'], url: '/#kontak', title: 'Kontak & Lokasi', type: 'Kontak' },
-    { keys: ['program', 'unggulan', 'teknologi', 'life skill'], url: '/#program', title: 'Program Unggulan', type: 'Program' },
-    { keys: ['prestasi', 'juara', 'lomba', 'pemenang'], url: '/#prestasi', title: 'Prestasi Siswa', type: 'Prestasi' },
-    { keys: ['testimoni', 'alumni', 'kata mereka'], url: '/#testimoni', title: 'Testimoni Alumni', type: 'Alumni' },
-    { keys: ['statistik', 'jumlah siswa', 'jumlah guru'], url: '/#statistik', title: 'Statistik Sekolah', type: 'Info' },
-    { keys: ['ppdb', 'masuk', 'registrasi', 'daftar'], url: '/pendaftaran', title: 'Info Pendaftaran (PPDB)', type: 'Pendaftaran' },
-    { keys: ['guru', 'pengajar', 'nip'], url: '/dewan-guru', title: 'Dewan Guru', type: 'Halaman' },
-    { keys: ['staf', 'pegawai', 'tu', 'tata usaha', 'admin'], url: '/tenaga-kependidikan', title: 'Tenaga Kependidikan', type: 'Halaman' },
+    { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Profil' },
+    { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Profil' },
+    { keys: ['struktur', 'pengurus', 'kepengurusan'], url: '/struktur-organisasi', title: 'Struktur Organisasi', type: 'Organisasi' },
+    { keys: ['kepala', 'ketua', 'hikam'], url: '/struktur-organisasi', title: 'Ketua MG Sulut', type: 'Pengurus' },
+    { keys: ['program', 'kegitan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
+    { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita Terbaru', type: 'Berita' },
+    { keys: ['galeri', 'foto', 'dokumentasi'], url: '/galeri', title: 'Galeri', type: 'Galeri' },
+    { keys: ['kontak', 'hubungi', 'alamat'], url: '/kontak', title: 'Kontak', type: 'Kontak' },
+    { keys: ['lpdp', 'beasiswa', 'alumni'], url: '/profil', title: 'Tentang LPDP', type: 'Info' },
   ];
 
   // Logika Live Search (Autocomplete)
@@ -76,16 +69,14 @@ const Navbar = () => {
 
       const trimmedQuery = searchQuery.trim().toLowerCase();
 
-      // A. Cari di MENU NAVIGASI (Otomatis)
+      // A. Cari di MENU NAVIGASI
       const menuMatches = [];
       menuItems.forEach(menu => {
-        // Cek Menu Utama
         if (menu.name.toLowerCase().includes(trimmedQuery)) {
            if (!menu.dropdown) {
              menuMatches.push({ _id: `menu-${menu.name}`, title: menu.name, path: menu.path, _type: 'static', typeLabel: 'Menu' });
            }
         }
-        // Cek Sub Menu
         if (menu.items) {
            menu.items.forEach(sub => {
               if (sub.label.toLowerCase().includes(trimmedQuery)) {
@@ -95,7 +86,7 @@ const Navbar = () => {
         }
       });
 
-      // B. Cari di STATIC SHORTCUTS (Konten Halaman)
+      // B. Cari di STATIC SHORTCUTS
       const staticMatches = staticShortcuts.filter(item => 
         item.keys.some(key => key.includes(trimmedQuery)) || 
         item.title.toLowerCase().includes(trimmedQuery)
@@ -109,34 +100,28 @@ const Navbar = () => {
 
       try {
         const groqQuery = `*[
-          (_type in ["berita", "galeri", "saranaPrasarana", "pendaftaran", "tenagaKependidikan", "dewanGuru"]) && 
-          (judul match $searchTerm || nama match $searchTerm || posisi match $searchTerm || bidang match $searchTerm)
+          (_type in ["berita", "galeri"]) && 
+          (judul match $searchTerm || nama match $searchTerm)
         ][0...5] {
           _id, _type,
           "title": coalesce(judul, nama),
           foto,
           "path": select(
             _type == "berita" => "/berita/" + _id,
-            _type == "galeri" => "/galeri",
-            _type == "saranaPrasarana" => "/profil#sarana-prasarana",
-            _type == "pendaftaran" => "/pendaftaran",
-            _type == "tenagaKependidikan" => "/tenaga-kependidikan",
-            _type == "dewanGuru" => "/dewan-guru"
+            _type == "galeri" => "/galeri"
           )
         }`;
         const data = await client.fetch(groqQuery, { searchTerm: `${searchQuery}*` });
-        // Gabungkan hasil: Pintasan Halaman (Static) + Konten Database (Sanity)
         setSuggestions([...menuMatches, ...staticMatches, ...data]);
       } catch (err) {
         console.error("Search error:", err);
       }
     };
 
-    const timer = setTimeout(fetchSuggestions, 300); // Debounce 300ms
+    const timer = setTimeout(fetchSuggestions, 300);
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Menutup dropdown saat klik di luar area search
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -151,12 +136,10 @@ const Navbar = () => {
     if (e.key === 'Enter' && searchQuery.trim()) {
       const trimmedQuery = searchQuery.trim().toLowerCase();
       
-      // Cek kecocokan langsung dengan Shortcut
       let directMatch = staticShortcuts.find(item => 
         item.keys.some(key => key === trimmedQuery || (trimmedQuery.length > 3 && key.startsWith(trimmedQuery)))
       );
 
-      // Jika tidak ada di shortcut, cek di Menu Items
       if (!directMatch) {
         menuItems.forEach(menu => {
           if (menu.name.toLowerCase() === trimmedQuery && !menu.dropdown) directMatch = { url: menu.path };
@@ -167,13 +150,9 @@ const Navbar = () => {
         });
       }
 
-      const shortcut = directMatch;
-
-      if (shortcut) {
-        // Jika cocok dengan pintasan, langsung buka halamannya
-        handleNavigation(shortcut.url);
+      if (directMatch) {
+        handleNavigation(directMatch.url);
       } else {
-        // Jika tidak, buka halaman hasil pencarian umum
         navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       }
 
@@ -187,7 +166,6 @@ const Navbar = () => {
     if (path.includes('#')) {
       const [pathname, hash] = path.split('#');
       navigate(pathname);
-      // Beri jeda sedikit agar halaman termuat sebelum scroll ke elemen
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -200,7 +178,6 @@ const Navbar = () => {
     setShowSuggestions(false);
   };
 
-  // Logika Deteksi Scroll (Utility Bar tetap terlihat saat scroll ke atas)
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
@@ -211,9 +188,9 @@ const Navbar = () => {
 
         if (!isMobileMenuOpen) {
           if (window.scrollY > lastScrollY && window.scrollY > 42) {
-            setIsVisible(false); // Sembunyikan Utility Bar
+            setIsVisible(false);
           } else {
-            setIsVisible(true);  // Munculkan kembali
+            setIsVisible(true);
           }
         }
         setLastScrollY(window.scrollY);
@@ -233,22 +210,35 @@ const Navbar = () => {
         }`}
       >
         
-        {/* --- TOP BAR (Utility Bar) - Warna Abu-abu Sesuai Desain Awal --- */}
-        <div className="hidden lg:block bg-[#EAEAEA] h-[42px] w-full border-b border-gray-200">
-          <div className="max-w-[1440px] mx-auto h-full px-[60px] flex justify-between items-center text-[12px] font-bold text-[#333]">
+        {/* --- TOP BAR - Navy Blue untuk MG Sulut --- */}
+        <div className="hidden lg:block bg-[#0D1B2A] h-[42px] w-full">
+          <div className="max-w-[1440px] mx-auto h-full px-[60px] flex justify-between items-center text-[12px] font-bold text-white">
             <div className="flex items-center gap-[25px]">
               <div className="flex items-center gap-[6px]">
-                <Phone size={14} className="text-gray-700" />
-                <span>0812-2995-9922</span>
+                <Phone size={14} className="text-[#B8860B]" />
+                <span>+62 812-3456-7890</span>
               </div>
-              <div className="flex items-center gap-[6px] border-l border-gray-400 pl-[25px]">
-                <Mail size={14} className="text-gray-700" />
-                <span className="lowercase">sman14.smapas@gmail.com</span>
+              <div className="flex items-center gap-[6px] border-l border-gray-600 pl-[25px]">
+                <Mail size={14} className="text-[#B8860B]" />
+                <span className="lowercase">info@matagarudasulut.org</span>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              {/* --- SEARCH BAR DIKEMBALIKAN --- */}
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-2">
+                <a href="https://instagram.com/matagarudasulut" target="_blank" rel="noopener noreferrer" className="p-1 hover:text-[#B8860B] transition-colors">
+                  <Instagram size={16} />
+                </a>
+                <a href="#" className="p-1 hover:text-[#B8860B] transition-colors">
+                  <Facebook size={16} />
+                </a>
+                <a href="#" className="p-1 hover:text-[#B8860B] transition-colors">
+                  <Youtube size={16} />
+                </a>
+              </div>
+
+              {/* Search Bar */}
               <div className="relative group" ref={searchRef}>
                 <input 
                   type="text" 
@@ -260,11 +250,10 @@ const Navbar = () => {
                   }}
                   onKeyDown={handleSearch}
                   onFocus={() => searchQuery.length >= 2 && setShowSuggestions(true)}
-                  className="w-[180px] h-[28px] bg-white border border-gray-300 rounded-full px-4 pl-9 text-[11px] focus:outline-none focus:border-[#587F93] transition-all"
+                  className="w-[180px] h-[28px] bg-white/10 border border-gray-600 rounded-full px-4 pl-9 text-[11px] focus:outline-none focus:border-[#B8860B] transition-all text-white placeholder-gray-400"
                 />
                 <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
 
-                {/* Suggestions Dropdown Desktop */}
                 {showSuggestions && searchQuery.length >= 2 && (
                   <div className="absolute top-full right-0 w-[280px] bg-white shadow-2xl rounded-xl mt-2 py-2 border border-gray-100 z-[110] overflow-hidden">
                     {suggestions.length > 0 ? (
@@ -287,8 +276,8 @@ const Navbar = () => {
                           </div>
                           <div className="text-left overflow-hidden">
                             <p className="text-[11px] font-bold text-gray-800 truncate">{item.title}</p>
-                            <p className="text-[9px] text-[#587F93] font-black uppercase tracking-tighter">
-                              {item._type === 'static' ? item.typeLabel : (item._type === 'saranaPrasarana' ? 'Fasilitas' : item._type === 'tenagaKependidikan' ? 'Tenaga Kependidikan' : item._type === 'dewanGuru' ? 'Dewan Guru' : item._type)}
+                            <p className="text-[9px] text-[#B8860B] font-black uppercase tracking-tighter">
+                              {item._type === 'static' ? item.typeLabel : item._type}
                             </p>
                           </div>
                         </div>
@@ -301,12 +290,6 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <Link 
-                to="/login"
-                className="bg-[#587F93] text-white px-4 h-[28px] rounded-full font-extrabold text-[11px] flex items-center gap-1.5 active:scale-95 shadow-sm hover:bg-[#587F93] transition-all cursor-pointer no-underline inline-flex items-center"
-              >
-                <LogIn size={13} /> LOGIN
-              </Link>
             </div>
           </div>
         </div>
@@ -317,15 +300,15 @@ const Navbar = () => {
             
             {/* Branding Logo */}
             <div className="flex items-center gap-[10px] lg:gap-[15px] cursor-pointer" onClick={() => handleNavigation('/')}>
-              <div className="w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] flex items-center justify-center shrink-0">
-                <img src="/logo-smapas.svg" alt="Logo SMAN 14" className="max-w-full max-h-full object-contain" />
+              <div className="w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] flex items-center justify-center shrink-0 bg-[#0D1B2A] rounded-full">
+                <span className="text-white font-bold text-lg lg:text-xl">MG</span>
               </div>
               <div className="flex flex-col justify-center text-left">
                 <h1 className="text-[16px] lg:text-[20px] font-[900] text-black leading-none uppercase tracking-tight">
-                  SMAN 14 SAMARINDA
+                  Mata Garuda
                 </h1>
-                <p className="text-[10px] lg:text-[12px] text-[#666] font-bold italic mt-[1px]">
-                  Beriman, Berakhlak, Berprestasi
+                <p className="text-[10px] lg:text-[12px] text-[#B8860B] font-bold italic mt-[1px]">
+                  Sulawesi Utara
                 </p>
               </div>
             </div>
@@ -345,17 +328,17 @@ const Navbar = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                   onClick={() => !menu.dropdown && handleNavigation(menu.path)}
                 >
-                  <div className="flex items-center gap-[3px] hover:text-[#587F93] transition-colors py-8">
+                  <div className="flex items-center gap-[3px] hover:text-[#B8860B] transition-colors py-8">
                     {menu.name}
                     {menu.dropdown && <ChevronDown size={12} className="opacity-60" />}
                   </div>
 
                   {menu.dropdown && activeDropdown === menu.name && (
-                    <ul className="absolute left-0 top-full w-[220px] bg-white shadow-xl border-t-4 border-[#587F93] py-2 z-50 animate-in fade-in slide-in-from-top-2">
+                    <ul className="absolute left-0 top-full w-[220px] bg-white shadow-xl border-t-4 border-[#B8860B] py-2 z-50 animate-in fade-in slide-in-from-top-2">
                       {menu.items.map((sub) => (
                         <li 
                           key={sub.label} 
-                          className="px-5 py-2.5 text-[12px] font-bold text-gray-700 hover:bg-gray-50 hover:text-[#587F93] transition-all border-b border-gray-50 last:border-none"
+                          className="px-5 py-2.5 text-[12px] font-bold text-gray-700 hover:bg-gray-50 hover:text-[#B8860B] transition-all border-b border-gray-50 last:border-none"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleNavigation(sub.path);
@@ -374,15 +357,23 @@ const Navbar = () => {
         </nav>
       </header>
 
-      {/* --- SIDEBAR MOBILE (Tetap Seperti Semula) --- */}
+      {/* --- SIDEBAR MOBILE --- */}
       <div 
         className={`fixed inset-0 bg-black/50 transition-opacity duration-300 xl:hidden z-[150] ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-    <div className={`fixed top-0 right-0 h-full w-[85%] max-w-[350px] bg-white z-[200] shadow-2xl transition-transform duration-300 ease-in-out transform xl:hidden flex flex-col font-urbanist ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-[85%] max-w-[350px] bg-white z-[200] shadow-2xl transition-transform duration-300 ease-in-out transform xl:hidden flex flex-col font-urbanist ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex justify-between items-center p-5 border-b border-gray-100 shrink-0">
-           <img src="/logo-smapas.svg" alt="Logo" className="w-[40px] h-[40px]" onClick={() => { handleNavigation('/'); setIsMobileMenuOpen(false); }} />
+           <div className="flex items-center gap-2">
+              <div className="w-[40px] h-[40px] flex items-center justify-center bg-[#0D1B2A] rounded-full">
+                <span className="text-white font-bold">MG</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold">Mata Garuda</span>
+                <span className="text-xs text-[#B8860B]">Sulawesi Utara</span>
+              </div>
+           </div>
            <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-gray-500"><X size={28} /></button>
         </div>
 
@@ -398,39 +389,9 @@ const Navbar = () => {
                  setShowSuggestions(true);
                }}
                onKeyDown={handleSearch}
-               className="w-full h-[45px] bg-gray-50 border border-gray-200 rounded-xl px-5 pl-12 text-sm focus:outline-none focus:border-[#587F93] transition-all font-bold"
+               className="w-full h-[45px] bg-gray-50 border border-gray-200 rounded-xl px-5 pl-12 text-sm focus:outline-none focus:border-[#B8860B] transition-all font-bold"
              />
              <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-
-             {/* Mobile Suggestions */}
-             {showSuggestions && searchQuery.length >= 2 && suggestions.length > 0 && (
-               <div className="absolute top-full left-0 w-full bg-white shadow-xl rounded-xl mt-2 py-1 border border-gray-100 z-[110] overflow-hidden">
-                 {suggestions.map((item) => (
-                   <div 
-                     key={item._id}
-                     onClick={() => {
-                       handleNavigation(item.path);
-                       setSearchQuery('');
-                     }}
-                     className="px-4 py-3 hover:bg-gray-50 cursor-pointer flex items-center gap-4 transition-colors border-b border-gray-50 last:border-none"
-                   >
-                     <div className="w-10 h-10 rounded-lg bg-gray-100 flex-shrink-0 overflow-hidden">
-                        {item.foto ? (
-                          <img src={urlFor(item.foto).width(80).height(80).url()} className="w-full h-full object-cover" />
-                        ) : (
-                          <Search size={16} className="m-auto text-gray-400" />
-                        )}
-                     </div>
-                     <div className="text-left overflow-hidden">
-                       <p className="text-sm font-bold text-gray-800 truncate">{item.title}</p>
-                       <p className="text-[10px] text-[#587F93] font-black uppercase tracking-widest">
-                         {item._type === 'static' ? item.typeLabel : (item._type === 'saranaPrasarana' ? 'Fasilitas' : item._type === 'tenagaKependidikan' ? 'Tenaga Kependidikan' : item._type === 'dewanGuru' ? 'Dewan Guru' : item._type)}
-                       </p>
-                     </div>
-                   </div>
-                 ))}
-               </div>
-             )}
            </div>
 
            <ul className="flex flex-col gap-1">
@@ -454,7 +415,7 @@ const Navbar = () => {
                  {menu.dropdown && activeDropdown === menu.name && (
                    <ul className="bg-gray-50 rounded-lg mb-4">
                      {menu.items?.map((sub) => (
-                       <li key={sub.label} className="py-3 px-6 text-[12px] font-bold text-gray-600 active:text-[#587F93]" onClick={() => { handleNavigation(sub.path); setIsMobileMenuOpen(false); }}>
+                       <li key={sub.label} className="py-3 px-6 text-[12px] font-bold text-gray-600 active:text-[#B8860B]" onClick={() => { handleNavigation(sub.path); setIsMobileMenuOpen(false); }}>
                          {sub.label}
                        </li>
                      ))}
@@ -465,15 +426,19 @@ const Navbar = () => {
            </ul>
         </div>
 
-        {/* Tombol Login Mobile di Bagian Bawah */}
+        {/* Social Media Mobile */}
         <div className="p-5 border-t border-gray-100 shrink-0">
-          <Link 
-            to="/login"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full bg-[#587F93] text-white h-[50px] rounded-xl font-[900] text-[14px] flex items-center justify-center gap-3 active:scale-95 shadow-lg transition-all uppercase tracking-widest cursor-pointer no-underline"
-          >
-            <LogIn size={20} /> Login Admin
-          </Link>
+          <div className="flex justify-center gap-4">
+            <a href="https://instagram.com/matagarudasulut" target="_blank" rel="noopener noreferrer" className="p-2 bg-[#0D1B2A] text-white rounded-full hover:bg-[#B8860B] transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="#" className="p-2 bg-[#0D1B2A] text-white rounded-full hover:bg-[#B8860B] transition-colors">
+              <Facebook size={20} />
+            </a>
+            <a href="#" className="p-2 bg-[#0D1B2A] text-white rounded-full hover:bg-[#B8860B] transition-colors">
+              <Youtube size={20} />
+            </a>
+          </div>
         </div>
       </div>
     </>

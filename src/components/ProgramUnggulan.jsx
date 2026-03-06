@@ -5,32 +5,32 @@ const ProgramUnggulan = () => {
   const programData = [
     {
       id: 1,
-      title: "Pembelajaran berbasis Teknologi",
-      desc: "Proses pembelajaran berbasis teknologi dapat menciptakan siswa yang mampu bereksplorasi, berkreatifitas, menyesuaikan diri dengan perkembangan zaman, dan tentunya menambah wawasan dan ilmu pengetahuan.",
+      title: "Mata Garuda Institute",
+      desc: "Melakukan riset dan publikasi kebijakan untuk memberikan rekomendasi berbasis bukti bagi pembangunan daerah Sulawesi Utara.",
       img: "/program-1.webp", 
     },
     {
       id: 2,
-      title: "Ekstrakurikuler",
-      desc: "Sebagai wadah untuk mengembangkan minat dan bakat, memperluas pengalaman bersosialisasi, praktik keterampilan berkomunikasi, dan internalisasi nilai-nilai karakter.",
+      title: "Capacity Building",
+      desc: "Program mentorship karir, pelatihan, dan diskusi industri untuk mengembangkan potensi anggota.",
       img: "/basket1.webp",
     },
     {
       id: 3,
-      title: "Life Skills",
-      desc: "Meningkatkan keterampilan, pengetahuan dan sikap belajar di bidang pekerjaan/usaha tertentu sesuai dengan minat dan bakat. perkembangan fisik dan jiwa serta potensi lingkungannya, sehingga diharapkan siswa memiliki bekal dimasa depan.",
+      title: "Community Development",
+      desc: "Pengabdian masyarakat dan pembangunan desa untuk memberikan dampak nyata bagi masyarakat Sulawesi Utara.",
       img: "/lab1.webp",
     },
     {
       id: 4,
-      title: "Green House",
-      desc: "Mengembangkan kesadaran lingkungan melalui praktik langsung budidaya tanaman dan pelestarian alam, menciptakan ekosistem sekolah yang asri dan edukatif.",
+      title: "MGPreneur (Entrepreneurship)",
+      desc: "Mengembangkan kewirausahaan dan startup untuk menciptakan lapangan kerja dan kemajuan ekonomi daerah.",
       img: "/greenhouse.webp",
     },
     {
       id: 5,
-      title: "Bilingual Class",
-      desc: "Mempersiapkan siswa menghadapi tantangan global melalui penguasaan bahasa asing dalam interaksi pembelajaran sehari-hari di kelas.",
+      title: "Jejaring & Kolaborasi",
+      desc: "Membangun koneksi antar alumni LPDP dan stakeholder lainnya untuk mendukung pembangunan daerah.",
       img: "/billingual.webp",
     },
   ];
@@ -39,7 +39,7 @@ const ProgramUnggulan = () => {
     <section className="py-24 bg-white font-urbanist overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px]">
         
-        {/* --- HEADER SECTION --- (DISAMAKAN DENGAN ACHIEVEMENT) */}
+        {/* --- HEADER SECTION --- */}
         <div className="flex flex-col items-start mb-16">
           <div className="flex items-center gap-6 mb-2">
             <span className="text-[#888888] font-[900] tracking-[0.3em] uppercase text-[18px] lg:text-[20px] whitespace-nowrap">
@@ -68,13 +68,13 @@ const ProgramUnggulan = () => {
                   src={item.img} 
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => { e.target.src = 'https://via.placeholder.com/600x400?text=SMAPAS+Program'; }}
+                  onError={(e) => { e.target.src = 'https://via.placeholder.com/600x400?text=MG+Sulut+Program'; }}
                 />
               </div>
 
               {/* Content Layer */}
               <div className="p-8 flex flex-col flex-grow">
-                <div className="bg-[#587F93] text-white w-10 h-7 flex items-center justify-center font-bold text-sm mb-4">
+                <div className="bg-[#B8860B] text-white w-10 h-7 flex items-center justify-center font-bold text-sm mb-4">
                   #{item.id}
                 </div>
 

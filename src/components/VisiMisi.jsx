@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 const VisiMisi = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const dataVisiMisi = [
     {
-      title: "Unggul Berprestasi",
-      desc: "Menghasilkan lulusan yang kompetitif di bidang akademik maupun non-akademik di tingkat nasional.",
+      title: "Sinergi Sam Ratulangi",
+      desc: "Membangun collaboration lintas sector dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.",
       img: "/unggul.webp", 
     },
     {
-      title: "Berwawasan Lingkungan",
-      desc: "Menciptakan budaya sekolah yang peduli dan berbudaya lingkungan hidup secara berkelanjutan.",
+      title: "Pengabdian Masyarakat",
+      desc: "Menjadi katalisator kontribusi ilmu dan keahlian alumni LPDP untuk pembangunan daerah.",
       img: "/berwawasan.webp",
     },
     {
-      title: "Berkarakter",
-      desc: "Membentuk kepribadian siswa yang beriman, bertaqwa, dan menjunjung tinggi nilai luhur budi pekerti.",
+      title: "Pemberdayaan Daerah",
+      desc: "Mewujudkan pengabdian kepada bangsa melalui program-program nyata yang berdampak bagi masyarakat.",
       img: "/berkarakter.webp",
     },
   ];
@@ -33,22 +34,18 @@ const VisiMisi = () => {
             viewport={{ once: true }}
             className="text-[28px] lg:text-[36px] font-[900] text-[#333] tracking-tight uppercase"
           >
-            FOKUS PENDIDIKAN
+            Visi & Misi
           </motion.h2>
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: 60 }}
             viewport={{ once: true }}
-            className="h-1 bg-[#587F93] mx-auto mt-4 rounded-full" 
+            className="h-1 bg-[#B8860B] mx-auto mt-4 rounded-full" 
           />
         </div>
 
-        {/* Container Utama: 
-            - Menggunakan rounded-[40px] agar lebih elegan
-            - Gambar tetap nyambung (tidak ada gap antar kartu)
-            - Overflow hidden untuk memotong sudut gambar di dalam
-        */}
-        <div className="flex flex-col lg:flex-row h-[600px] w-full bg-gray-900 rounded-[40px] overflow-hidden">
+        {/* Container Utama */}
+        <div className="flex flex-col lg:flex-row h-[600px] w-full bg-[#0D1B2A] rounded-[40px] overflow-hidden">
           {dataVisiMisi.map((item, index) => (
             <div
               key={index}
@@ -71,11 +68,11 @@ const VisiMisi = () => {
                     transition: 'transform 1.2s ease-out, filter 0.8s ease-in-out'
                   }}
                 />
-                {/* Overlay Gradasi Biru Khas Sekolah */}
+                {/* Overlay Gradasi Gold dan Navy */}
                 <div 
                   className="absolute inset-0 transition-opacity duration-700" 
                   style={{ 
-                    background: 'linear-gradient(to bottom, rgba(88, 127, 147, 0.5), rgba(0, 0, 0, 0.7))',
+                    background: 'linear-gradient(to bottom, rgba(184, 134, 11, 0.5), rgba(0, 0, 0, 0.7))',
                     opacity: hoveredIndex === index ? 0 : 1
                   }} 
                 />
@@ -87,7 +84,7 @@ const VisiMisi = () => {
                 
                 <div className="relative z-10 w-full">
                   
-                  {/* Judul: Tetap stabil dan tajam */}
+                  {/* Judul */}
                   <h3 
                     className={`font-[900] uppercase tracking-wider leading-tight transition-all duration-500 ${
                       hoveredIndex === index 
@@ -108,7 +105,7 @@ const VisiMisi = () => {
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.4, delay: 0.3 }}
                         >
-                          <p className="text-[14px] sm:text-[15px] lg:text-[17px] font-medium leading-relaxed max-w-full lg:max-w-[450px] text-white/80 border-l-[3px] border-[#587F93] pl-4 sm:pl-5 py-1">
+                          <p className="text-[14px] sm:text-[15px] lg:text-[17px] font-medium leading-relaxed max-w-full lg:max-w-[450px] text-white/80 border-l-[3px] border-[#B8860B] pl-4 sm:pl-5 py-1">
                             {item.desc}
                           </p>
                         </motion.div>

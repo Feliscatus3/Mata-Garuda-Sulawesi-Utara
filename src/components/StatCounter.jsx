@@ -1,7 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Presentation, School } from 'lucide-react';
+import { Users, Award, Briefcase } from 'lucide-react';
 
 const StatCounter = () => {
   const { ref, inView } = useInView({
@@ -12,27 +12,26 @@ const StatCounter = () => {
   const stats = [
     {
       id: 1,
-      label: "Siswa Aktif",
-      value: 711,
+      label: "Alumni & Awardee",
+      value: 150,
       suffix: "+",
-      icon: <GraduationCap size={36} className="text-[#587F93]" strokeWidth={1.2} />,
-      // Menambah min-width agar kontainer tidak berubah ukuran saat angka bergulir
+      icon: <Users size={36} className="text-[#B8860B]" strokeWidth={1.2} />,
       minWidth: "min-w-[120px] lg:min-w-[150px]" 
     },
     {
       id: 2,
-      label: "Guru & Staff",
-      value: 48,
+      label: "Program Kerja",
+      value: 12,
       suffix: "",
-      icon: <Presentation size={36} className="text-[#587F93]" strokeWidth={1.2} />,
+      icon: <Award size={36} className="text-[#B8860B]" strokeWidth={1.2} />,
       minWidth: "min-w-[80px] lg:min-w-[100px]"
     },
     {
       id: 3,
-      label: "Ruang Kelas",
-      value: 20,
-      suffix: "",
-      icon: <School size={36} className="text-[#587F93]" strokeWidth={1.2} />,
+      label: "Kolaborasi Terbentuk",
+      value: 25,
+      suffix: "+",
+      icon: <Briefcase size={36} className="text-[#B8860B]" strokeWidth={1.2} />,
       minWidth: "min-w-[60px] lg:min-w-[80px]"
     },
   ];
@@ -41,7 +40,7 @@ const StatCounter = () => {
     <div className="relative w-full flex justify-center z-20 -mt-10 lg:-mt-12 px-5 font-urbanist">
       <div 
         ref={ref}
-        className="bg-white rounded-2xl py-8 lg:py-10 px-10 lg:px-20 flex flex-wrap justify-center gap-10 lg:gap-32 border border-white/50 shadow-[0_30px_60px_rgba(0,0,0,0.12)] backdrop-blur-sm"
+        className="bg-[#0D1B2A] rounded-2xl py-8 lg:py-10 px-10 lg:px-20 flex flex-wrap justify-center gap-10 lg:gap-32 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
       >
         {stats.map((stat) => (
           <div key={stat.id} className="flex items-center gap-6">
@@ -54,8 +53,7 @@ const StatCounter = () => {
                 {stat.label}
               </span>
               
-              {/* tabular-nums memastikan setiap karakter angka punya lebar yang sama */}
-              <span className="text-[28px] lg:text-[36px] font-bold text-[#1A1A1A] leading-none tabular-nums">
+              <span className="text-[28px] lg:text-[36px] font-bold text-white leading-none tabular-nums">
                 {inView ? (
                   <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} separator="." />
                 ) : (

@@ -1,42 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { fetchPrestasiSiswa, urlFor } from '../lib/sanity';
+import { Trophy, Medal, Star } from 'lucide-react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const PrestasiSiswa = () => {
-  const [prestasiData, setPrestasiData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadPrestasi = async () => {
-      try {
-        const data = await fetchPrestasiSiswa();
-        setPrestasiData(data);
-      } catch (error) {
-        console.error('Gagal memuat prestasi:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadPrestasi();
-  }, []);
-
-  if (isLoading) {
-    return (
-      <section className="py-24 bg-white font-urbanist overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px] text-center">
-          <p className="text-gray-500 font-medium">Memuat data prestasi...</p>
-        </div>
-      </section>
-    );
-  }
+  // Static data untuk Kegiatan & Prestasi MG Sulut
+  const prestasiData = [
+    {
+      _id: 1,
+      tingkatPrestasi: "Nasional",
+      judul: "Forum Alumni LPDP 2025",
+      namaSiswa: "Mata Garuda Sulut",
+      deskripsi: "Menjadi narasumber dalam Forum Alumni LPDP Nasional dengan tema Pembangunan Daerah.",
+      icon: <Trophy size={40} className="text-[#B8860B]" />
+    },
+    {
+      _id: 2,
+      tingkatPrestasi: "Daerah",
+      judul: "Pengabdian Desa Bantik",
+      namaSama: "Tim MG Sulut",
+      deskripsi: "Program pengabdian masyarakat di Desa Bantik dengan fokus pada pendidikan dan pemberdayaan.",
+      icon: <Medal size={40} className="text-[#B8860B]" />
+    },
+    {
+      _id: 3,
+      tingkatPrestasi: "Nasional",
+      judul: "MGPreneur Award 2024",
+      namaSiswa: "Mata Garuda Sulut",
+      deskripsi: "Penganugerahan program kewirausahaan terbaik bagi alumni LPDP di Sulawesi Utara.",
+      icon: <Star size={40} className="text-[#B8860B]" />
+    },
+    {
+      _id: 4,
+      tingkatPrestasi: "Daerah",
+      judul: "Seminar Kebijakan Publik",
+      namaSiswa: "MG Institute",
+      deskripsi: "Mengadakan seminar kebijakan publik bersama pemangku kepentingan di Sulawesi Utara.",
+      icon: <Trophy size={40} className="text-[#B8860B]" />
+    }
+  ];
 
   return (
-    <section className="py-24 bg-white font-urbanist overflow-hidden">
+    <section className="py-24 bg-[#F8FAFC] font-urbanist overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px]">
         
         {/* --- HEADER SECTION --- */}
@@ -49,7 +57,7 @@ const PrestasiSiswa = () => {
           </div>
           
           <h2 className="text-[28px] lg:text-[36px] font-[900] text-black uppercase tracking-tight -ml-[1px] lg:-ml-[2px]">
-            PRESTASI SISWA/I
+            Program & Kegiatan
           </h2>
         </div>
 
@@ -73,25 +81,20 @@ const PrestasiSiswa = () => {
                 <div className="bg-white rounded-[40px] overflow-hidden flex flex-col flex-1 border border-[#F5F5F5] shadow-2xl drop-shadow-[0_20px_20px_rgba(0,0,0,0.05)] mb-10">
                   
                   {/* Image Area */}
-                  <div className="relative h-[300px] bg-[#F8F8F8] overflow-hidden">
-                    {item.foto ? (
-                      <img 
-                        src={urlFor(item.foto).width(600).height(400).url()}
-                        alt={item.namaSiswa}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                        <span className="text-gray-400">Foto Prestasi</span>
+                  <div className="relative h-[200px] bg-[#0D1B2A] flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B2A] to-[#1a3a5c] opacity-90" />
+                    <div className="relative z-10 text-center p-6">
+                      <div className="flex justify-center mb-4">
+                        {item.icon}
                       </div>
-                    )}
+                      <span className="text-[12px] font-black text-[#B8860B] uppercase tracking-widest px-3 py-1 border border-[#B8860B] rounded-full">
+                        {item.tingkatPrestasi}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content Area */}
                   <div className="p-10 text-center flex flex-col flex-grow items-center">
-                    <span className="text-[12px] font-black text-[#587F93] uppercase tracking-widest mb-3 px-3 py-1 bg-[#587F93]/10 rounded-full">
-                      {item.tingkatPrestasi}
-                    </span>
                     <h3 className="text-[22px] lg:text-[24px] font-[900] text-[#1A1A1A] mb-4 uppercase tracking-tight line-clamp-2">
                       {item.judul}
                     </h3>
@@ -114,13 +117,13 @@ const PrestasiSiswa = () => {
             .prestasi-slider-container .swiper-pagination-bullet {
               width: 14px;
               height: 14px;
-              background: #587F93;
+              background: #B8860B;
               opacity: 0.2;
               margin: 0 8px !important;
               transition: all 0.3s ease;
             }
             .prestasi-slider-container .swiper-pagination-bullet-active {
-              background: #587F93;
+              background: #B8860B;
               opacity: 1;
               width: 14px;
               border-radius: 50%;
