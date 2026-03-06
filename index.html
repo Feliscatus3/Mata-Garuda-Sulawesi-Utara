@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-smapas.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="max-image-preview:none">
+    
+    <title>SMA Negeri 14 Samarinda</title>
+    <meta name="description" content="Website resmi SMA Negeri 14 Samarinda. Media informasi dan pembelajaran berbasis teknologi informasi." />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SMA Negeri 14 Samarinda",
+      "alternateName": ["SMAN 14 Samarinda", "SMAPAS"],
+      "url": "https://www.sman14samarinda.sch.id/"
+    }
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.sman14samarinda.sch.id/" />
+    <meta property="og:title" content="SMA Negeri 14 Samarinda" />
+    <meta property="og:description" content="Website resmi SMA Negeri 14 Samarinda." />
+    <meta property="og:image" content="/logo-smapas.svg" />
+
+    <style>
+      .font-urbanist {
+        font-family: 'Urbanist', sans-serif !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+
+  <script>
+  window.addEventListener('load', function() {
+    const style = document.createElement('style');
+    style.innerHTML = '*{user-select: text !important; -webkit-user-select: text !important;}';
+    document.head.appendChild(style);
+
+    document.addEventListener('contextmenu', (e) => e.stopPropagation(), true);
+    document.addEventListener('copy', (e) => e.stopPropagation(), true);
+    document.addEventListener('selectstart', (e) => e.stopPropagation(), true);
+    
+    document.body.oncontextmenu = null;
+    document.body.onselectstart = null;
+    document.body.oncopy = null;
+  }, true);
+</script>
+</html>
