@@ -1,48 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Image as ImageIcon, Maximize2, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { fetchGaleri, urlFor } from '../lib/sanity';
+import { useNavigate } from 'react-router-dom';
 
 const Galeri = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const [galeriData, setGaleriData] = useState([]);
-  const [filter, setFilter] = useState(location.state?.filter || 'Semua');
+  const [filter, setFilter] = useState('Semua');
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchGaleri();
-        setGaleriData(data);
-      } catch (error) {
-        console.error('Gagal memuat galeri:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadData();
-  }, []);
-
-  useEffect(() => {
-    if (location.state?.filter) {
-      setFilter(location.state.filter);
+  // Static gallery data for MG Sulut
+  const galeriData = [
+    {
+      _id: 1,
+      kategori: 'acara',
+      judul: 'Forum Alumni LPDP 2025',
+      deskripsi: 'Partisipasi dalam Forum Alumni LPDP Nasional',
+      foto: ['/program-1.webp', '/basket1.webp']
+    },
+    {
+      _id: 2,
+      kategori: 'pengabdian',
+      judul: 'Pengabdian Desa Bantik',
+      deskripsi: 'Program pengabdian masyarakat di Desa Bantik',
+      foto: ['/lab1.webp', '/greenhouse.webp']
+    },
+    {
+      _id: 3,
+      kategori: 'acara',
+      judul: 'MGPreneur Award 2024',
+      deskripsi: 'Penganugerahan program kewirausahaan terbaik',
+      foto: ['/unggul.webp', '/berwawasan.webp']
+    },
+    {
+      _id: 4,
+      kategori: 'seminar',
+      judul: 'Seminar Kebijakan Publik',
+      deskripsi: 'Seminar kebijakan publik bersama stakeholder',
+      foto: ['/berkarakter.webp', '/kelas.webp']
+    },
+    {
+      _id: 5,
+      kategori: 'fasilitas',
+      judul: 'Kantor MG Sulut',
+      deskripsi: 'Fasilitas kantor Mata Garuda Sulawesi Utara',
+      foto: ['/gedung-smapas.webp', '/lobby.webp']
+    },
+    {
+      _id: 6,
+      kategori: 'aktivitas',
+      judul: ' Kegiatan Anggota',
+      deskripsi: 'Dokumentasi kegiatan anggota MG Sulut',
+      foto: ['/perpus.webp', '/lab-komputer.webp']
     }
-  }, [location.state]);
+  ];
 
-  const categories = ['Semua', 'akademik', 'acara', 'ekstrakurikuler', 'prestasi', 'wisata', 'fasilitas'];
+  const categories = ['Semua', 'acara', 'pengabdian', 'seminar', 'fasilitas', 'aktivitas'];
   
   const categoryLabels = {
-    'akademik': 'Akademik',
     'acara': 'Acara',
-    'ekstrakurikuler': 'Ekstrakurikuler',
-    'prestasi': 'Prestasi',
-    'wisata': 'Wisata',
+    'pengabdian': 'Pengabdian',
+    'seminar': 'Seminar',
     'fasilitas': 'Fasilitas',
+    'aktivitas': 'Aktivitas',
   };
 
   const filteredData = filter === 'Semua' 
@@ -66,16 +86,6 @@ const Galeri = () => {
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-[#FDFDFD] min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-5 lg:px-[60px] text-center">
-          <p className="text-gray-500 font-medium">Memuat galeri foto...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-[#FDFDFD] min-h-screen">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-[60px]">
@@ -87,16 +97,16 @@ const Galeri = () => {
           className="mb-12"
         >
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
-            <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
+            <span className="hover:text-[#B8860B] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
             <ChevronRight size={14} />
-            <span className="text-[#587F93]">Galeri Foto</span>
+            <span className="text-[#B8860B]">Galeri Foto</span>
           </div>
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
-            Galeri <span className="text-[#587F93]">Sekolah</span>
+            Galeri <span className="text-[#B8860B]">Mata Garuda</span>
           </h1>
-          <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
+          <div className="w-20 h-1.5 bg-[#B8860B] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-            Dokumentasi momen berharga, fasilitas unggulan, dan berbagai pencapaian civitas akademika SMAN 14 Samarinda.
+            Dokumentasi momen berharga, program kerja, dan berbagai pencapaian Mata Garuda Sulawesi Utara.
           </p>
         </motion.div>
 
@@ -108,8 +118,8 @@ const Galeri = () => {
               onClick={() => setFilter(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 uppercase tracking-wider border-2 ${
                 filter === cat 
-                ? 'bg-[#587F93] text-white border-[#587F93] shadow-lg shadow-[#587F93]/20' 
-                : 'bg-white text-gray-400 border-gray-100 hover:border-[#587F93] hover:text-[#587F93]'
+                ? 'bg-[#B8860B] text-white border-[#B8860B] shadow-lg shadow-[#B8860B]/20' 
+                : 'bg-white text-gray-400 border-gray-100 hover:border-[#B8860B] hover:text-[#B8860B]'
               }`}
             >
               {cat === 'Semua' ? 'Semua' : categoryLabels[cat]}
@@ -137,7 +147,7 @@ const Galeri = () => {
                 >
                   {/* Image */}
                   <img 
-                    src={urlFor(fotoItem).width(800).height(600).url()} 
+                    src={fotoItem} 
                     alt={album.judul} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -146,7 +156,7 @@ const Galeri = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
                     <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="px-3 py-1 bg-[#587F93] text-white text-[10px] font-black uppercase tracking-widest">
+                        <span className="px-3 py-1 bg-[#B8860B] text-white text-[10px] font-black uppercase tracking-widest">
                           {categoryLabels[album.kategori] || album.kategori}
                         </span>
                       </div>
@@ -200,14 +210,14 @@ const Galeri = () => {
             >
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 lg:right-0 text-white/50 hover:text-white transition-colors p-2 z-10"
+                className="absolute -top-12 right-0 text-white/50 hover:text-white transition-colors p-2 z-10"
               >
                 <X size={32} />
               </button>
               
               <div className="relative flex-grow flex items-center justify-center overflow-hidden rounded-lg">
                 <img
-                  src={urlFor(selectedImage.foto[selectedImageIndex]).width(1200).height(900).url()}
+                  src={selectedImage.foto[selectedImageIndex]}
                   alt={selectedImage.judul}
                   className="max-w-full max-h-[75vh] object-contain shadow-2xl"
                 />
@@ -220,14 +230,14 @@ const Galeri = () => {
                       disabled={selectedImageIndex === 0}
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 disabled:opacity-30 text-white p-3 rounded-full transition-all"
                     >
-                      ← Sebelumnya
+                      ←
                     </button>
                     <button
                       onClick={handleNext}
                       disabled={selectedImageIndex === selectedImage.foto.length - 1}
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 disabled:opacity-30 text-white p-3 rounded-full transition-all"
                     >
-                      Berikutnya →
+                      →
                     </button>
                   </>
                 )}
@@ -235,7 +245,7 @@ const Galeri = () => {
               
               <div className="mt-6 text-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-[#587F93] text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
+                  <span className="px-3 py-1 bg-[#B8860B] text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                     {categoryLabels[selectedImage.kategori] || selectedImage.kategori}
                   </span>
                   {selectedImage.foto.length > 1 && (
