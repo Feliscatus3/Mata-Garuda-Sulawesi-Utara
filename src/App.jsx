@@ -67,6 +67,7 @@ const AppContent = () => {
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />
+          <Route path="/program" element={<ProfilSekolah />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
