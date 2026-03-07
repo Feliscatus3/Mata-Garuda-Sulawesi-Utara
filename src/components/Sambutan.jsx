@@ -57,7 +57,7 @@ const Sambutan = () => {
                 "Assalamu'alaikum Warahmatullahi Wabarakatuh,"
               </p>
               <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
-                Selamat datang di website resmi Mata Garuda Sulawesi Utara. Organisasi ini merupakan wadah alumni dan penerima aktif beasiswa LPDP di Sulawesi Utara yang berfokus pada pengabdian, kolaborasi, dan kontribusi nyata bagi pembangunan daerah.
+                Selamat datang di website resmi Mata Garuda Sulawesi Utara. Organisasi ini merupakan wadah alumni dan penerima aktif奖学金 LPDP di Sulawesi Utara yang berfokus pada pengabdian, kolaborasi, dan kontribusi nyata bagi pembangunan daerah.
               </p>
               <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
                 Kami mengajak seluruh alumni dan awardee LPDP di Sulawesi Utara untuk bersatu dalam visi "Sinergi Sam Ratulangi". Mari bersama-sama memberikan dampak positif bagi daerah dan bangsa melalui berbagai program kerja yang kreatif, progresif, dan inklusif.

@@ -48,15 +48,11 @@ const Navbar = () => {
 
   // --- 2. KATA KUNCI KONTEN & BAGIAN WEBSITE ---
   const staticShortcuts = [
-    { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Tentang' },
-    { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Tentang' },
+    { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Profil' },
+    { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Profil' },
     { keys: ['struktur', 'pengurus', 'kepengurusan'], url: '/struktur-organisasi', title: 'Struktur Organisasi', type: 'Organisasi' },
     { keys: ['kepala', 'ketua', 'hikam'], url: '/struktur-organisasi', title: 'Ketua MG Sulut', type: 'Pengurus' },
-    { keys: ['program', 'kegiatan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
-    { keys: ['institute', 'pelatihan', 'workshop'], url: '/program#institute', title: 'Mata Garuda Institute', type: 'Program' },
-    { keys: ['capacity', 'building', 'pengembangan'], url: '/program#capacity', title: 'Capacity Building', type: 'Program' },
-    { keys: ['community', 'development', 'pemberdayaan'], url: '/program#community', title: 'Community Development', type: 'Program' },
-    { keys: ['entrepreneurship', 'wirausaha', 'bisnis'], url: '/program#entrepreneurship', title: 'Entrepreneurship', type: 'Program' },
+    { keys: ['program', 'kegitan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
     { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita Terbaru', type: 'Berita' },
     { keys: ['galeri', 'foto', 'dokumentasi'], url: '/galeri', title: 'Galeri', type: 'Galeri' },
     { keys: ['kontak', 'hubungi', 'alamat'], url: '/kontak', title: 'Kontak', type: 'Kontak' },

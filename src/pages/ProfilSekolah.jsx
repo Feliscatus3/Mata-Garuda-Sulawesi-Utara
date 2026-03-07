@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const ProfilOrganisasi = () => {
+const ProfilSekolah = () => {
   const navigate = useNavigate();
 
   const containerVariants = {
@@ -165,4 +165,4 @@ const ProfilOrganisasi = () => {
   );
 };
 
-export default ProfilOrganisasi;
+export default ProfilSekolah;

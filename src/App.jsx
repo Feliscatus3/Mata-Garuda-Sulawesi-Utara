@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login';
-import ProfilOrganisasi from './pages/ProfilOrganisasi';
+import ProfilSekolah from './pages/ProfilSekolah';
 import Hero from './components/Hero';
 import Sambutan from './components/Sambutan';
 import VisiMisi from './components/VisiMisi';
@@ -57,7 +57,7 @@ const AppContent = () => {
               <Testimoni />
             </>
           } />
-          <Route path="/profil" element={<ProfilOrganisasi />} />
+          <Route path="/profil" element={<ProfilSekolah />} />
           <Route path="/berita" element={<BeritaTerbaru />} />
           <Route path="/berita/:id" element={<NewsDetail />} />
           <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
@@ -67,7 +67,6 @@ const AppContent = () => {
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />
-          <Route path="/program" element={<ProfilOrganisasi />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

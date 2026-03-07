@@ -14,7 +14,7 @@ const Testimoni = () => {
       namaAlumni: "Dr. Ahmad Rizki, M.Si",
       universitas: "Universitas Indonesia",
       pekerjaanSaatIni: "Dosen & Peneliti",
-      testimoni: "Mata Garuda Sulawesi Utara memberikan saya kesempatan untuk berkontribusi bagi daerah asal saya. Melalui program-programnya, saya dapat pulang ke Sulawesi Utara dan memberikan dampak positif bagi komunitas."
+      testimoni: "Mata Garuda memberikan saya kesempatan untuk berkontribusi bagi daerah asal saya. Melalui program-programnya, saya dapat pulang ke Sulawesi Utara dan memberikan dampak positif bagi komunitas."
     },
     {
       _id: 2,

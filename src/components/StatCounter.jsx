@@ -12,7 +12,7 @@ const StatCounter = () => {
   const stats = [
     {
       id: 1,
-      label: "Alumni & Awardee LPDP",
+      label: "Alumni & Awardee",
       value: 150,
       suffix: "+",
       icon: <Users size={36} className="text-[#B8860B]" strokeWidth={1.2} />,
