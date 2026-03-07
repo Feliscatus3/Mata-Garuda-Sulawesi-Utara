@@ -46,7 +46,7 @@ const StrukturOrganisasiPage = () => {
     },
     {
       nama: 'Budi Santoso, S.T',
-      jakarta: 'Koordinator Bidang Program',
+      jabatan: 'Koordinator Bidang Program',
       deskripsi: 'MG Institute & Riset Kebijakan'
     },
     {

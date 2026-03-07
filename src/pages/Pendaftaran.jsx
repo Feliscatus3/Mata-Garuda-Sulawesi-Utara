@@ -107,7 +107,7 @@ const Pendaftaran = () => {
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Cara Mendaftar</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Silakan填写 formulir keanggotaan melalui link di bawah. Tim kami akan memproses aplikasi Anda dalam waktu 3-5 hari kerja.
+                    Silakan isi formulir keanggotaan melalui link di bawah. Tim kami akan memproses aplikasi Anda dalam waktu 3-5 hari kerja.
                   </p>
                 </div>
               </div>

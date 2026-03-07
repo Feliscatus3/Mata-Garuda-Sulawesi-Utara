@@ -87,7 +87,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 font-medium"
           >
-            "Sinergi Sam Ratulangi"
+            Wadah Alumni dan Awardee LPDP
           </motion.p>
           
           <motion.div variants={itemVariants}>

@@ -7,7 +7,7 @@ const VisiMisi = () => {
   const dataVisiMisi = [
     {
       title: "Sinergi Sam Ratulangi",
-      desc: "Membangun collaboration lintas sector dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.",
+      desc: "Membangun kolaborasi lintas sektor dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.",
       img: "/unggul.webp", 
     },
     {

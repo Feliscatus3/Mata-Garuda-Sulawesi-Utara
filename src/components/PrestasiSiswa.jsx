@@ -21,7 +21,7 @@ const PrestasiSiswa = () => {
       _id: 2,
       tingkatPrestasi: "Daerah",
       judul: "Pengabdian Desa Bantik",
-      namaSama: "Tim MG Sulut",
+      namaSiswa: "Tim MG Sulut",
       deskripsi: "Program pengabdian masyarakat di Desa Bantik dengan fokus pada pendidikan dan pemberdayaan.",
       icon: <Medal size={40} className="text-[#B8860B]" />
     },

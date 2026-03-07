@@ -24,7 +24,7 @@ const ProgramUnggulan = () => {
     {
       id: 4,
       title: "MGPreneur (Entrepreneurship)",
-      desc: "Mengembangkan kewirausahaan dan startup untuk menciptakan lapangan kerja dan kemajuan ekonomi daerah.",
+      desc: "Mengembangkan kewirausahaan dan startup untuk menciptakan lapangan kerja dan kemajuan ekonomi Sulawesi Utara.",
       img: "/greenhouse.webp",
     },
     {
