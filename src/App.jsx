@@ -23,6 +23,7 @@ import Pendaftaran from './pages/Pendaftaran';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
 import Kontak from './pages/Kontak';
 import ChatCS from './components/ChatCS';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const AppContent = () => {
   const location = useLocation();
@@ -45,31 +46,33 @@ const AppContent = () => {
     <div className="flex flex-col min-h-screen bg-white font-urbanist overflow-x-hidden scroll-auto">
       {!isLoginPage && <Navbar />}
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <StatCounter />
-              <Sambutan />
-              <VisiMisi />
-              <ProgramUnggulan />
-              <PrestasiSiswa />
-              <Testimoni />
-            </>
-          } />
-          <Route path="/profil" element={<ProfilSekolah />} />
-          <Route path="/berita" element={<BeritaTerbaru />} />
-          <Route path="/berita/:id" element={<NewsDetail />} />
-          <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
-          <Route path="/dewan-guru" element={<DewanGuruPage />} />
-          <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-          <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
-          <Route path="/galeri" element={<Galeri />} />
-          <Route path="/pendaftaran" element={<Pendaftaran />} />
-          <Route path="/kontak" element={<Kontak />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <StatCounter />
+                <Sambutan />
+                <VisiMisi />
+                <ProgramUnggulan />
+                <PrestasiSiswa />
+                <Testimoni />
+              </>
+            } />
+            <Route path="/profil" element={<ProfilSekolah />} />
+            <Route path="/berita" element={<BeritaTerbaru />} />
+            <Route path="/berita/:id" element={<NewsDetail />} />
+            <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
+            <Route path="/dewan-guru" element={<DewanGuruPage />} />
+            <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
+            <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
+            <Route path="/galeri" element={<Galeri />} />
+            <Route path="/pendaftaran" element={<Pendaftaran />} />
+            <Route path="/kontak" element={<Kontak />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </ErrorBoundary>
       </main>
       {!isLoginPage && <Footer />}
       {!isLoginPage && <ChatCS />}
