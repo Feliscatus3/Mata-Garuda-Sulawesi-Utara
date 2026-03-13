@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, BookOpen, Users, Award, Calendar, Target } from 'lucide-react';
+import { ChevronRight, BookOpen, Users, Award, Calendar, Target, Globe, GraduationCap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const MataGarudaInstitute = () => {
@@ -47,6 +47,22 @@ const MataGarudaInstitute = () => {
       color: "from-[#B8860B] to-[#F4D03F]",
       duration: "12 Bulan",
       target: "50 Mentor-Mentees"
+    },
+    {
+      title: "MG Leadership Academy",
+      desc: "Pelatihan kepemimpinan dan pengembangan diri untuk generasi muda Sulawesi Utara.",
+      icon: <GraduationCap size={32} />,
+      color: "from-[#2C3E50] to-[#34495E]",
+      duration: "8 Bulan",
+      target: "100 Peserta"
+    },
+    {
+      title: "MG Community Impact",
+      desc: "Program pemberdayaan masyarakat dan pengabdian kepada masyarakat di Sulawesi Utara.",
+      icon: <Globe size={32} />,
+      color: "from-[#16A085] to-[#27AE60]",
+      duration: "Berkala",
+      target: "50 Proyek"
     }
   ];
 
@@ -63,7 +79,7 @@ const MataGarudaInstitute = () => {
             <h1 className="text-4xl lg:text-6xl font-black uppercase tracking-tight mb-6">
               Mata Garuda
               <br />
-              <span className="text-5xl lg:text-7xl block text-white/90">Institute</span>
+              <span className="text-5xl lg:text-7xl block text-white/90">Sulawesi Utara</span>
             </h1>
             <p className="text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed mb-12 opacity-90">
               Pusat unggulan program penelitian, forum kebijakan, dan pengembangan kapasitas alumni LPDP Sulawesi Utara
