@@ -95,7 +95,7 @@ const DewanPengurus = () => {
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-            Mengenal lebih dekat guru profesional SMAN 14 Samarinda yang berdedikasi dalam membimbing siswa meraih prestasi.
+            Mengenal lebih dekat guru profesional Mata Garuda Sulawesi Utara yang berdedikasi dalam membimbing siswa meraih prestasi.
           </p>
         </motion.div>
 

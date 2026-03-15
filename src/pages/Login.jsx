@@ -170,7 +170,7 @@ const Login = () => {
         <motion.p 
           className="mt-8 text-[11px] font-bold text-[#587F93]/60 uppercase tracking-[0.2em] text-center"
         >
-          @Managed by TIM IT SMAN 14 Samarinda
+          @Managed by TIM IT Mata Garuda Sulawesi Utara
         </motion.p>
 
       </motion.div>

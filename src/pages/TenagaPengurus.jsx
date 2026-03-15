@@ -71,7 +71,7 @@ const TenagaPengurus = () => {
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-            Mengenal lebih dekat tenaga kependidikan profesional SMAN 14 Samarinda yang berdedikasi dalam pengelolaan dan pengembangan sekolah.
+            Mengenal lebih dekat tenaga kependidikan profesional Mata Garuda Sulawesi Utara yang berdedikasi dalam pengelolaan dan pengembangan sekolah.
           </p>
         </motion.div>
 

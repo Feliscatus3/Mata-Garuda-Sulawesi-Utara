@@ -5,24 +5,26 @@ import { useNavigate } from 'react-router-dom';
 
 const Program = () => {
   const navigate = useNavigate();
+
+
   const [filter, setFilter] = useState('Semua');
 
-  const categories = ['Semua', 'Wajib', 'Olahraga', 'Seni', 'Sains & Hobi'];
+  const categories = ['Semua', 'Pengabdian', 'Pendidikan', 'Pengembangan', 'Prestasi'];
 
-  const ekskulData = [
-    { id: 1, nama: "Pramuka", kategori: "Wajib", img: "/ekskul-pramuka.jpg", desc: "Membentuk karakter disiplin, mandiri, dan jiwa kepemimpinan melalui kepanduan." },
-    { id: 2, nama: "Paskibra", kategori: "Wajib", img: "/ekskul-paskibra.jpg", desc: "Pasukan pengibar bendera yang menjunjung tinggi nasionalisme dan ketegasan." },
-    { id: 3, nama: "Basket", kategori: "Olahraga", img: "/ekskul-basket.jpg", desc: "Mengembangkan teknik permainan basket dan kerjasama tim yang solid." },
-    { id: 4, nama: "Futsal", kategori: "Olahraga", img: "/ekskul-futsal.jpg", desc: "Wadah bagi siswa untuk mengasah bakat sepak bola dalam skala lapangan kecil." },
-    { id: 5, nama: "Seni Tari", kategori: "Seni", img: "/ekskul-tari.jpg", desc: "Melestarikan budaya melalui tarian tradisional dan kreasi modern." },
-    { id: 6, nama: "Paduan Suara", kategori: "Seni", img: "/ekskul-padus.jpg", desc: "Mengolah vokal dan harmoni dalam grup musik sekolah." },
-    { id: 7, nama: "Karate", kategori: "Olahraga", img: "/ekskul-karate.jpg", desc: "Mengembangkan keterampilan bela diri dan disiplin diri melalui latihan." },
-    { id: 8, nama: "English Club", kategori: "Sains & Hobi", img: "/ekskul-english.jpg", desc: "Meningkatkan kemampuan bahasa Inggris melalui debat dan storytelling." },
+const programData = [
+    { id: 1, nama: "Pengabdian Desa Bantik", kategori: "Pengabdian", img: "/program-1.webp", desc: "Program pengabdian masyarakat di Desa Bantik dengan fokus pada pendidikan dan pemberdayaan komunitas Sulawesi Utara." },
+    { id: 2, nama: "Capacity Building", kategori: "Pengembangan", img: "/bendahara.jpeg", desc: "Mentorship karir, pelatihan, dan diskusi industri untuk mengembangkan potensi anggota MG Sulut." },
+    { id: 3, nama: "Prestasi Anggota", kategori: "Prestasi", img: "/tas1.jpeg", desc: "Kegiatan kompetisi dan pencapaian luar biasa anggota Mata Garuda Sulawesi Utara." },
+    { id: 4, nama: "MG Institute", kategori: "Pendidikan", img: "/public/program-1.webp", desc: "Pusat pembelajaran dan riset kebijakan untuk kemajuan Sulawesi Utara." },
+    { id: 5, nama: "Riset Kebijakan", kategori: "Pengembangan", img: "/greenhouse.webp", desc: "Penelitian dan analisis kebijakan untuk isu strategis daerah." },
+    { id: 6, nama: "Tim MG Sulut", kategori: "Pengabdian", img: "/basket1.webp", desc: "Program kolaborasi tim untuk inisiatif sosial dan pengembangan." },
+    { id: 7, nama: "Pendidikan Karakter", kategori: "Pendidikan", img: "/berkarakter.webp", desc: "Pembentukan karakter kepemimpinan dan nasionalisme MG Sulut." },
+    { id: 8, nama: "Diskusi Industri", kategori: "Prestasi", img: "/unggul.webp", desc: "Forum diskusi dengan pakar industri untuk wawasan karir anggota." },
   ];
 
   const filteredData = filter === 'Semua' 
-    ? ekskulData 
-    : ekskulData.filter(item => item.kategori === filter);
+    ? programData 
+    : programData.filter(item => item.kategori === filter);
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-[#FDFDFD] min-h-screen">
@@ -39,12 +41,12 @@ const Program = () => {
             <ChevronRight size={14} />
             <span className="text-[#587F93]">Program</span>
           </div>
-          <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
-            Ekstra<span className="text-[#587F93]">kurikuler</span>
+<h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
+            Program <span className="text-[#587F93]">Kerja</span>
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
-          <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-            Wadah pengembangan minat, bakat, dan karakter siswa SMAN 14 Samarinda melalui berbagai kegiatan positif.
+<p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
+            Berbagai program strategis Mata Garuda Sulawesi Utara untuk pengembangan anggota dan dampak sosial di Sulawesi Utara.
           </p>
         </motion.div>
 
@@ -71,7 +73,7 @@ const Program = () => {
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode='popLayout'>
-            {filteredData.map((item) => (
+        {filteredData.map((item) => (
               <motion.div
                 key={item.id}
                 layout
@@ -80,15 +82,15 @@ const Program = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -10 }}
-                className="group flex flex-col bg-white rounded-none overflow-hidden shadow-xl border border-gray-100 h-full"
+                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100 hover:shadow-[#587F93]/20 h-full transition-all duration-300"
               >
                 {/* Image Container - Landscape Orientation */}
                 <div className="relative w-full aspect-video overflow-hidden bg-gray-200">
-                  <img 
+                <img 
                     src={item.img} 
                     alt={item.nama} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    onError={(e) => e.target.src = 'https://via.placeholder.com/600x400?text=Ekskul+SMAN14'}
+                    onError={(e) => e.target.src = 'https://via.placeholder.com/600x400?text=MG+Sulut+Program'}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-[#587F93] text-white text-[10px] font-black uppercase tracking-widest">
@@ -109,10 +111,10 @@ const Program = () => {
 
                   <div className="mt-auto pt-4 border-t border-gray-50 flex gap-6">
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter text-gray-400">
-                      <Users size={14} className="text-[#587F93]" /> 40+ Siswa
+                      <Users size={14} className="text-[#587F93]" /> 50+ Anggota
                     </div>
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter text-gray-400">
-                      <Trophy size={14} className="text-[#587F93]" /> 5 Prestasi
+                      <Trophy size={14} className="text-[#587F93]" /> 10+ Prestasi
                     </div>
                   </div>
                 </div>

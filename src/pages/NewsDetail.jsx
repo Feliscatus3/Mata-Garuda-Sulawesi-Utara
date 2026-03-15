@@ -390,7 +390,7 @@ const NewsDetail = () => {
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
               <h3 className="text-xl font-black mb-4 relative z-10">Info Pendaftaran</h3>
               <p className="text-white/80 text-sm leading-relaxed mb-8 relative z-10">
-                Dapatkan informasi terbaru mengenai PPDB SMAN 14 Samarinda tahun ajaran 2026/2027.
+                Dapatkan informasi terbaru mengenai PPDB Mata Garuda Sulawesi Utara tahun ajaran 2026/2027.
               </p>
               <button 
                 onClick={() => navigate('/pendaftaran')}
