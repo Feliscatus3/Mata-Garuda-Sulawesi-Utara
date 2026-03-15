@@ -8,7 +8,7 @@ const BeritaTerbaru = () => {
   const navigate = useNavigate();
   const [filter, setFilter] = useState('Semua');
 
-  const staticNews = beritaData;
+  const staticNews = [...beritaData].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
   const filteredNews = filter === 'Semua' 
     ? staticNews 
