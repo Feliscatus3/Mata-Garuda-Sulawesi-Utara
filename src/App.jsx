@@ -58,12 +58,12 @@ const AppContent = () => {
           } />
           <Route path="/profil" element={<Profil />} />
           <Route path="/berita" element={<BeritaTerbaru />} />
-          <Route path="/berita/:id" element={<Berita1 />} />
-          <Route path="/berita/:id" element={<Berita2 />} />
-          <Route path="/berita/:id" element={<Berita3 />} />
-          <Route path="/berita/:id" element={<Berita4 />} />
-          <Route path="/berita/:id" element={<Berita5 />} />
-          <Route path="/berita/:id" element={<Berita6 />} />
+          <Route path="/berita/1" element={<Berita1 />} />
+          <Route path="/berita/2" element={<Berita2 />} />
+          <Route path="/berita/3" element={<Berita3 />} />
+          <Route path="/berita/4" element={<Berita4 />} />
+          <Route path="/berita/5" element={<Berita5 />} />
+          <Route path="/berita/6" element={<Berita6 />} />
           <Route path="/tenaga-kependidikan" element={<TenagaPengurus />} />
           <Route path="/dewan-guru" element={<DewanPengurus />} />
           <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
