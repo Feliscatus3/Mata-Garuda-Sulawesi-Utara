@@ -1,218 +1,101 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Calendar, 
-  User, 
-  ChevronRight, 
-  ArrowLeft, 
-  Facebook, 
-  MessageCircle, 
-  Link as LinkIcon,
-  ArrowRight
-} from 'lucide-react';
-import { fetchBeritaById, fetchRelatedBerita, urlFor } from '../lib/sanity';
-import { PortableText } from '@portabletext/react';
+import { Calendar, User, ChevronRight, ArrowLeft, MessageCircle } from 'lucide-react';
 
 const NewsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [article, setArticle] = useState(null);
-  const [relatedNews, setRelatedNews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadArticle = async () => {
-      try {
-        const berita = await fetchBeritaById(id);
-        setArticle(berita);
-        
-        if (berita?.kategori) {
-          const related = await fetchRelatedBerita(berita.kategori, id);
-          setRelatedNews(related);
-        }
-      } catch (error) {
-        console.error('Gagal memuat berita:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadArticle();
-  }, [id]);
-
-  // Komponen PortableText standar untuk konten utama
-  const portableTextComponents = useMemo(() => ({
-    types: {
-      image: ({ value }) => (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="my-10 clear-both"
-        >
-          <img
-            src={urlFor(value).width(800).url()}
-            alt={value.alt || 'Article image'}
-            className="w-full rounded-2xl shadow-xl border-4 border-white"
-          />
-        </motion.div>
-      ),
+  // Cari berita berdasarkan _id dari staticNews di BeritaTerbaru
+  const allNews = [
+    {
+      _id: '1',
+      judul: 'MG Sulut Gelar Pengabdian Desa Bantik',
+      kategori: 'Kegiatan',
+      tanggal: '2024-10-15',
+      foto: '/program-1.webp',
+      hashtag: ['#MGSulut', '#Pengabdian', '#DesaBantik'],
+      kontenFull: [
+        "Tim Mata Garuda Sulawesi Utara dengan penuh semangat menggelar program pengabdian masyarakat di Desa Bantik, Kabupaten Minahasa Utara.",
+        "Kegiatan ini melibatkan 30+ anggota MG Sulut yang fokus pada bidang pendidikan karakter, pemberdayaan ekonomi masyarakat, dan pelestarian lingkungan.",
+        "Hari pertama diisi dengan workshop kepemimpinan untuk pemuda desa, diikuti praktik langsung pembuatan pupuk organik dan penanaman pohon mangrove.",
+        "Kepala Desa Bantik mengapresiasi tinggi kontribusi MG Sulut dan berharap program serupa dapat dilanjutkan secara berkala.",
+        "Program ini merupakan bagian dari komitmen MG Sulut untuk memberikan dampak nyata bagi masyarakat Sulawesi Utara."
+      ]
     },
-    block: {
-      h1: ({ children }) => <h1 className="text-3xl font-black text-gray-900 my-8">{children}</h1>,
-      h2: ({ children }) => <h2 className="text-2xl font-black text-gray-900 my-6">{children}</h2>,
-      h3: ({ children }) => <h3 className="text-xl font-black text-gray-900 my-5">{children}</h3>,
-      blockquote: ({ children }) => (
-        <blockquote className="border-l-4 border-[#587F93] pl-6 my-8 italic text-gray-600 text-lg bg-gray-50 py-4 pr-4">
-          {children}
-        </blockquote>
-      ),
-      normal: ({ children }) => <p className="text-gray-700 text-lg leading-[1.8] mb-6 font-medium text-justify">{children}</p>,
+    {
+      _id: '2',
+      judul: 'Capacity Building MG Institute Dimulai',
+      kategori: 'Prestasi',
+      tanggal: '2024-10-10',
+      foto: '/bendahara.jpeg',
+      hashtag: ['#CapacityBuilding', '#MGInstitute'],
+      kontenFull: [
+        "MG Institute resmi meluncurkan program Capacity Building pertama untuk anggota Mata Garuda Sulawesi Utara.",
+        "50 peserta terpilih akan mengikuti mentorship karir intensif dengan 10 mentor dari berbagai industri.",
+        "Kurikulum meliputi public speaking, leadership, digital marketing, dan financial literacy.",
+        "Program berlangsung 8 minggu dengan sesi mingguan dan proyek akhir kolaboratif.",
+        "Expected outcome: 100% peserta siap kerja / entrepreneurship dalam 6 bulan."
+      ]
     },
-    marks: {
-      strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
-      em: ({ children }) => <em className="italic text-gray-600">{children}</em>,
-      link: ({ value, children }) => (
-        <a href={value?.href} className="text-[#587F93] font-bold hover:underline" target="_blank" rel="noopener noreferrer">
-          {children}
-        </a>
-      ),
+    {
+      _id: '3',
+      judul: 'Prestasi Anggota MG Sulut di Kompetisi Nasional',
+      kategori: 'Prestasi',
+      tanggal: '2024-10-05',
+      foto: '/tas1.jpeg',
+      hashtag: ['#Prestasi', '#MGSulut'],
+      kontenFull: [
+        "Tiga anggota MG Sulut meraih podium di Kompetisi Riset Kebijakan Nasional 2024.",
+        "Juara 1: Riset 'Pemberdayaan Pemuda Sulut Era Digital' - Tim Bintang et al.",
+        "Juara 2: 'Model Ekonomi Berbasis Potensi Lokal Minahasa' - Tim Rizal et al.",
+        "Juara 3: 'Strategi Mitigasi Bencana di Sulawesi Utara' - Tim Sarah et al.",
+        "Prestasi ini bukti komitmen MG Sulut mencetak generasi riset berdaya saing nasional."
+      ]
     },
-  }), []);
-
-  /**
-   * Fungsi untuk menyisipkan foto dari galeri ke dalam array konten Portable Text
-   * agar muncul berselang-seling di antara paragraf.
-   */
-  const interspersedContent = useMemo(() => {
-    if (!article?.konten) return [];
-    const gallery = article?.galeri || [];
-    
-    if (gallery.length === 0) return article.konten;
-
-    const result = [];
-    // Salin array galeri agar bisa dimanipulasi (diambil itemnya)
-    const pendingGallery = [...gallery];
-    
-    // Fungsi untuk mengambil item galeri berdasarkan posisi
-    const popImagesForPosition = (pos) => {
-      const matches = [];
-      // Loop backwards agar aman saat splice
-      for (let i = pendingGallery.length - 1; i >= 0; i--) {
-        if (pendingGallery[i].posisi === pos) {
-          matches.unshift(pendingGallery[i]);
-          pendingGallery.splice(i, 1);
-        }
-      }
-      return matches;
-    };
-
-    // 1. Sisipkan posisi 'top' (Sebelum teks utama)
-    const topImages = popImagesForPosition('top');
-    topImages.forEach((img, idx) => {
-      result.push({
-        _type: 'injectedGalleryImage',
-        _key: img._key || `injected-top-${idx}`,
-        ...img
-      });
-    });
-
-    let pCount = 0;
-    article.konten.forEach((block) => {
-      result.push(block);
-      
-      // 2. Sisipkan di antara blok konten teks (paragraf, heading, list, dll.)
-      // Kondisi ini memastikan pCount bertambah untuk setiap blok yang mengandung teks,
-      // bukan hanya paragraf 'normal', sehingga lebih akurat.
-      if (block._type === 'block' && block.children && block.children.length > 0) {
-        pCount++;
-        const pImages = popImagesForPosition(`p${pCount}`);
-        pImages.forEach((img, idx) => {
-          result.push({
-            _type: 'injectedGalleryImage',
-            _key: img._key || `injected-p${pCount}-${idx}`,
-            ...img
-          });
-        });
-      }
-    });
-
-    // 3. Final Pass: Sisipkan sisa foto (posisi 'bottom' atau yang slot paragrafnya tidak tersedia)
-    pendingGallery.forEach((img, idx) => {
-      result.push({
-        _type: 'injectedGalleryImage',
-        _key: img._key || `injected-bottom-${idx}`,
-        ...img
-      });
-    });
-
-    return result;
-  }, [article?.konten, article?.galeri]);
-
-  // Komponen tambahan untuk merender gambar yang disisipkan
-  const extendedComponents = useMemo(() => ({
-    ...portableTextComponents,
-    types: {
-      ...portableTextComponents.types,
-      injectedGalleryImage: ({ value }) => {
-        // Pastikan mengambil field 'image' dari objek galeri
-        const imageData = value.image;
-        if (!imageData || !imageData.asset) return null;
-
-        // Logika CSS berdasarkan layout (Full, Left, Right)
-        let containerClass = "my-10 clear-both";
-        if (value.layout === 'left') {
-          containerClass = "md:float-left md:mr-8 mb-6 mt-2 w-full md:w-1/2 lg:w-2/5 clear-none";
-        } else if (value.layout === 'right') {
-          containerClass = "md:float-right md:ml-8 mb-6 mt-2 w-full md:w-1/2 lg:w-2/5 clear-none";
-        }
-
-        return (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={containerClass}
-          >
-            <img
-              src={urlFor(imageData).width(800).url()}
-              alt={value.caption || "Gambar Berita"}
-              className="w-full rounded-2xl shadow-xl border-4 border-white"
-            />
-            {value.caption && (
-              <p className="mt-3 text-sm text-gray-500 italic text-center font-medium">
-                {value.caption}
-              </p>
-            )}
-          </motion.div>
-        );
-      },
+    {
+      _id: '4',
+      judul: 'Riset Kebijakan Sulawesi Utara Dirilis',
+      kategori: 'Akademik',
+      tanggal: '2024-09-30',
+      foto: '/greenhouse.webp',
+      hashtag: ['#Riset', '#Kebijakan'],
+      kontenFull: [
+        "Laporan riset kebijakan 'Pembangunan Sulawesi Utara 2025-2030' dirilis MG Sulut.",
+        "200+ halaman analisis mendalam 5 sektor prioritas: ekonomi, pendidikan, kesehatan, lingkungan, infrastruktur.",
+        "Rekomendasi diserahkan ke Gubernur Sulawesi Utara dan DPRD Provinsi.",
+        "Riset melibatkan 50 akademisi, praktisi, dan pemangku kepentingan.",
+        "Download lengkap tersedia di website MG Sulut."
+      ]
+    },
+    {
+      _id: '5',
+      judul: 'Diskusi Industri Bersama Pakar',
+      kategori: 'Kegiatan',
+      tanggal: '2024-09-25',
+      foto: '/unggul.webp',
+      hashtag: ['#DiskusiIndustri', '#Karir'],
+      kontenFull: [
+        "Forum Diskusi Industri 'Future of Work Sulawesi Utara' sukses digelar MG Sulut.",
+        "5 pakar industri: Tech, Finance, Agribisnis, Pariwisata, Pemerintahan.",
+        "100+ anggota hadir, networking sesi, career booth dari 10 perusahaan.",
+        "Key takeaway: Adaptasi AI + skill lokal = competitive advantage Sulut.",
+        "Rekaman full available di YouTube MG Sulut."
+      ]
     }
-  }), [portableTextComponents]);
+  ];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  if (isLoading) {
-    return (
-      <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen flex items-center justify-center">
-        <p className="text-gray-500 font-medium text-lg">Memuat berita...</p>
-      </div>
-    );
-  }
+  const article = allNews.find(news => news._id === id);
+  const [relatedNews] = useState(allNews.filter(n => n._id !== id).slice(0,3));
 
   if (!article) {
     return (
       <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">
         <div className="max-w-[1440px] mx-auto px-5 lg:px-[60px] text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Berita Tidak Ditemukan</h2>
-          <button
-            onClick={() => navigate('/berita')}
-            className="inline-flex items-center gap-2 text-[#587F93] font-bold hover:gap-4 transition-all"
-          >
-            Kembali ke Berita <ArrowRight size={20} />
+          <button onClick={() => navigate('/berita')} className="text-[#587F93] font-bold hover:underline">
+            ← Kembali ke Berita
           </button>
         </div>
       </div>
@@ -222,118 +105,68 @@ const NewsDetail = () => {
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-[60px]">
-        
-          {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
+        <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
           <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
           <ChevronRight size={14} />
           <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/berita')}>Berita</span>
           <ChevronRight size={14} />
-          <span className="text-[#587F93] truncate max-w-[200px] lg:max-w-none">{article?.judul}</span>
-        </nav>
+          <span className="text-[#587F93]">{article.judul}</span>
+        </div>
 
-        <div className="flex flex-col lg:flex-row gap-16">
-          
-          {/* MAIN CONTENT AREA */}
-          <motion.article 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="w-full lg:w-2/3"
-          >
-            {/* Category & Title */}
-            <span className="inline-block bg-[#587F93]/10 text-[#587F93] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-6">
-              {article?.kategori}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-12">
+          {/* Main Content */}
+          <motion.article initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="lg:col-span-2">
+            <span className="inline-block bg-[#587F93]/10 text-[#587F93] px-4 py-1.5 rounded-full text-xs font-black uppercase mb-6">
+              {article.kategori}
             </span>
-            <h1 className="text-[32px] lg:text-[48px] font-[900] text-gray-900 leading-tight mb-8">
-              {article?.judul}
+            <h1 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-8">
+              {article.judul}
             </h1>
 
-            {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-6 py-6 border-y border-gray-100 mb-10 text-gray-500 text-sm font-bold uppercase tracking-wide">
+            <div className="flex flex-wrap gap-6 py-6 border-y border-gray-100 mb-12 text-sm font-bold text-gray-500 uppercase tracking-wide">
               <div className="flex items-center gap-2">
-                <User size={16} className="text-[#587F93]" />
-                <span>Oleh: {article?.author || 'Admin SMAN 14'}</span>
+                <User size={16} />
+                <span>Tim MG Sulut</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={16} className="text-[#587F93]" />
-                <span>{new Date(article?.tanggal).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-              </div>
-              <div className="flex items-center gap-4 ml-auto">
-                <span className="text-gray-400">Bagikan:</span>
-                <a 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#1877F2] cursor-pointer transition-colors"
-                  title="Bagikan ke Facebook"
-                >
-                  <Facebook size={18} />
-                </a>
-                <a 
-                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(article?.judul + " - Baca selengkapnya di: " + window.location.href)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#25D366] cursor-pointer transition-colors"
-                  title="Bagikan ke WhatsApp"
-                >
-                  <MessageCircle size={18} />
-                </a>
-                <LinkIcon 
-                  size={18} 
-                  className="hover:text-[#587F93] cursor-pointer transition-colors" 
-                  title="Salin Link"
-                  onClick={() => {
-                    navigator.clipboard.writeText(window.location.href);
-                    alert('Link disalin!');
-                  }}
-                />
+                <Calendar size={16} />
+                <span>{new Date(article.tanggal).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
               </div>
             </div>
 
-            {/* Featured Image */}
-            <div className="w-full aspect-video rounded-3xl overflow-hidden mb-12 shadow-2xl">
-              {article?.foto ? (
-                <img 
-                  src={urlFor(article.foto).width(1200).height(800).url()} 
-                  alt={article.judul} 
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400">Foto Berita</span>
-                </div>
-              )}
+            <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl">
+              <img src={article.foto} alt={article.judul} className="w-full h-[400px] lg:h-[500px] object-cover" />
             </div>
 
-            {/* Article Body */}
-            {article?.konten && (
-              <div className="text-gray-700 leading-[1.8] font-medium">
-                <PortableText value={interspersedContent} components={extendedComponents} />
-              </div>
-            )}
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-12">
+              {article.kontenFull.map((p, idx) => (
+                <motion.p 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mb-8 text-lg font-medium"
+                >
+                  {p}
+                </motion.p>
+              ))}
+            </div>
 
-            {/* Hashtag */}
-            {article?.hashtag && article.hashtag.length > 0 && (
-              <div className="mt-12 pt-8 border-t border-gray-100">
+            {article.hashtag.length > 0 && (
+              <div className="py-8 border-t border-gray-100 mb-12">
                 <div className="flex flex-wrap gap-2">
                   {article.hashtag.map((tag, idx) => (
-                    <motion.a
-                      key={idx}
-                      href={`/berita?search=${tag.replace('#', '')}`}
-                      whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-[#587F93]/10 text-[#587F93] rounded-full text-sm font-bold hover:bg-[#587F93] hover:text-white transition-all"
-                    >
-                      {tag.startsWith('#') ? tag : `#${tag}`}
-                    </motion.a>
+                    <span key={idx} className="px-4 py-2 bg-[#587F93]/10 text-[#587F93] rounded-full text-sm font-bold">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Back Button */}
             <button 
               onClick={() => navigate('/berita')}
-              className="mt-16 flex items-center gap-3 text-gray-900 font-black text-sm uppercase tracking-widest group"
+              className="flex items-center gap-3 text-gray-900 font-black text-sm uppercase tracking-wider hover:text-[#587F93] group"
             >
               <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-[#587F93] group-hover:text-white transition-all">
                 <ArrowLeft size={18} />
@@ -342,66 +175,30 @@ const NewsDetail = () => {
             </button>
           </motion.article>
 
-          {/* SIDEBAR */}
-          <aside className="w-full lg:w-1/3 space-y-12">
-            
-            {/* Related News Widget */}
-            {relatedNews.length > 0 && (
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-8 uppercase tracking-tight">Berita Terkait</h3>
-                <div className="space-y-6">
-                  {relatedNews.map((news) => (
-                    <motion.div
-                      key={news._id}
-                      whileHover={{ y: -5 }}
-                      onClick={() => navigate(`/berita/${news._id}`)}
-                      className="p-5 rounded-2xl border border-gray-100 hover:border-[#587F93] hover:shadow-lg transition-all cursor-pointer group"
-                    >
-                      <div className="flex gap-4">
-                        {news.foto && (
-                          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                            <img 
-                              src={urlFor(news.foto).width(200).height(200).url()} 
-                              alt={news.judul}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                            />
-                          </div>
-                        )}
-                        <div className="flex-1 flex flex-col">
-                          <span className="text-[10px] font-black text-[#587F93] uppercase tracking-widest mb-1">
-                            {news.kategori}
-                          </span>
-                          <h4 className="font-black text-gray-900 group-hover:text-[#587F93] transition-colors line-clamp-2 mb-2">
-                            {news.judul}
-                          </h4>
-                          <span className="text-xs text-gray-400 font-bold">
-                            {new Date(news.tanggal).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
-                          </span>
-                        </div>
+          {/* Sidebar */}
+          <motion.aside initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="lg:col-span-1 mt-16 lg:mt-0 space-y-8">
+            <div>
+              <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tight">Berita Terkait</h3>
+              <div className="space-y-4">
+                {relatedNews.map((news) => (
+                  <div 
+                    key={news._id}
+                    onClick={() => navigate(`/berita/${news._id}`)}
+                    className="p-4 rounded-xl border border-gray-100 hover:border-[#587F93] hover:shadow-md cursor-pointer transition-all group"
+                  >
+                    <div className="flex gap-3">
+                      <img src={news.foto} alt={news.judul} className="w-20 h-20 rounded-lg object-cover flex-shrink-0 group-hover:scale-105 transition-transform" />
+                      <div>
+                        <span className="text-xs font-bold text-[#587F93] uppercase tracking-wider block mb-1">{news.kategori}</span>
+                        <h4 className="font-bold text-gray-900 line-clamp-2 group-hover:text-[#587F93] transition-colors">{news.judul}</h4>
+                        <span className="text-xs text-gray-500 font-medium">{new Date(news.tanggal).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}</span>
                       </div>
-                    </motion.div>
-                  ))}
-                </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            )}
-
-            {/* Newsletter / Info Widget */}
-            <div className="bg-[#587F93] rounded-[32px] p-8 text-white relative overflow-hidden group">
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-              <h3 className="text-xl font-black mb-4 relative z-10">Info Pendaftaran</h3>
-              <p className="text-white/80 text-sm leading-relaxed mb-8 relative z-10">
-                Dapatkan informasi terbaru mengenai PPDB Mata Garuda Sulawesi Utara tahun ajaran 2026/2027.
-              </p>
-              <button 
-                onClick={() => navigate('/pendaftaran')}
-                className="w-full bg-white text-[#587F93] py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-all relative z-10"
-              >
-                Cek Jadwal PPDB
-              </button>
             </div>
-
-          </aside>
-
+          </motion.aside>
         </div>
       </div>
     </div>

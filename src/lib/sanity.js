@@ -2,7 +2,7 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 // Fallback values jika environment variable tidak ada
-const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "vn9r43ot";
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "az0fgh8c";
 const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
 
 export const client = createClient({
