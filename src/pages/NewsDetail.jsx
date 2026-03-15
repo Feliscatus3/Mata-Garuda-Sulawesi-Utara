@@ -252,7 +252,11 @@ const NewsDetail = () => {
             <div className="flex flex-wrap items-center gap-6 py-6 border-y border-gray-100 mb-10 text-gray-500 text-sm font-bold uppercase tracking-wide">
               <div className="flex items-center gap-2">
                 <User size={16} className="text-[#587F93]" />
-                <span>Oleh: {article?.author || 'Admin SMAN 14'}</span>
+<span>Oleh: {article?.author || 'Admin MG Sulut'}</span>
+</xai:function_call >
+
+<xai:function_call name="edit_file">
+<parameter name="path">src/pages/NewsDetail.jsx
               </div>
               <div className="flex items-center gap-2">
                 <Calendar size={16} className="text-[#587F93]" />
@@ -390,7 +394,7 @@ const NewsDetail = () => {
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
               <h3 className="text-xl font-black mb-4 relative z-10">Info Pendaftaran</h3>
               <p className="text-white/80 text-sm leading-relaxed mb-8 relative z-10">
-                Dapatkan informasi terbaru mengenai PPDB SMAN 14 Samarinda tahun ajaran 2026/2027.
+Dapatkan informasi terbaru mengenai program keanggotaan dan kegiatan Mata Garuda Sulawesi Utara.
               </p>
               <button 
                 onClick={() => navigate('/pendaftaran')}

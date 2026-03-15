@@ -66,7 +66,7 @@ const Login = () => {
           <div className="w-full md:w-1/2 h-[250px] md:h-full bg-white flex items-center justify-center p-6 overflow-hidden">
             <img 
               src="/login-visual.webp" 
-              alt="Visual SMAN 14" 
+alt="Visual MG Sulut"
               className="w-full h-full object-contain"
             />
           </div>
@@ -170,7 +170,7 @@ const Login = () => {
         <motion.p 
           className="mt-8 text-[11px] font-bold text-[#587F93]/60 uppercase tracking-[0.2em] text-center"
         >
-          @Managed by TIM IT SMAN 14 Samarinda
+@Managed by TIM IT MG Sulut
         </motion.p>
 
       </motion.div>

@@ -84,8 +84,7 @@ const Pendaftaran = () => {
               <ul className="space-y-3">
                 {[
                   'Alumni LPDP Sulawesi Utara',
-                  'Penerima aktifbeasiswa LPDP',
-                  'atau Partisipan program LPDP'
+'Penerima beasiswa LPDP aktif',\n                  'atau Partisipan program MG Sulut'
                 ].map((syarat, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-[#B8860B] rounded-full"></div>

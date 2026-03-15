@@ -7,18 +7,9 @@ const Ekstrakurikuler = () => {
   const navigate = useNavigate();
   const [filter, setFilter] = useState('Semua');
 
-  const categories = ['Semua', 'Wajib', 'Olahraga', 'Seni', 'Sains & Hobi'];
+  const categories = ['Semua', 'Kebijakan', 'Olahraga', 'Budaya', 'Pelatihan'];
 
-  const ekskulData = [
-    { id: 1, nama: "Pramuka", kategori: "Wajib", img: "/ekskul-pramuka.jpg", desc: "Membentuk karakter disiplin, mandiri, dan jiwa kepemimpinan melalui kepanduan." },
-    { id: 2, nama: "Paskibra", kategori: "Wajib", img: "/ekskul-paskibra.jpg", desc: "Pasukan pengibar bendera yang menjunjung tinggi nasionalisme dan ketegasan." },
-    { id: 3, nama: "Basket", kategori: "Olahraga", img: "/ekskul-basket.jpg", desc: "Mengembangkan teknik permainan basket dan kerjasama tim yang solid." },
-    { id: 4, nama: "Futsal", kategori: "Olahraga", img: "/ekskul-futsal.jpg", desc: "Wadah bagi siswa untuk mengasah bakat sepak bola dalam skala lapangan kecil." },
-    { id: 5, nama: "Seni Tari", kategori: "Seni", img: "/ekskul-tari.jpg", desc: "Melestarikan budaya melalui tarian tradisional dan kreasi modern." },
-    { id: 6, nama: "Paduan Suara", kategori: "Seni", img: "/ekskul-padus.jpg", desc: "Mengolah vokal dan harmoni dalam grup musik sekolah." },
-    { id: 7, nama: "Karate", kategori: "Olahraga", img: "/ekskul-karate.jpg", desc: "Mengembangkan keterampilan bela diri dan disiplin diri melalui latihan." },
-    { id: 8, nama: "English Club", kategori: "Sains & Hobi", img: "/ekskul-english.jpg", desc: "Meningkatkan kemampuan bahasa Inggris melalui debat dan storytelling." },
-  ];
+  const ekskulData = [\n    { id: 1, nama: "Policy Forum", kategori: "Kebijakan", img: "/program-1.webp", desc: "Diskusi mendalam mengenai kebijakan publik dan pembangunan daerah Sulawesi Utara." },\n    { id: 2, nama: "MG Institute", kategori: "Riset", img: "/greenhouse.webp", desc: "Pusat riset dan publikasi kebijakan berbasis data untuk pengembangan daerah." },\n    { id: 3, nama: "Sports Meet", kategori: "Olahraga", img: "/basket1.webp", desc: "Kegiatan olahraga tahunan untuk kesehatan dan networking antar alumni." },\n    { id: 4, nama: "Capacity Building", kategori: "Pelatihan", img: "/berkarakter.webp", desc: "Workshop mentorship karir dan skill development untuk anggota aktif." },\n    { id: 5, nama: "Cultural Night", kategori: "Budaya", img: "/berwawasan.webp", desc: "Perayaan budaya Sulawesi Utara dan networking santai." },\n    { id: 6, nama: "Music & Art", kategori: "Seni", img: "/billingual.webp", desc: "Ekspresi kreatif dan hiburan untuk komunitas alumni." },\n    { id: 7, nama: "Leadership Training", kategori: "Kepemimpinan", img: "/unggul.webp", desc: "Pelatihan kepemimpinan dan bela diri mental untuk pemimpin masa depan." },\n    { id: 8, nama: "Global Dialogue", kategori: "Internasional", img: "/login-visual.webp", desc: "Diskusi internasional tentang beasiswa LPDP dan pengabdian global." },\n  ];
 
   const filteredData = filter === 'Semua' 
     ? ekskulData 
@@ -37,14 +28,16 @@ const Ekstrakurikuler = () => {
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
             <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
             <ChevronRight size={14} />
-            <span className="text-[#587F93]">Ekstrakurikuler</span>
+            <span className="text-[#587F93]">Program Kegiatan</span>
+</xai:function_call name="edit_file">
+<parameter name="path">src/pages/Ekstrakurikuler.jsx
           </div>
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
-            Ekstra<span className="text-[#587F93]">kurikuler</span>
+            Program <span className="text-[#587F93]">Kegiatan</span>
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-            Wadah pengembangan minat, bakat, dan karakter siswa SMAN 14 Samarinda melalui berbagai kegiatan positif.
+Wadah pengembangan networking, skill, dan kolaborasi anggota Mata Garuda Sulawesi Utara melalui kegiatan sinergi dan pengabdian.
           </p>
         </motion.div>
 
@@ -88,7 +81,7 @@ const Ekstrakurikuler = () => {
                     src={item.img} 
                     alt={item.nama} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    onError={(e) => e.target.src = 'https://via.placeholder.com/600x400?text=Ekskul+SMAN14'}
+onError={(e) => e.target.src = 'https://via.placeholder.com/600x400?text=MG+Sulut'}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-[#587F93] text-white text-[10px] font-black uppercase tracking-widest">
@@ -109,10 +102,10 @@ const Ekstrakurikuler = () => {
 
                   <div className="mt-auto pt-4 border-t border-gray-50 flex gap-6">
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter text-gray-400">
-                      <Users size={14} className="text-[#587F93]" /> 40+ Siswa
+                      <Users size={14} className="text-[#587F93]" /> 40+ Anggota
                     </div>
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter text-gray-400">
-                      <Trophy size={14} className="text-[#587F93]" /> 5 Prestasi
+                      <Trophy size={14} className="text-[#587F93]" /> 5+ Impact
                     </div>
                   </div>
                 </div>

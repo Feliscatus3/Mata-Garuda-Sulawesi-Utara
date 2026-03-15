@@ -15,9 +15,7 @@ import Testimoni from './components/Testimoni';
 import StatCounter from './components/StatCounter';
 import BeritaTerbaru from './pages/BeritaTerbaru';
 import NewsDetail from './pages/NewsDetail';
-import TenagaKependidikanPage from './pages/TenagaKependidikanPage';
-import DewanGuruPage from './pages/DewanGuruPage';
-import Ekstrakurikuler from './pages/Ekstrakurikuler';
+import TimPendukungPage from './pages/TimPendukungPage';\nimport DewanPengurusPage from './pages/DewanPengurusPage';\nimport ProgramKegiatan from './pages/ProgramKegiatan';
 import Galeri from './pages/Galeri';
 import Pendaftaran from './pages/Pendaftaran';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
@@ -60,10 +58,7 @@ const AppContent = () => {
           <Route path="/profil" element={<ProfilSekolah />} />
           <Route path="/berita" element={<BeritaTerbaru />} />
           <Route path="/berita/:id" element={<NewsDetail />} />
-          <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
-          <Route path="/dewan-guru" element={<DewanGuruPage />} />
-          <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-          <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
+          <Route path="/tim-pendukung" element={<TimPendukungPage />} />\n          <Route path="/dewan-pengurus" element={<DewanPengurusPage />} />\n          <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />\n          <Route path="/program-kegiatan" element={<ProgramKegiatan />} />
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />

@@ -42,8 +42,7 @@ const SearchResults = () => {
             _type == "galeri" => "/galeri",
             _type == "saranaPrasarana" => "/profil#sarana-prasarana",
             _type == "pendaftaran" => "/pendaftaran",
-            _type == "tenagaKependidikan" => "/tenaga-kependidikan",
-            _type == "dewanGuru" => "/dewan-guru"
+      _type == "timPendukung" => "/tim-pendukung",\n      _type == "dewanPengurus" => "/dewan-pengurus"
           )
         }`;
 
@@ -65,8 +64,7 @@ const SearchResults = () => {
       'galeri': 'Galeri',
       'saranaPrasarana': 'Fasilitas',
       'pendaftaran': 'PPDB',
-      'tenagaKependidikan': 'Tenaga Kependidikan',
-      'dewanGuru': 'Dewan Guru'
+'timPendukung': 'Tim Pendukung',\n      'dewanPengurus': 'Dewan Pengurus'
     };
     return labels[type] || 'Informasi';
   };
