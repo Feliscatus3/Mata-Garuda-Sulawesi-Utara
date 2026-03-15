@@ -15,6 +15,22 @@ export const beritaData = [
       "Program ini merupakan bagian dari komitmen MG Sulut untuk memberikan dampak nyata bagi masyarakat Sulawesi Utara."
     ]
   },
-  // 2-6 similar with their content
+  {
+    _id: '6',
+    judul: 'Peluncuran Tim MG Sulut Baru',
+    kategori: 'Kegiatan',
+    tanggal: '2024-09-20',
+    excerpt: 'Kick-off meeting tim Mata Garuda Sulawesi Utara periode baru dengan visi baru dan program 2024-2025.',
+    foto: '/basket1.webp',
+    hashtag: ['#TimMGSulut', '#KickOff', '#NewVision'],
+    kontenFull: [
+      "Kick-off meeting tim Mata Garuda Sulawesi Utara periode 2024/2025 berlangsung meriah dengan 60 anggota terpilih.",
+      "Ketua Umum menyampaikan visi 'MG Sulut Generasi Emas 2030' dengan 5 pilar program utama.",
+      "Rangkaian kegiatan ice-breaking dan team building mempererat soliditas tim.",
+      "Program prioritas: Pengabdian 10 desa, riset 20 topik, capacity building 200 anggota.",
+      "Tim MG Sulut siap berkontribusi maksimal untuk kemajuan Sulawesi Utara."
+    ]
+  }
 ];
+
 
