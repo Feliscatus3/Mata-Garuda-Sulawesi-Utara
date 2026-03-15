@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Phone, Mail, Search, ChevronDown, Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
-import { client, urlFor } from '../lib/sanity';
+// Sanity removed - static search only
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -97,20 +97,8 @@ const Navbar = () => {
       }));
 
       try {
-        const groqQuery = `*[
-          (_type in ["berita", "galeri"]) && 
-          (judul match $searchTerm || nama match $searchTerm)
-        ][0...5] {
-          _id, _type,
-          "title": coalesce(judul, nama),
-          foto,
-          "path": select(
-            _type == "berita" => "/berita/" + _id,
-            _type == "galeri" => "/galeri"
-          )
-        }`;
-        const data = await client.fetch(groqQuery, { searchTerm: `${searchQuery}*` });
-        setSuggestions([...menuMatches, ...staticMatches, ...data]);
+// Sanity removed - static search only
+        setSuggestions([...menuMatches, ...staticMatches]);
       } catch (err) {
         console.error("Search error:", err);
       }
