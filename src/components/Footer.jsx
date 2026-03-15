@@ -54,11 +54,12 @@ const Footer = () => {
               <ul className="space-y-4">
                 {[
                   { name: 'Home', path: '/' },
-                  { name: 'Tentang Kami', path: '/tentang-kami' },
+                  { name: 'Tentang', path: '/tentang-kami' },
                   { name: 'Program', path: '/program' },
-                  { name: 'Pengurus', path: '/pengurus' },
-                  { name: 'Berita & Kegiatan', path: '/berita' },
+                  { name: 'Organisasi', path: '/organisasi/pengurus' },
+                  { name: 'Media', path: '/media/berita' },
                   { name: 'Kolaborasi', path: '/kolaborasi' },
+                  { name: 'Pendaftaran', path: '/pendaftaran' },
                   { name: 'Kontak', path: '/kontak' }
                 ].map((item) => (
                   <li key={item.name}>

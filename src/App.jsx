@@ -6,11 +6,22 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import TentangKami from './pages/TentangKami';
-import Program from './pages/Program';
+import ProfilMataGaruda from './pages/ProfilMataGaruda';
+import StrukturOrganisasi from './pages/StrukturOrganisasi';
+import DewanPenasihat from './pages/DewanPenasihat';
+import TimSekretariat from './pages/TimSekretariat';
+import ProgramUtama from './pages/ProgramUtama';
+import KomunitasProgram from './pages/KomunitasProgram';
+import MataGarudaInstitute from './pages/MataGarudaInstitute';
 import Pengurus from './pages/Pengurus';
 import Berita from './pages/Berita';
+import BeritaTerbaru from './pages/BeritaTerbaru';
+import Galeri from './pages/Galeri';
 import Kolaborasi from './pages/Kolaborasi';
+import Pendaftaran from './pages/Pendaftaran';
 import Kontak from './pages/Kontak';
+import Login from './pages/Login';
+import NewsDetail from './pages/NewsDetail';
 import ChatCS from './components/ChatCS';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -41,18 +52,29 @@ const AppContent = () => {
               <>
                 <Hero />
                 <TentangKami />
-                <Program />
+                <ProgramUtama />
                 <Pengurus />
                 <Berita />
                 <Kolaborasi />
               </>
             } />
             <Route path="/tentang-kami" element={<TentangKami />} />
-            <Route path="/program" element={<Program />} />
-            <Route path="/pengurus" element={<Pengurus />} />
-            <Route path="/berita" element={<Berita />} />
+            <Route path="/tentang-kami/profil-mata-garuda" element={<ProfilMataGaruda />} />
+            <Route path="/tentang-kami/struktur-organisasi" element={<StrukturOrganisasi />} />
+            <Route path="/tentang-kami/dewan-penasihat" element={<DewanPenasihat />} />
+            <Route path="/organisasi/pengurus" element={<Pengurus />} />
+            <Route path="/organisasi/tim-sekretariat" element={<TimSekretariat />} />
+            <Route path="/program" element={<ProgramUtama />} />
+            <Route path="/program/komunitas-program" element={<KomunitasProgram />} />
+            <Route path="/program/mata-garuda-institute" element={<MataGarudaInstitute />} />
+            <Route path="/media/berita" element={<Berita />} />
+            <Route path="/media/berita-terbaru" element={<BeritaTerbaru />} />
+            <Route path="/media/galeri" element={<Galeri />} />
+            <Route path="/berita/:id" element={<NewsDetail />} />
             <Route path="/kolaborasi" element={<Kolaborasi />} />
+            <Route path="/pendaftaran" element={<Pendaftaran />} />
             <Route path="/kontak" element={<Kontak />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ErrorBoundary>

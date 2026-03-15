@@ -18,38 +18,50 @@ const Navbar = () => {
   const menuItems = [
     { name: 'Home', dropdown: false, path: '/' },
     { 
-      name: 'Tentang Kami', 
+      name: 'Tentang', 
       dropdown: true, 
       items: [
-        { label: 'Sejarah', path: '/tentang-kami#sejarah' },
-        { label: 'Visi & Misi', path: '/tentang-kami#visi-misi' }
+        { label: 'Tentang Kami', path: '/tentang-kami' },
+        { label: 'Profil Mata Garuda', path: '/tentang-kami/profil-mata-garuda' },
+        { label: 'Struktur Organisasi', path: '/tentang-kami/struktur-organisasi' },
+        { label: 'Dewan Penasihat', path: '/tentang-kami/dewan-penasihat' }
       ] 
     },
     { 
       name: 'Program', 
       dropdown: true, 
       items: [
-        { label: 'Leadership Forum', path: '/program#leadership' },
-        { label: 'Mentoring Beasiswa LPDP', path: '/program#mentoring' },
-        { label: 'Pengabdian Masyarakat', path: '/program#pengabdian' },
-        { label: 'Kolaborasi Riset', path: '/program#riset' },
-        { label: 'Seminar dan Diskusi Publik', path: '/program#seminar' }
+        { label: 'Program Utama', path: '/program' },
+        { label: 'Komunitas Program', path: '/program/komunitas-program' },
+        { label: 'Mata Garuda Institute', path: '/program/mata-garuda-institute' }
       ] 
     },
     { 
-      name: 'Pengurus', 
-      dropdown: false, 
-      path: '/pengurus'
+      name: 'Organisasi', 
+      dropdown: true, 
+      items: [
+        { label: 'Pengurus', path: '/organisasi/pengurus' },
+        { label: 'Tim Sekretariat', path: '/organisasi/tim-sekretariat' }
+      ] 
     },
     { 
-      name: 'Berita & Kegiatan', 
-      dropdown: false, 
-      path: '/berita'
+      name: 'Media', 
+      dropdown: true, 
+      items: [
+        { label: 'Berita', path: '/media/berita' },
+        { label: 'Berita Terbaru', path: '/media/berita-terbaru' },
+        { label: 'Galeri', path: '/media/galeri' }
+      ] 
     },
     { 
       name: 'Kolaborasi', 
       dropdown: false, 
       path: '/kolaborasi'
+    },
+    { 
+      name: 'Pendaftaran', 
+      dropdown: false, 
+      path: '/pendaftaran'
     },
     { 
       name: 'Kontak', 
