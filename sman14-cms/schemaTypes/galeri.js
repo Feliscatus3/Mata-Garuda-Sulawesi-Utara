@@ -28,7 +28,7 @@ export default {
         list: [
           { title: 'Kegiatan Akademik', value: 'akademik' },
           { title: 'Acara Sekolah', value: 'acara' },
-          { title: 'Ekstrakurikuler', value: 'ekstrakurikuler' },
+          { title: 'Program', value: 'Program' },
           { title: 'Prestasi', value: 'prestasi' },
           { title: 'Wisata Pendidikan', value: 'wisata' },
           { title: 'Fasilitas', value: 'fasilitas' },

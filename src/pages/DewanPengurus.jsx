@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchDewanGuru, urlFor } from '../lib/sanity';
+import { fetchdewanGuru, urlFor } from '../lib/sanity';
 
-const DewanGuruPage = () => {
+const DewanPengurus = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,7 @@ const DewanGuruPage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const fetchedData = await fetchDewanGuru();
+        const fetchedData = await fetchdewanGuru();
         setData(fetchedData);
       } catch (error) {
         console.error('Gagal memuat data dewan guru:', error);
@@ -203,4 +203,4 @@ const DewanGuruPage = () => {
   );
 };
 
-export default DewanGuruPage;
+export default DewanPengurus;

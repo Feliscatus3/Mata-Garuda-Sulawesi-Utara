@@ -29,7 +29,7 @@ const SearchResults = () => {
           (_type == "galeri" && (judul match $searchTerm || deskripsi match $searchTerm)) ||
           (_type == "saranaPrasarana" && (nama match $searchTerm || deskripsi match $searchTerm)) ||
           (_type == "pendaftaran" && (judul match $searchTerm || deskripsi match $searchTerm)) ||
-          (_type == "tenagaKependidikan" && (nama match $searchTerm || posisi match $searchTerm)) ||
+          (_type == "tenagaKepengerusan" && (nama match $searchTerm || posisi match $searchTerm)) ||
           (_type == "dewanGuru" && (nama match $searchTerm || bidang match $searchTerm))
         ] {
           _id,
@@ -42,7 +42,7 @@ const SearchResults = () => {
             _type == "galeri" => "/galeri",
             _type == "saranaPrasarana" => "/profil#sarana-prasarana",
             _type == "pendaftaran" => "/pendaftaran",
-            _type == "tenagaKependidikan" => "/tenaga-kependidikan",
+            _type == "tenagaKepengerusan" => "/tenaga-kependidikan",
             _type == "dewanGuru" => "/dewan-guru"
           )
         }`;
@@ -65,7 +65,7 @@ const SearchResults = () => {
       'galeri': 'Galeri',
       'saranaPrasarana': 'Fasilitas',
       'pendaftaran': 'PPDB',
-      'tenagaKependidikan': 'Tenaga Kependidikan',
+      'tenagaKepengerusan': 'Tenaga Kependidikan',
       'dewanGuru': 'Dewan Guru'
     };
     return labels[type] || 'Informasi';

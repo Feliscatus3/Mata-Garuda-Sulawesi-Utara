@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Trophy, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Ekstrakurikuler = () => {
+const Program = () => {
   const navigate = useNavigate();
   const [filter, setFilter] = useState('Semua');
 
@@ -37,7 +37,7 @@ const Ekstrakurikuler = () => {
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
             <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
             <ChevronRight size={14} />
-            <span className="text-[#587F93]">Ekstrakurikuler</span>
+            <span className="text-[#587F93]">Program</span>
           </div>
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
             Ekstra<span className="text-[#587F93]">kurikuler</span>
@@ -132,4 +132,4 @@ const Ekstrakurikuler = () => {
   );
 };
 
-export default Ekstrakurikuler;
+export default Program;

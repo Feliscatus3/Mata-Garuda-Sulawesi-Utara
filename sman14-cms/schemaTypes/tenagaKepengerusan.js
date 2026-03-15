@@ -1,5 +1,5 @@
 export default {
-  name: 'tenagaKependidikan',
+  name: 'tenagaKepengerusan',
   title: 'Tenaga Kependidikan',
   type: 'document',
   fields: [

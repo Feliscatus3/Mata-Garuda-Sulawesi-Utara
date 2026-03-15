@@ -1,7 +1,7 @@
 import prestasiSiswa from './prestasiSiswa';
 import alumni from './alumni';
 import berita from './berita';
-import tenagaKependidikan from './tenagaKependidikan';
+import tenagaKepengerusan from './tenagaKepengerusan';
 import dewanGuru from './dewanGuru';
 import pendaftaran from './pendaftaran';
 import saranaPrasarana from './saranaPrasarana';
@@ -15,7 +15,7 @@ export const schemaTypes = [
   prestasiSiswa, 
   alumni, 
   berita, 
-  tenagaKependidikan,
+  tenagaKepengerusan,
   dewanGuru,
   pendaftaran, 
   saranaPrasarana, 

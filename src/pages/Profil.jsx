@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const ProfilSekolah = () => {
+const Profil = () => {
   const navigate = useNavigate();
 
   const containerVariants = {
@@ -165,4 +165,4 @@ const ProfilSekolah = () => {
   );
 };
 
-export default ProfilSekolah;
+export default Profil;

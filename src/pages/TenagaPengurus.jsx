@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchTenagaKependidikan, urlFor } from '../lib/sanity';
+import { fetchtenagaKepengerusan, urlFor } from '../lib/sanity';
 
-const TenagaKependidikanPage = () => {
+const TenagaraPengurus = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,7 @@ const TenagaKependidikanPage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const fetchedData = await fetchTenagaKependidikan();
+        const fetchedData = await fetchtenagaKepengerusan();
         setData(fetchedData);
       } catch (error) {
         console.error('Gagal memuat data tenaga kependidikan:', error);
@@ -162,4 +162,4 @@ const TenagaKependidikanPage = () => {
   );
 };
 
-export default TenagaKependidikanPage;
+export default TenagaraPengurus;

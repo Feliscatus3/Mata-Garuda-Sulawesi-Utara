@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login';
-import ProfilSekolah from './pages/ProfilSekolah';
+import Profil from './pages/Profil';
 import Hero from './components/Hero';
 import Sambutan from './components/Sambutan';
 import VisiMisi from './components/VisiMisi';
@@ -15,9 +15,9 @@ import Testimoni from './components/Testimoni';
 import StatCounter from './components/StatCounter';
 import BeritaTerbaru from './pages/BeritaTerbaru';
 import NewsDetail from './pages/NewsDetail';
-import TenagaKependidikanPage from './pages/TenagaKependidikanPage';
-import DewanGuruPage from './pages/DewanGuruPage';
-import Ekstrakurikuler from './pages/Ekstrakurikuler';
+import TenagaraPengurus from './pages/TenagaraPengurus';
+import DewanPengurus from './pages/DewanPengurus';
+import Program from './pages/Program';
 import Galeri from './pages/Galeri';
 import Pendaftaran from './pages/Pendaftaran';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
@@ -57,13 +57,13 @@ const AppContent = () => {
               <Testimoni />
             </>
           } />
-          <Route path="/profil" element={<ProfilSekolah />} />
+          <Route path="/profil" element={<Profil />} />
           <Route path="/berita" element={<BeritaTerbaru />} />
           <Route path="/berita/:id" element={<NewsDetail />} />
-          <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
-          <Route path="/dewan-guru" element={<DewanGuruPage />} />
+          <Route path="/tenaga-kependidikan" element={<TenagaraPengurus />} />
+          <Route path="/dewan-guru" element={<DewanPengurus />} />
           <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-          <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
+          <Route path="/Program" element={<Program />} />
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />

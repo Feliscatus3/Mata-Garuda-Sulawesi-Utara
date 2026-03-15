@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'; 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchDewanGuru, urlFor } from '../lib/sanity';
+import { fetchdewanGuru, urlFor } from '../lib/sanity';
 
 import 'swiper/css';
 
@@ -17,7 +17,7 @@ const DataGuru = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchDewanGuru();
+        const result = await fetchdewanGuru();
         setData(result);
       } catch (error) {
         console.error('Gagal memuat data guru:', error);

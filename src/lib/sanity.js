@@ -16,7 +16,7 @@ const builder = imageUrlBuilder(client);
 
 export const urlFor = (source) => builder.image(source);
 
-export const fetchPrestasiSiswa = async () => {
+export const fetchprestasiSiswa = async () => {
   const query = `*[_type == "prestasiSiswa"] | order(tanggal desc)[0..3] {
     _id,
     judul,
@@ -72,8 +72,8 @@ export const fetchStrukturOrganisasi = async () => {
   return await client.fetch(query);
 };
 
-export const fetchTenagaKependidikan = async () => {
-  const query = `*[_type == "tenagaKependidikan"] | order(urutan asc) {
+export const fetchtenagaKepengerusan = async () => {
+  const query = `*[_type == "tenagaKepengerusan"] | order(urutan asc) {
     _id,
     posisi,
     nama,
@@ -86,7 +86,7 @@ export const fetchTenagaKependidikan = async () => {
   return await client.fetch(query);
 };
 
-export const fetchDewanGuru = async () => {
+export const fetchdewanGuru = async () => {
   const query = `*[_type == "dewanGuru"] | order(urutan asc) {
     _id,
     nama,
