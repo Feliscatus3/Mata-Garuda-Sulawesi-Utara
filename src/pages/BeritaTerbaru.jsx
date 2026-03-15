@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 const BeritaTerbaru = () => {
   const navigate = useNavigate();
-  const [newsData, setNewsData] = useState([]);
+const [filter, setFilter] = useState('Semua');
   const [filter, setFilter] = useState('Semua');
 
   // Static data MG Sulawesi Utara - edit sesuai kebutuhan
