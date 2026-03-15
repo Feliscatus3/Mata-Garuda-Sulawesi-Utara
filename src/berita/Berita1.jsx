@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowLeft, Calendar, User } from 'lucide-react';
+import { beritaData } from '../data/beritaData.js';
 
 const Berita1 = () => {
   const navigate = useNavigate();
+  const [relatedNews] = useState(beritaData.filter(n => n._id !== '1').slice(0,2));
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">
@@ -72,26 +74,22 @@ const Berita1 = () => {
             <div>
               <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tight">Berita Terkait</h3>
               <div className="space-y-4">
-                <div onClick={() => navigate('/berita/2')} className="p-4 rounded-xl border border-gray-100 hover:border-[#587F93] hover:shadow-md cursor-pointer transition-all">
-                  <div className="flex gap-3">
-                    <img src="/bendahara.jpeg" alt="" className="w-20 h-20 rounded-lg object-cover" />
-                    <div>
-                      <span className="text-xs font-bold text-[#587F93] uppercase block mb-1">Prestasi</span>
-                      <h4 className="font-bold line-clamp-2">Capacity Building MG Institute Dimulai</h4>
-                      <span className="text-xs text-gray-500">10 Okt 2024</span>
+                {relatedNews.map((news) => (
+                  <div 
+                    key={news._id}
+                    onClick={() => navigate(`/berita/${news._id}`)}
+                    className="p-4 rounded-xl border border-gray-100 hover:border-[#587F93] hover:shadow-md cursor-pointer transition-all"
+                  >
+                    <div className="flex gap-3">
+                      <img src={news.foto} alt={news.judul} className="w-20 h-20 rounded-lg object-cover flex-shrink-0" />
+                      <div>
+                        <span className="text-xs font-bold text-[#587F93] uppercase block mb-1">{news.kategori}</span>
+                        <h4 className="font-bold line-clamp-2">{news.judul}</h4>
+                        <span className="text-xs text-gray-500">{new Date(news.tanggal).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div onClick={() => navigate('/berita/3')} className="p-4 rounded-xl border border-gray-100 hover:border-[#587F93] hover:shadow-md cursor-pointer transition-all">
-                  <div className="flex gap-3">
-                    <img src="/tas1.jpeg" alt="" className="w-20 h-20 rounded-lg object-cover" />
-                    <div>
-                      <span className="text-xs font-bold text-[#587F93] uppercase block mb-1">Prestasi</span>
-                      <h4 className="font-bold line-clamp-2">Prestasi Anggota MG Sulut Kompetisi Nasional</h4>
-                      <span className="text-xs text-gray-500">5 Okt 2024</span>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </motion.aside>
