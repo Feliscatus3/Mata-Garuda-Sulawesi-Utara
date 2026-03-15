@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { beritaData } from '../data/beritaData.js';
 
 const BeritaTerbaru = () => {
