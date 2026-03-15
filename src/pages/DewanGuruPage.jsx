@@ -88,27 +88,23 @@ const DewanGuruPage = () => {
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
             <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
             <ChevronRight size={14} />
-<span className="text-[#587F93]">Dewan Pengurus</span>
-</xai:function_call]
-
-<xai:function_call name="edit_file">
-<parameter name="path">src/pages/DewanGuruPage.jsx
+            <span className="text-[#587F93]">Dewan Guru</span>
           </div>
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
             Dewan <span className="text-[#587F93]">Guru</span>
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-Mengenal lebih dekat dewan pengurus Mata Garuda Sulawesi Utara yang berdedikasi membangun sinergi alumni LPDP melalui program pengabdian dan kolaborasi daerah.
+            Mengenal lebih dekat guru profesional SMAN 14 Samarinda yang berdedikasi dalam membimbing siswa meraih prestasi.
           </p>
         </motion.div>
 
         {/* Kategori Sections */}
         {[
-{ id: 'saintek', title: 'Riset & Kebijakan', subtitle: 'Riset, Analisis Data, Kebijakan Sains & Teknologi' },
-{ id: 'sospol', title: 'Kebijakan Publik', subtitle: 'Ekonomi, Pemerintahan, Sosial & Pengabdian Masyarakat' },
-{ id: 'bahasa', title: 'Komunikasi', subtitle: 'Advokasi, Media, Bahasa & Diplomasi Internasional' },
-{ id: 'umum', title: 'Operasional', subtitle: 'Administrasi, Logistik, Keuangan & Pengelolaan' }
+          { id: 'saintek', title: 'Sains & Teknologi', subtitle: 'Matematika, Fisika, Biologi, Kimia, Informatika, dan KKA' },
+          { id: 'sospol', title: 'Sosial & Politik', subtitle: 'Ekonomi, PKn, Sejarah, Geografi, Sosiologi, dan BK' },
+          { id: 'bahasa', title: 'Bahasa & Sastra', subtitle: 'Bahasa Indonesia, Inggris, Sastra Asing, dan Seni Budaya' },
+          { id: 'umum', title: 'Umum & Lainnya', subtitle: 'Pendidikan Agama, PJOK, dan Lainnya' }
         ].map((category) => {
           
           // Filter data menggunakan fungsi getKategori berdasarkan field 'bidang'

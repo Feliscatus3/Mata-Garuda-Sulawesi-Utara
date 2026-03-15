@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ChatCS = () => {
   const [isVisible, setIsVisible] = useState(false);
   const phoneNumber = "6281229959922"; // Format internasional tanpa tanda +
-  const message = "Halo Admin MG Sulut, saya ingin bertanya mengenai...";
+  const message = "Halo Admin SMAN 14 Samarinda, saya ingin bertanya mengenai...";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Logika untuk memunculkan/menyembunyikan tombol berdasarkan scroll

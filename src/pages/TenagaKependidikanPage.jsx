@@ -64,18 +64,14 @@ const TenagaKependidikanPage = () => {
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
             <span className="hover:text-[#587F93] cursor-pointer" onClick={() => navigate('/')}>Beranda</span>
             <ChevronRight size={14} />
-<span className="text-[#587F93]">Tim Pendukung</span>
-</xai:function_call >
-
-<xai:function_call name="edit_file">
-<parameter name="path">src/pages/TenagaKependidikanPage.jsx
+            <span className="text-[#587F93]">Tenaga Kependidikan</span>
           </div>
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
             Tenaga <span className="text-[#587F93]">Kependidikan</span>
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl font-medium text-lg">
-Mengenal lebih dekat tim pendukung profesional Mata Garuda Sulawesi Utara yang berdedikasi dalam operasional dan pengembangan organisasi.
+            Mengenal lebih dekat tenaga kependidikan profesional SMAN 14 Samarinda yang berdedikasi dalam pengelolaan dan pengembangan sekolah.
           </p>
         </motion.div>
 

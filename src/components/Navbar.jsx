@@ -50,9 +50,9 @@ const Navbar = () => {
   const staticShortcuts = [
     { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Profil' },
     { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Profil' },
-{ keys: ['struktur', 'pengurus', 'kepengurusan', 'tim'], url: '/dewan-pengurus', title: 'Dewan Pengurus', type: 'Organisasi' },
-{ keys: ['kepala', 'ketua', 'hikam', 'tim-pendukung'], url: '/tim-pendukung', title: 'Tim & Pengurus', type: 'Pengurus' },
-{ keys: ['program', 'kegiatan', 'kegitan', 'event'], url: '/program-kegiatan', title: 'Program Kegiatan', type: 'Program' },
+    { keys: ['struktur', 'pengurus', 'kepengurusan'], url: '/struktur-organisasi', title: 'Struktur Organisasi', type: 'Organisasi' },
+    { keys: ['kepala', 'ketua', 'hikam'], url: '/struktur-organisasi', title: 'Ketua MG Sulut', type: 'Pengurus' },
+    { keys: ['program', 'kegitan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
     { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita Terbaru', type: 'Berita' },
     { keys: ['galeri', 'foto', 'dokumentasi'], url: '/galeri', title: 'Galeri', type: 'Galeri' },
     { keys: ['kontak', 'hubungi', 'alamat'], url: '/kontak', title: 'Kontak', type: 'Kontak' },
