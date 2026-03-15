@@ -1,15 +1,15 @@
-import sanityClient from '@sanity/client';
+import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 // Fallback values jika environment variable tidak ada
 const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "vn9r43ot";
 const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
 
-export const client = sanityClient({
+export const client = createClient({
   projectId: projectId, 
   dataset: dataset,
   useCdn: true, 
-// apiVersion removed in v6 (defaults to latest)
+  apiVersion: "2026-02-13",
 });
 
 const builder = imageUrlBuilder(client);

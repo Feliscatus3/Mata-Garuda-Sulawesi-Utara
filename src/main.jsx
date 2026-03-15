@@ -12,10 +12,12 @@ const Analytics = lazy(() =>
 );
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter> 
+  <StrictMode>
+    <BrowserRouter> 
       <App />
       <Suspense fallback={null}>
         <Analytics />
       </Suspense>
-    </BrowserRouter>,
+    </BrowserRouter>
+  </StrictMode>,
 )

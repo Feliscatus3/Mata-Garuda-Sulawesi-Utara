@@ -14,73 +14,49 @@ const Navbar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef(null);
 
-  // --- 1. DEFINISI MENU UNTUK MATA GARUDA SULAWESI UTARA ---
+  // --- 1. DEFINISI MENU UNTUK MATA GARUDA SULUT ---
   const menuItems = [
-    { name: 'Home', dropdown: false, path: '/' },
+    { name: 'BERANDA', dropdown: false, path: '/' },
     { 
-      name: 'Tentang', 
+      name: 'TENTANG', 
       dropdown: true, 
       items: [
-        { label: 'Tentang Kami', path: '/tentang-kami' },
-        { label: 'Profil Mata Garuda', path: '/tentang-kami/profil-mata-garuda' },
-        { label: 'Struktur Organisasi', path: '/tentang-kami/struktur-organisasi' },
-        { label: 'Dewan Penasihat', path: '/tentang-kami/dewan-penasihat' }
+        { label: 'Profil Organisasi', path: '/profil' },
+        { label: 'Visi & Misi', path: '/profil#visi-misi' },
+        { label: 'Struktur Organisasi', path: '/struktur-organisasi' },
+        { label: 'Sejarah', path: '/profil#sejarah' }
       ] 
     },
     { 
-      name: 'Program', 
+      name: 'PROGRAM', 
       dropdown: true, 
       items: [
-        { label: 'Program Utama', path: '/program' },
-        { label: 'Komunitas Program', path: '/program/komunitas-program' },
-        { label: 'Mata Garuda Institute', path: '/program/mata-garuda-institute' }
+        { label: 'Mata Garuda Institute', path: '/program#institute' },
+        { label: 'Capacity Building', path: '/program#capacity' },
+        { label: 'Community Development', path: '/program#community' },
+        { label: 'Entrepreneurship', path: '/program#entrepreneurship' }
       ] 
     },
     { 
-      name: 'Organisasi', 
+      name: 'BERITA', 
       dropdown: true, 
-      items: [
-        { label: 'Pengurus', path: '/organisasi/pengurus' },
-        { label: 'Tim Sekretariat', path: '/organisasi/tim-sekretariat' }
-      ] 
+      items: [{ label: 'Daftar Berita', path: '/berita' }] 
     },
-    { 
-      name: 'Media', 
-      dropdown: true, 
-      items: [
-        { label: 'Berita', path: '/media/berita' },
-        { label: 'Berita Terbaru', path: '/media/berita-terbaru' },
-        { label: 'Galeri', path: '/media/galeri' }
-      ] 
-    },
-    { 
-      name: 'Kolaborasi', 
-      dropdown: false, 
-      path: '/kolaborasi'
-    },
-    { 
-      name: 'Pendaftaran', 
-      dropdown: false, 
-      path: '/pendaftaran'
-    },
-    { 
-      name: 'Kontak', 
-      dropdown: false, 
-      path: '/kontak'
-    }
+    { name: 'GALERI', dropdown: false, path: '/galeri' },
+    { name: 'KONTAK', dropdown: false, path: '/kontak' },
   ];
 
   // --- 2. KATA KUNCI KONTEN & BAGIAN WEBSITE ---
   const staticShortcuts = [
-    { keys: ['tentang', 'profil', 'organisasi'], url: '/tentang-kami', title: 'Tentang Kami', type: 'Tentang' },
-    { keys: ['visi', 'misi', 'tujuan'], url: '/tentang-kami#visi-misi', title: 'Visi & Misi', type: 'Tentang' },
-    { keys: ['sejarah', 'sejarah organisasi'], url: '/tentang-kami#sejarah', title: 'Sejarah', type: 'Tentang' },
-    { keys: ['pengurus', 'struktur', 'kepengurusan'], url: '/pengurus', title: 'Pengurus', type: 'Pengurus' },
-    { keys: ['program', 'kegiatan', 'kelas'], url: '/program', title: 'Program', type: 'Program' },
-    { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita & Kegiatan', type: 'Berita' },
-    { keys: ['kolaborasi', 'mitra', 'kemitraan'], url: '/kolaborasi', title: 'Kolaborasi', type: 'Kolaborasi' },
+    { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Profil' },
+    { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Profil' },
+    { keys: ['struktur', 'pengurus', 'kepengurusan'], url: '/struktur-organisasi', title: 'Struktur Organisasi', type: 'Organisasi' },
+    { keys: ['kepala', 'ketua', 'hikam'], url: '/struktur-organisasi', title: 'Ketua MG Sulut', type: 'Pengurus' },
+    { keys: ['program', 'kegitan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
+    { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita Terbaru', type: 'Berita' },
+    { keys: ['galeri', 'foto', 'dokumentasi'], url: '/galeri', title: 'Galeri', type: 'Galeri' },
     { keys: ['kontak', 'hubungi', 'alamat'], url: '/kontak', title: 'Kontak', type: 'Kontak' },
-    { keys: ['lpdp', 'beasiswa', 'alumni'], url: '/tentang-kami', title: 'Tentang LPDP', type: 'Info' },
+    { keys: ['lpdp', 'beasiswa', 'alumni'], url: '/profil', title: 'Tentang LPDP', type: 'Info' },
   ];
 
   // Logika Live Search (Autocomplete)

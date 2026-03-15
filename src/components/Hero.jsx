@@ -78,27 +78,22 @@ const Hero = () => {
             variants={itemVariants}
             className="text-[28px] md:text-[40px] lg:text-[52px] font-[900] text-white leading-[1.2] lg:leading-[1.15] tracking-tight mb-6 lg:mb-8 drop-shadow-2xl text-left"
           >
-            Mata Garuda Sulawesi Utara
+            Selamat datang di <br />
+            Mata Garuda <br />
+            Sulawesi Utara
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 font-medium"
           >
-            Komunitas alumni dan awardee LPDP yang berkomitmen mendorong kolaborasi, 
-            kepemimpinan, dan kontribusi bagi pembangunan Sulawesi Utara dan Indonesia.
+            "Sinergi Sam Ratulangi"
           </motion.p>
           
-          <motion.div variants={itemVariants} className="flex gap-4">
-            <a href="#tentang-kami" className="inline-block">
+          <motion.div variants={itemVariants}>
+            <a href="#tentang" className="inline-block">
               <button className="group bg-transparent hover:bg-[#B8860B] border-2 border-white hover:border-[#B8860B] text-white px-6 py-3 lg:px-10 lg:py-3.5 rounded-full font-bold text-[14px] lg:text-[16px] flex items-center gap-2 transition-all duration-300 shadow-lg active:scale-95 cursor-pointer">
-                Pelajari Lebih Lanjut
-                <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform duration-300" />
-              </button>
-            </a>
-            <a href="#program" className="inline-block">
-              <button className="group bg-[#B8860B] hover:bg-white border-2 border-[#B8860B] hover:border-[#B8860B] text-white hover:text-[#B8860B] px-6 py-3 lg:px-10 lg:py-3.5 rounded-full font-bold text-[14px] lg:text-[16px] flex items-center gap-2 transition-all duration-300 shadow-lg active:scale-95 cursor-pointer">
-                Bergabung
+                Selengkapnya
                 <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform duration-300" />
               </button>
             </a>
