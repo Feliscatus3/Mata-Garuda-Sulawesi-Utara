@@ -64,7 +64,8 @@ const AppContent = () => {
           <Route path="/tenaga-kependidikan" element={<TenagaPengurus />} />
           <Route path="/dewan-guru" element={<DewanPengurus />} />
           <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-          <Route path="/Program" element={<Program />} />
+<Route path="/Program" element={<Program />} />
+          <Route path="/berita/berita:slug" element={<Berita1 />} />  // Update slug sesuai
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />
