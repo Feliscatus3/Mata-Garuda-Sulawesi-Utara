@@ -40,8 +40,8 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-[280px]">
-                Wadah alumni dan penerima beasiswa LPDP di Sulawesi Utara. 
-                Fokus pada pengabdian masyarakat, kebijakan publik, dan pengembangan daerah.
+                Komunitas awardee dan alumni LPDP di Sulawesi Utara yang berkolaborasi 
+                untuk pengembangan kepemimpinan, pengabdian masyarakat, dan pembangunan daerah.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
                 <span className="text-[#B8860B] font-bold">Visi:</span> "Sinergi Sam Ratulangi"
@@ -53,12 +53,12 @@ const Footer = () => {
               <h3 className="text-lg font-bold mb-6 text-white">Menu</h3>
               <ul className="space-y-4">
                 {[
-                  { name: 'Beranda', path: '/' },
-                  { name: 'Profil Organisasi', path: '/profil' },
-                  { name: 'Struktur Organisasi', path: '/struktur-organisasi' },
+                  { name: 'Home', path: '/' },
+                  { name: 'Tentang Kami', path: '/tentang-kami' },
                   { name: 'Program', path: '/program' },
-                  { name: 'Berita', path: '/berita' },
-                  { name: 'Galeri', path: '/galeri' },
+                  { name: 'Pengurus', path: '/pengurus' },
+                  { name: 'Berita & Kegiatan', path: '/berita' },
+                  { name: 'Kolaborasi', path: '/kolaborasi' },
                   { name: 'Kontak', path: '/kontak' }
                 ].map((item) => (
                   <li key={item.name}>

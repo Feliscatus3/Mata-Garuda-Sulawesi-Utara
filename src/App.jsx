@@ -4,23 +4,12 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Login from './pages/Login';
-import ProfilSekolah from './pages/ProfilSekolah';
 import Hero from './components/Hero';
-import Sambutan from './components/Sambutan';
-import VisiMisi from './components/VisiMisi';
-import ProgramUnggulan from './components/ProgramUnggulan';
-import PrestasiSiswa from './components/PrestasiSiswa';
-import Testimoni from './components/Testimoni';
-import StatCounter from './components/StatCounter';
-import BeritaTerbaru from './pages/BeritaTerbaru';
-import NewsDetail from './pages/NewsDetail';
-import TenagaKependidikanPage from './pages/TenagaKependidikanPage';
-import DewanGuruPage from './pages/DewanGuruPage';
-import Ekstrakurikuler from './pages/Ekstrakurikuler';
-import Galeri from './pages/Galeri';
-import Pendaftaran from './pages/Pendaftaran';
-import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
+import TentangKami from './pages/TentangKami';
+import Program from './pages/Program';
+import Pengurus from './pages/Pengurus';
+import Berita from './pages/Berita';
+import Kolaborasi from './pages/Kolaborasi';
 import Kontak from './pages/Kontak';
 import ChatCS from './components/ChatCS';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -51,25 +40,19 @@ const AppContent = () => {
             <Route path="/" element={
               <>
                 <Hero />
-                <StatCounter />
-                <Sambutan />
-                <VisiMisi />
-                <ProgramUnggulan />
-                <PrestasiSiswa />
-                <Testimoni />
+                <TentangKami />
+                <Program />
+                <Pengurus />
+                <Berita />
+                <Kolaborasi />
               </>
             } />
-            <Route path="/profil" element={<ProfilSekolah />} />
-            <Route path="/berita" element={<BeritaTerbaru />} />
-            <Route path="/berita/:id" element={<NewsDetail />} />
-            <Route path="/tenaga-kependidikan" element={<TenagaKependidikanPage />} />
-            <Route path="/dewan-guru" element={<DewanGuruPage />} />
-            <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-            <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
-            <Route path="/galeri" element={<Galeri />} />
-            <Route path="/pendaftaran" element={<Pendaftaran />} />
+            <Route path="/tentang-kami" element={<TentangKami />} />
+            <Route path="/program" element={<Program />} />
+            <Route path="/pengurus" element={<Pengurus />} />
+            <Route path="/berita" element={<Berita />} />
+            <Route path="/kolaborasi" element={<Kolaborasi />} />
             <Route path="/kontak" element={<Kontak />} />
-            <Route path="/login" element={<Login />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ErrorBoundary>

@@ -14,49 +14,61 @@ const Navbar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef(null);
 
-  // --- 1. DEFINISI MENU UNTUK MATA GARUDA SULUT ---
+  // --- 1. DEFINISI MENU UNTUK MATA GARUDA SULAWESI UTARA ---
   const menuItems = [
-    { name: 'BERANDA', dropdown: false, path: '/' },
+    { name: 'Home', dropdown: false, path: '/' },
     { 
-      name: 'TENTANG', 
+      name: 'Tentang Kami', 
       dropdown: true, 
       items: [
-        { label: 'Profil Organisasi', path: '/profil' },
-        { label: 'Visi & Misi', path: '/profil#visi-misi' },
-        { label: 'Struktur Organisasi', path: '/struktur-organisasi' },
-        { label: 'Sejarah', path: '/profil#sejarah' }
+        { label: 'Sejarah', path: '/tentang-kami#sejarah' },
+        { label: 'Visi & Misi', path: '/tentang-kami#visi-misi' }
       ] 
     },
     { 
-      name: 'PROGRAM', 
+      name: 'Program', 
       dropdown: true, 
       items: [
-        { label: 'Mata Garuda Institute', path: '/program#institute' },
-        { label: 'Capacity Building', path: '/program#capacity' },
-        { label: 'Community Development', path: '/program#community' },
-        { label: 'Entrepreneurship', path: '/program#entrepreneurship' }
+        { label: 'Leadership Forum', path: '/program#leadership' },
+        { label: 'Mentoring Beasiswa LPDP', path: '/program#mentoring' },
+        { label: 'Pengabdian Masyarakat', path: '/program#pengabdian' },
+        { label: 'Kolaborasi Riset', path: '/program#riset' },
+        { label: 'Seminar dan Diskusi Publik', path: '/program#seminar' }
       ] 
     },
     { 
-      name: 'BERITA', 
-      dropdown: true, 
-      items: [{ label: 'Daftar Berita', path: '/berita' }] 
+      name: 'Pengurus', 
+      dropdown: false, 
+      path: '/pengurus'
     },
-    { name: 'GALERI', dropdown: false, path: '/galeri' },
-    { name: 'KONTAK', dropdown: false, path: '/kontak' },
+    { 
+      name: 'Berita & Kegiatan', 
+      dropdown: false, 
+      path: '/berita'
+    },
+    { 
+      name: 'Kolaborasi', 
+      dropdown: false, 
+      path: '/kolaborasi'
+    },
+    { 
+      name: 'Kontak', 
+      dropdown: false, 
+      path: '/kontak'
+    }
   ];
 
   // --- 2. KATA KUNCI KONTEN & BAGIAN WEBSITE ---
   const staticShortcuts = [
-    { keys: ['tentang', 'profil', 'organisasi'], url: '/profil', title: 'Profil Organisasi', type: 'Profil' },
-    { keys: ['visi', 'misi', 'tujuan'], url: '/profil#visi-misi', title: 'Visi & Misi', type: 'Profil' },
-    { keys: ['struktur', 'pengurus', 'kepengurusan'], url: '/struktur-organisasi', title: 'Struktur Organisasi', type: 'Organisasi' },
-    { keys: ['kepala', 'ketua', 'hikam'], url: '/struktur-organisasi', title: 'Ketua MG Sulut', type: 'Pengurus' },
-    { keys: ['program', 'kegitan', 'kelas'], url: '/program', title: 'Program Kerja', type: 'Program' },
-    { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita Terbaru', type: 'Berita' },
-    { keys: ['galeri', 'foto', 'dokumentasi'], url: '/galeri', title: 'Galeri', type: 'Galeri' },
+    { keys: ['tentang', 'profil', 'organisasi'], url: '/tentang-kami', title: 'Tentang Kami', type: 'Tentang' },
+    { keys: ['visi', 'misi', 'tujuan'], url: '/tentang-kami#visi-misi', title: 'Visi & Misi', type: 'Tentang' },
+    { keys: ['sejarah', 'sejarah organisasi'], url: '/tentang-kami#sejarah', title: 'Sejarah', type: 'Tentang' },
+    { keys: ['pengurus', 'struktur', 'kepengurusan'], url: '/pengurus', title: 'Pengurus', type: 'Pengurus' },
+    { keys: ['program', 'kegiatan', 'kelas'], url: '/program', title: 'Program', type: 'Program' },
+    { keys: ['berita', 'artikel', 'informasi'], url: '/berita', title: 'Berita & Kegiatan', type: 'Berita' },
+    { keys: ['kolaborasi', 'mitra', 'kemitraan'], url: '/kolaborasi', title: 'Kolaborasi', type: 'Kolaborasi' },
     { keys: ['kontak', 'hubungi', 'alamat'], url: '/kontak', title: 'Kontak', type: 'Kontak' },
-    { keys: ['lpdp', 'beasiswa', 'alumni'], url: '/profil', title: 'Tentang LPDP', type: 'Info' },
+    { keys: ['lpdp', 'beasiswa', 'alumni'], url: '/tentang-kami', title: 'Tentang LPDP', type: 'Info' },
   ];
 
   // Logika Live Search (Autocomplete)
