@@ -2,27 +2,63 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchBerita, urlFor } from '../lib/sanity';
-
 const BeritaTerbaru = () => {
   const navigate = useNavigate();
   const [newsData, setNewsData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [filter, setFilter] = useState('Semua');
 
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        const data = await fetchBerita();
-        setNewsData(data);
-      } catch (error) {
-        console.error('Gagal memuat berita:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // Static data MG Sulawesi Utara - edit sesuai kebutuhan
+  const staticNews = [
+    {
+      _id: '1',
+      judul: 'MG Sulut Gelar Pengabdian Desa Bantik',
+      kategori: 'Kegiatan',
+      tanggal: '2024-10-15',
+      excerpt: 'Tim Mata Garuda Sulawesi Utara sukses menggelar program pengabdian masyarakat di Desa Bantik dengan fokus pendidikan dan pemberdayaan.',
+      foto: '/program-1.webp',
+      hashtag: ['#MGSulut', '#Pengabdian', '#DesaBantik']
+    },
+    {
+      _id: '2',
+      judul: 'Capacity Building MG Institute Dimulai',
+      kategori: 'Prestasi',
+      tanggal: '2024-10-10',
+      excerpt: 'Program mentorship karir dan pelatihan industri pertama di MG Institute resmi diluncurkan untuk 50+ anggota.',
+      foto: '/bendahara.jpeg',
+      hashtag: ['#CapacityBuilding', '#MGInstitute']
+    },
+    {
+      _id: '3',
+      judul: 'Prestasi Anggota MG Sulut di Kompetisi Nasional',
+      kategori: 'Prestasi',
+      tanggal: '2024-10-05',
+      excerpt: '3 anggota MG Sulut meraih juara 1, 2, 3 di kompetisi riset kebijakan tingkat nasional.',
+      foto: '/tas1.jpeg',
+      hashtag: ['#Prestasi', '#MGSulut']
+    },
+    {
+      _id: '4',
+      judul: 'Riset Kebijakan Sulawesi Utara Dirilis',
+      kategori: 'Akademik',
+      tanggal: '2024-09-30',
+      excerpt: 'Laporan riset kebijakan terbaru MG Sulut membahas isu strategis pembangunan daerah.',
+      foto: '/greenhouse.webp',
+      hashtag: ['#Riset', '#Kebijakan']
+    },
+    {
+      _id: '5',
+      judul: 'Diskusi Industri Bersama Pakar',
+      kategori: 'Kegiatan',
+      tanggal: '2024-09-25',
+      excerpt: 'Forum diskusi karir dengan 5 pakar industri menghadirkan wawasan berharga untuk anggota MG.',
+      foto: '/unggul.webp',
+      hashtag: ['#DiskusiIndustri', '#Karir']
+    }
+  ];
 
-    loadNews();
-  }, []);
+  const filteredNews = filter === 'Semua' 
+    ? staticNews 
+    : staticNews.filter(item => item.kategori === filter);
 
   // Animasi Variants
   const containerVariants = {
@@ -42,15 +78,7 @@ const BeritaTerbaru = () => {
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-[#FDFDFD] min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-5 lg:px-[60px] text-center">
-          <p className="text-gray-500 font-medium">Memuat berita...</p>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-[#FDFDFD] min-h-screen">
@@ -80,7 +108,7 @@ const BeritaTerbaru = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
         >
-          {newsData.map((news) => (
+                {filteredNews.map((news) => (
             <motion.div 
               key={news._id}
               variants={cardVariants}
@@ -89,17 +117,11 @@ const BeritaTerbaru = () => {
             >
               {/* Image Container */}
               <div className="relative h-[240px] overflow-hidden">
-                {news.foto ? (
-                  <img 
-                    src={urlFor(news.foto).width(600).height(400).url()} 
+                <img 
+                    src={news.foto} 
                     alt={news.judul} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                ) : (
-                  <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-400">Foto Berita</span>
-                  </div>
-                )}
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm">
                   <span className="text-[11px] font-black text-[#587F93] uppercase tracking-wider">{news.kategori}</span>
                 </div>
@@ -124,18 +146,17 @@ const BeritaTerbaru = () => {
 
                 {/* Hashtags */}
                 {news.hashtag && news.hashtag.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-6">
                     {news.hashtag.slice(0, 3).map((tag, idx) => (
                       <span key={idx} className="text-[10px] px-2 py-1 bg-[#587F93]/10 text-[#587F93] rounded-full font-bold">
-                        {tag.startsWith('#') ? tag : `#${tag}`}
+                        {tag}
                       </span>
                     ))}
                   </div>
                 )}
 
                 <button 
-                  onClick={() => navigate(`/berita/${news._id}`)}
-                  className="mt-auto flex items-center gap-3 text-[#587F93] font-black text-[13px] uppercase tracking-widest group/btn"
+                  className="mt-auto flex items-center gap-3 text-[#587F93] font-black text-[13px] uppercase tracking-widest group/btn self-start"
                 >
                   Baca Selengkapnya
                   <ArrowRight size={18} className="transition-transform duration-300 group-hover/btn:translate-x-2" />
