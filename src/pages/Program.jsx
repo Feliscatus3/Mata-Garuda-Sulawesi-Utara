@@ -75,6 +75,7 @@ const programData = [
           <AnimatePresence mode='popLayout'>
         {filteredData.map((item) => (
               <motion.div
+                id={item.kategori.toLowerCase()}
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -82,7 +83,7 @@ const programData = [
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -10 }}
-                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100 hover:shadow-[#587F93]/20 h-full transition-all duration-300"
+                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100 hover:shadow-[#587F93]/20 h-full transition-all duration-300 scroll-mt-20"
               >
                 {/* Image Container - Landscape Orientation */}
                 <div className="relative w-full aspect-video overflow-hidden bg-gray-200">

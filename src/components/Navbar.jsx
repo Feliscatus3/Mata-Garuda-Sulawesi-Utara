@@ -29,10 +29,10 @@ const Navbar = () => {
       name: 'PROGRAM', 
       dropdown: true, 
       items: [
-        { label: 'Mata Garuda Institute', path: '/program#institute' },
+{ label: 'Pengabdian Desa Bantik', path: '/program#pengabdian' },
+        { label: 'MG Institute', path: '/program#institute' },
         { label: 'Capacity Building', path: '/program#capacity' },
-        { label: 'Community Development', path: '/program#community' },
-        { label: 'Entrepreneurship', path: '/program#entrepreneurship' }
+        { label: 'Prestasi Anggota', path: '/program#prestasi' }
       ] 
     },
     { 

@@ -9,8 +9,12 @@
 
 **Status:** Edits complete. Testing next.
 
-Updated Program.jsx now features:
-- "Program Kerja" theme for Mata Garuda Sulawesi Utara
-- New categories: Pengabdian, Pendidikan, etc.
-- 8 MG programs (Pengabdian Desa Bantik, Capacity Building, etc.)
-- Updated images/stats, hover effects enhanced
+## Updated Tasks
+1-5. [x] Program.jsx complete
+
+**Completed:**
+6. [x] Navbar PROGRAM dropdown: Pengabdian Desa Bantik (#pengabdian), MG Institute (#institute), Capacity Building (#capacity), Prestasi Anggota (#prestasi)
+7. [x] Added id={item.kategori.toLowerCase()} + scroll-mt-20 to Program.jsx cards
+8. [x] Updated TODO.md
+
+All aligned. Navbar dropdown now links directly to program categories. Full task complete.
