@@ -22,6 +22,12 @@ import Pendaftaran from './pages/Pendaftaran';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
 import Kontak from './pages/Kontak';
 import ChatCS from './components/ChatCS';
+import Berita1 from './berita/Berita1';
+import Berita2 from './berita/Berita2';
+import Berita3 from './berita/Berita3';
+import Berita4 from './berita/Berita4';
+import Berita5 from './berita/Berita5';
+import Berita6 from './berita/Berita6';
 
 const AppContent = () => {
   const location = useLocation();
