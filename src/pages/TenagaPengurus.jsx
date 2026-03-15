@@ -4,7 +4,7 @@ import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { fetchtenagaKepengerusan, urlFor } from '../lib/sanity';
 
-const TenagaraPengurus = () => {
+const TenagaPengurus = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -162,4 +162,4 @@ const TenagaraPengurus = () => {
   );
 };
 
-export default TenagaraPengurus;
+export default TenagaPengurus;

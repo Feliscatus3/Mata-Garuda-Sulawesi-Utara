@@ -15,7 +15,7 @@ import Testimoni from './components/Testimoni';
 import StatCounter from './components/StatCounter';
 import BeritaTerbaru from './pages/BeritaTerbaru';
 import NewsDetail from './pages/NewsDetail';
-import TenagaraPengurus from './pages/TenagaraPengurus';
+import TenagaPengurus from './pages/TenagaPengurus';
 import DewanPengurus from './pages/DewanPengurus';
 import Program from './pages/Program';
 import Galeri from './pages/Galeri';
@@ -60,7 +60,7 @@ const AppContent = () => {
           <Route path="/profil" element={<Profil />} />
           <Route path="/berita" element={<BeritaTerbaru />} />
           <Route path="/berita/:id" element={<NewsDetail />} />
-          <Route path="/tenaga-kependidikan" element={<TenagaraPengurus />} />
+          <Route path="/tenaga-kependidikan" element={<TenagaPengurus />} />
           <Route path="/dewan-guru" element={<DewanPengurus />} />
           <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
           <Route path="/Program" element={<Program />} />
