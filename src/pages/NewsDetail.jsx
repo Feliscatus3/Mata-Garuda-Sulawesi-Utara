@@ -7,87 +7,12 @@ const NewsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Cari berita berdasarkan _id dari staticNews di BeritaTerbaru
-  const allNews = [
-    {
-      _id: '1',
-      judul: 'MG Sulut Gelar Pengabdian Desa Bantik',
-      kategori: 'Kegiatan',
-      tanggal: '2024-10-15',
-      foto: '/program-1.webp',
-      hashtag: ['#MGSulut', '#Pengabdian', '#DesaBantik'],
-      kontenFull: [
-        "Tim Mata Garuda Sulawesi Utara dengan penuh semangat menggelar program pengabdian masyarakat di Desa Bantik, Kabupaten Minahasa Utara.",
-        "Kegiatan ini melibatkan 30+ anggota MG Sulut yang fokus pada bidang pendidikan karakter, pemberdayaan ekonomi masyarakat, dan pelestarian lingkungan.",
-        "Hari pertama diisi dengan workshop kepemimpinan untuk pemuda desa, diikuti praktik langsung pembuatan pupuk organik dan penanaman pohon mangrove.",
-        "Kepala Desa Bantik mengapresiasi tinggi kontribusi MG Sulut dan berharap program serupa dapat dilanjutkan secara berkala.",
-        "Program ini merupakan bagian dari komitmen MG Sulut untuk memberikan dampak nyata bagi masyarakat Sulawesi Utara."
-      ]
-    },
-    {
-      _id: '2',
-      judul: 'Capacity Building MG Institute Dimulai',
-      kategori: 'Prestasi',
-      tanggal: '2024-10-10',
-      foto: '/bendahara.jpeg',
-      hashtag: ['#CapacityBuilding', '#MGInstitute'],
-      kontenFull: [
-        "MG Institute resmi meluncurkan program Capacity Building pertama untuk anggota Mata Garuda Sulawesi Utara.",
-        "50 peserta terpilih akan mengikuti mentorship karir intensif dengan 10 mentor dari berbagai industri.",
-        "Kurikulum meliputi public speaking, leadership, digital marketing, dan financial literacy.",
-        "Program berlangsung 8 minggu dengan sesi mingguan dan proyek akhir kolaboratif.",
-        "Expected outcome: 100% peserta siap kerja / entrepreneurship dalam 6 bulan."
-      ]
-    },
-    {
-      _id: '3',
-      judul: 'Prestasi Anggota MG Sulut di Kompetisi Nasional',
-      kategori: 'Prestasi',
-      tanggal: '2024-10-05',
-      foto: '/tas1.jpeg',
-      hashtag: ['#Prestasi', '#MGSulut'],
-      kontenFull: [
-        "Tiga anggota MG Sulut meraih podium di Kompetisi Riset Kebijakan Nasional 2024.",
-        "Juara 1: Riset 'Pemberdayaan Pemuda Sulut Era Digital' - Tim Bintang et al.",
-        "Juara 2: 'Model Ekonomi Berbasis Potensi Lokal Minahasa' - Tim Rizal et al.",
-        "Juara 3: 'Strategi Mitigasi Bencana di Sulawesi Utara' - Tim Sarah et al.",
-        "Prestasi ini bukti komitmen MG Sulut mencetak generasi riset berdaya saing nasional."
-      ]
-    },
-    {
-      _id: '4',
-      judul: 'Riset Kebijakan Sulawesi Utara Dirilis',
-      kategori: 'Akademik',
-      tanggal: '2024-09-30',
-      foto: '/greenhouse.webp',
-      hashtag: ['#Riset', '#Kebijakan'],
-      kontenFull: [
-        "Laporan riset kebijakan 'Pembangunan Sulawesi Utara 2025-2030' dirilis MG Sulut.",
-        "200+ halaman analisis mendalam 5 sektor prioritas: ekonomi, pendidikan, kesehatan, lingkungan, infrastruktur.",
-        "Rekomendasi diserahkan ke Gubernur Sulawesi Utara dan DPRD Provinsi.",
-        "Riset melibatkan 50 akademisi, praktisi, dan pemangku kepentingan.",
-        "Download lengkap tersedia di website MG Sulut."
-      ]
-    },
-    {
-      _id: '5',
-      judul: 'Diskusi Industri Bersama Pakar',
-      kategori: 'Kegiatan',
-      tanggal: '2024-09-25',
-      foto: '/unggul.webp',
-      hashtag: ['#DiskusiIndustri', '#Karir'],
-      kontenFull: [
-        "Forum Diskusi Industri 'Future of Work Sulawesi Utara' sukses digelar MG Sulut.",
-        "5 pakar industri: Tech, Finance, Agribisnis, Pariwisata, Pemerintahan.",
-        "100+ anggota hadir, networking sesi, career booth dari 10 perusahaan.",
-        "Key takeaway: Adaptasi AI + skill lokal = competitive advantage Sulut.",
-        "Rekaman full available di YouTube MG Sulut."
-      ]
-    }
-  ];
-
-  const article = allNews.find(news => news._id === id);
-  const [relatedNews] = useState(allNews.filter(n => n._id !== id).slice(0,3));
+  import { beritaData } from '../data/beritaData.js';
+  const allNews = beritaData;
+  const article = allNews.find(n => n._id === id);
+  const relatedNews = allNews.filter(n => n._id !== id && n.kategori === article?.kategori).slice(0,3).length > 0 
+    ? allNews.filter(n => n._id !== id && n.kategori === article.kategori).slice(0,3)
+    : allNews.filter(n => n._id !== id).slice(0,3);
 
   if (!article) {
     return (

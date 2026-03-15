@@ -2,58 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Calendar, ArrowRight, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { beritaData } from '../data/beritaData.js';
+
 const BeritaTerbaru = () => {
   const navigate = useNavigate();
-const [filter, setFilter] = useState('Semua');
+  const [filter, setFilter] = useState('Semua');
 
-  // Static data MG Sulawesi Utara - edit sesuai kebutuhan
-  const staticNews = [
-    {
-      _id: '1',
-      judul: 'MG Sulut Gelar Pengabdian Desa Bantik',
-      kategori: 'Kegiatan',
-      tanggal: '2024-10-15',
-      excerpt: 'Tim Mata Garuda Sulawesi Utara sukses menggelar program pengabdian masyarakat di Desa Bantik dengan fokus pendidikan dan pemberdayaan.',
-      foto: '/program-1.webp',
-      hashtag: ['#MGSulut', '#Pengabdian', '#DesaBantik']
-    },
-    {
-      _id: '2',
-      judul: 'Capacity Building MG Institute Dimulai',
-      kategori: 'Prestasi',
-      tanggal: '2024-10-10',
-      excerpt: 'Program mentorship karir dan pelatihan industri pertama di MG Institute resmi diluncurkan untuk 50+ anggota.',
-      foto: '/bendahara.jpeg',
-      hashtag: ['#CapacityBuilding', '#MGInstitute']
-    },
-    {
-      _id: '3',
-      judul: 'Prestasi Anggota MG Sulut di Kompetisi Nasional',
-      kategori: 'Prestasi',
-      tanggal: '2024-10-05',
-      excerpt: '3 anggota MG Sulut meraih juara 1, 2, 3 di kompetisi riset kebijakan tingkat nasional.',
-      foto: '/tas1.jpeg',
-      hashtag: ['#Prestasi', '#MGSulut']
-    },
-    {
-      _id: '4',
-      judul: 'Riset Kebijakan Sulawesi Utara Dirilis',
-      kategori: 'Akademik',
-      tanggal: '2024-09-30',
-      excerpt: 'Laporan riset kebijakan terbaru MG Sulut membahas isu strategis pembangunan daerah.',
-      foto: '/greenhouse.webp',
-      hashtag: ['#Riset', '#Kebijakan']
-    },
-    {
-      _id: '5',
-      judul: 'Diskusi Industri Bersama Pakar',
-      kategori: 'Kegiatan',
-      tanggal: '2024-09-25',
-      excerpt: 'Forum diskusi karir dengan 5 pakar industri menghadirkan wawasan berharga untuk anggota MG.',
-      foto: '/unggul.webp',
-      hashtag: ['#DiskusiIndustri', '#Karir']
-    }
-  ];
+  const staticNews = beritaData;
 
   const filteredNews = filter === 'Semua' 
     ? staticNews 
