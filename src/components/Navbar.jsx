@@ -22,9 +22,7 @@ const Navbar = () => {
       dropdown: true, 
       items: [
         { label: 'Profil Organisasi', path: '/profil' },
-        { label: 'Visi & Misi', path: '/profil#visi-misi' },
-        { label: 'Struktur Organisasi', path: '/struktur-organisasi' },
-        { label: 'Sejarah', path: '/profil#sejarah' }
+        { label: 'Struktur Organisasi', path: '/struktur-organisasi' }
       ] 
     },
     { 
