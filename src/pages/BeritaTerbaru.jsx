@@ -49,15 +49,16 @@ const BeritaTerbaru = () => {
             <ChevronRight size={14} />
             <span className="text-[#587F93]">Berita Terbaru</span>
           </div>
+
           <h1 className="text-[40px] lg:text-[56px] font-[900] text-black leading-none tracking-tight">
-            Berita <span className="text-[#587F93]">Terbaru</span>
+            Berita <span className="text-[#587F93]">MG Sulut</span>
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
         </motion.div>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-3 mb-12">
-          {['Semua', 'Kegiatan', 'Prestasi', 'Akademik'].map((cat) => (
+          {['Semua', 'Kegiatan', 'Prestasi', 'Akademik', 'MG Sulut'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
