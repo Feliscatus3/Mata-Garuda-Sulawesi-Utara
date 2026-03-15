@@ -6,7 +6,7 @@ import { beritaData } from '../data/beritaData.js';
 
 const Berita3 = () => {
   const navigate = useNavigate();
-  const [relatedNews] = useState(beritaData.filter(n => n._id !== '3').slice(0,2));
+  const [relatedNews] = useState(beritaData.filter(n => n._id !== '3' && n.kategori === 'Prestasi').slice(0,2) || beritaData.filter(n => n._id !== '3').slice(0,2));
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">
