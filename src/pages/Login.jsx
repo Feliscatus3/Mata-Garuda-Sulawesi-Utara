@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Lock, Eye, EyeOff, LogIn, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { client } from '../client'; 
+// Static login - Sanity removed
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,32 +18,18 @@ const Login = () => {
     setIsLoading(true);
     setError('');
 
-    try {
-      // 1. Query ke Sanity mencari dokumen admin berdasarkan username
-      const query = `*[_type == "admin" && username == $username][0]`;
-      const params = { username: username };
-      const admin = await client.fetch(query, params);
+    // Static admin credentials - Sanity removed
+    const staticAdmin = {
+      username: 'admin',
+      password: 'admin123'
+    };
 
-      // 2. Validasi kecocokan data
-      if (admin && admin.password === password) {
-        setIsLoading(false);
-
-        // LOGIKA SMART REDIRECT:
-        // Jika sedang di localhost, arahkan ke port 3333
-        // Jika sudah online (Vercel), arahkan ke Sanity Studio yang sudah dideploy
-        const studioUrl = window.location.hostname === 'localhost' 
-          ? 'http://localhost:3333' 
-          : 'https://www.sanity.io/@o0E0wSMrR/studio/akrnc8fvvm7nlcn2kmneu402/default/structure'; 
-
-        window.location.replace(studioUrl);
-      } else {
-        setIsLoading(false);
-        setError('Username atau Password salah!');
-      }
-    } catch (err) {
-      console.error("Login Error:", err);
+    if (username === staticAdmin.username && password === staticAdmin.password) {
       setIsLoading(false);
-      setError('Gagal terhubung ke Sanity CMS. Cek koneksi atau CORS!');
+      alert('Login berhasil! Website sudah static, no CMS needed.');
+    } else {
+      setIsLoading(false);
+      setError('Username atau Password salah!');
     }
   };
 

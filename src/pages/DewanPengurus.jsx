@@ -2,26 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchdewanGuru, urlFor } from '../lib/sanity';
+import { dewanGuruData } from '../data/dewanGuru.js';
 
 const DewanPengurus = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const fetchedData = await fetchdewanGuru();
-        setData(fetchedData);
-      } catch (error) {
-        console.error('Gagal memuat data dewan guru:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadData();
+useEffect(() => {
+    setData(dewanGuruData);
+    setIsLoading(false);
   }, []);
 
   const containerVariants = {
@@ -140,17 +130,11 @@ const DewanPengurus = () => {
                   >
                     {/* Image Container */}
                     <div className="relative aspect-[3/4] overflow-hidden bg-gray-50">
-                      {guru.foto ? (
-                        <img 
-                          src={urlFor(guru.foto).width(300).height(400).url()} 
-                          alt={guru.nama} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                          <span className="text-gray-400">Foto</span>
-                        </div>
-                      )}
+                      <img 
+                        src={guru.foto || '/kepsek1.webp'} 
+                        alt={guru.nama} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#587F93]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
                         {guru.email && (
                           <a href={`mailto:${guru.email}`} className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#587F93] hover:bg-[#587F93] hover:text-white transition-all shadow-lg">

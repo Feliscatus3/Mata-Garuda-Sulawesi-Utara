@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules'; 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchdewanGuru, urlFor } from '../lib/sanity';
+import { dewanGuruData } from '../data/dewanGuru.js';
 
 import 'swiper/css';
 
@@ -14,18 +14,9 @@ const DataGuru = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const result = await fetchdewanGuru();
-        setData(result);
-      } catch (error) {
-        console.error('Gagal memuat data guru:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    loadData();
+useEffect(() => {
+    setData(dewanGuruData);
+    setIsLoading(false);
   }, []);
 
   // Gandakan data agar looping marquee tetap mulus tanpa jeda
@@ -103,7 +94,7 @@ const DataGuru = () => {
                 >
                   <div className="w-full aspect-[4/5] bg-white rounded-2xl shadow-[0_25px_50px_-15px_rgba(0,0,0,0.15)] border border-white overflow-hidden mb-6 relative group/img">
                     <img 
-                      src={guru.foto ? urlFor(guru.foto).width(400).height(500).url() : 'https://via.placeholder.com/400x500?text=Guru'} 
+                      src={guru.foto || '/kepsek1.webp'} 
                       alt={guru.nama}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
                     />

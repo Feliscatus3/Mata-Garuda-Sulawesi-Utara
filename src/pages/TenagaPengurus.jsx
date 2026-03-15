@@ -2,26 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { fetchtenagaKepengerusan, urlFor } from '../lib/sanity';
+import { tenagaKepengerusanData } from '../data/tenagaKepengerusan.js';
 
 const TenagaPengurus = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const fetchedData = await fetchtenagaKepengerusan();
-        setData(fetchedData);
-      } catch (error) {
-        console.error('Gagal memuat data tenaga kependidikan:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadData();
+useEffect(() => {
+    setData(tenagaKepengerusanData);
+    setIsLoading(false);
   }, []);
 
   const containerVariants = {
@@ -91,17 +81,11 @@ const TenagaPengurus = () => {
             >
               {/* Image Container */}
               <div className="relative aspect-[3/4] overflow-hidden bg-gray-50">
-                {item.foto ? (
-                  <img 
-                    src={urlFor(item.foto).width(300).height(400).url()} 
+                <img 
+                    src={item.foto || '/kepsek1.webp'} 
                     alt={item.nama} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                    <span className="text-gray-400">Foto</span>
-                  </div>
-                )}
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#587F93]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
                   {item.email && (

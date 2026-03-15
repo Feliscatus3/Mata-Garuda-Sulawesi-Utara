@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, ChevronRight, ArrowRight, Loader2, FileText, Image as ImageIcon, User, Info, AlertCircle } from 'lucide-react';
-import { client, urlFor } from '../lib/sanity';
+// Static search - Sanity removed
 
 const SearchResults = () => {
   const location = useLocation();
@@ -14,49 +14,31 @@ const SearchResults = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const performSearch = async () => {
-      if (!query) {
-        setResults([]);
-        setIsLoading(false);
-        return;
+    // Static search - Sanity removed
+    const staticResults = [];
+    if (query) {
+      // Search in static data
+      if (query.toLowerCase().includes('program')) {
+        staticResults.push({
+          _id: 'program',
+          _type: 'program',
+          title: 'Program Kerja MG Sulut',
+          description: 'Semua program Mata Garuda Sulawesi Utara',
+          path: '/program'
+        });
       }
-
-      setIsLoading(true);
-      try {
-        // GROQ Query untuk mencari di berbagai tipe dokumen
-        const groqQuery = `*[
-          (_type == "berita" && (judul match $searchTerm || excerpt match $searchTerm || konten[].children[].text match $searchTerm)) ||
-          (_type == "galeri" && (judul match $searchTerm || deskripsi match $searchTerm)) ||
-          (_type == "saranaPrasarana" && (nama match $searchTerm || deskripsi match $searchTerm)) ||
-          (_type == "pendaftaran" && (judul match $searchTerm || deskripsi match $searchTerm)) ||
-          (_type == "tenagaKepengerusan" && (nama match $searchTerm || posisi match $searchTerm)) ||
-          (_type == "dewanGuru" && (nama match $searchTerm || bidang match $searchTerm))
-        ] {
-          _id,
-          _type,
-          "title": coalesce(judul, nama),
-          "description": coalesce(excerpt, deskripsi, posisi, bidang),
-          foto,
-          "path": select(
-            _type == "berita" => "/berita/" + _id,
-            _type == "galeri" => "/galeri",
-            _type == "saranaPrasarana" => "/profil#sarana-prasarana",
-            _type == "pendaftaran" => "/pendaftaran",
-            _type == "tenagaKepengerusan" => "/tenaga-kependidikan",
-            _type == "dewanGuru" => "/dewan-guru"
-          )
-        }`;
-
-        const data = await client.fetch(groqQuery, { searchTerm: `*${query}*` });
-        setResults(data);
-      } catch (error) {
-        console.error('Search error:', error);
-      } finally {
-        setIsLoading(false);
+      if (query.toLowerCase().includes('berita')) {
+        staticResults.push({
+          _id: 'berita',
+          _type: 'berita',
+          title: 'Berita MG Sulut',
+          description: 'Berita terbaru Mata Garuda Sulawesi Utara',
+          path: '/berita'
+        });
       }
-    };
-
-    performSearch();
+    }
+    setResults(staticResults);
+    setIsLoading(false);
   }, [query]);
 
   const getTypeLabel = (type) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
-import { fetchBerita, urlFor } from '../lib/sanity';
+import { beritaData } from '../data/beritaData.js';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,19 +12,9 @@ const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        const data = await fetchBerita();
-        setNewsData(data);
-      } catch (error) {
-        console.error('Gagal memuat berita:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadNews();
+useEffect(() => {
+    setNewsData(beritaData.slice(0, 6));
+    setIsLoading(false);
   }, []);
 
   if (isLoading) {
@@ -74,17 +64,11 @@ const LatestNews = () => {
                   
                   {/* Image Container */}
                   <div className="relative h-[200px] overflow-hidden bg-gray-100">
-                    {news.foto ? (
-                      <img 
-                        src={urlFor(news.foto).width(400).height(300).url()}
-                        alt={news.judul} 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-gray-400">Foto Berita</span>
-                      </div>
-                    )}
+                    <img 
+                      src={news.foto || '/program-1.webp'}
+                      alt={news.judul} 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-[#587F93]/90 text-white text-[10px] font-black uppercase tracking-widest rounded">
                         {news.kategori}
