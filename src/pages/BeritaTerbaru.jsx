@@ -172,7 +172,7 @@ const [filter, setFilter] = useState('Semua');
                 )}
 
                 <button 
-                  onClick={() => navigate(`/berita/berita${news._id}`)}
+                  onClick={() => navigate(`/berita/${news._id}`)}
                   className="mt-auto flex items-center gap-3 text-[#587F93] font-black text-[13px] uppercase tracking-widest group/btn self-start hover:text-[#B8860B] transition-colors cursor-pointer"
                 >
                   Baca Selengkapnya

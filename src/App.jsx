@@ -23,7 +23,6 @@ import Pendaftaran from './pages/Pendaftaran';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage';
 import Kontak from './pages/Kontak';
 import ChatCS from './components/ChatCS';
-import NewsDetail from './pages/NewsDetail';
 
 const AppContent = () => {
   const location = useLocation();
@@ -65,7 +64,7 @@ const AppContent = () => {
           <Route path="/tenaga-kependidikan" element={<TenagaPengurus />} />
           <Route path="/dewan-guru" element={<DewanPengurus />} />
           <Route path="/struktur-organisasi" element={<StrukturOrganisasiPage />} />
-<Route path="/Program" element={<Program />} />
+          <Route path="/Program" element={<Program />} />
 
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
