@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const BeritaTerbaru = () => {
   const navigate = useNavigate();
 const [filter, setFilter] = useState('Semua');
-  const [filter, setFilter] = useState('Semua');
 
   // Static data MG Sulawesi Utara - edit sesuai kebutuhan
   const staticNews = [
@@ -100,6 +99,23 @@ const [filter, setFilter] = useState('Semua');
           </h1>
           <div className="w-20 h-1.5 bg-[#587F93] mt-6 rounded-full"></div>
         </motion.div>
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap gap-3 mb-12">
+          {['Semua', 'Kegiatan', 'Prestasi', 'Akademik'].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 uppercase tracking-wider border-2 ${
+                filter === cat 
+                ? 'bg-[#587F93] text-white border-[#587F93] shadow-lg' 
+                : 'bg-white text-gray-400 border-gray-100 hover:border-[#587F93] hover:text-[#587F93]'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
         {/* News Grid */}
         <motion.div 
