@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowLeft, Calendar, User } from 'lucide-react';
+import { beritaData } from '../data/beritaData.js';
 
 const Berita4 = () => {
   const navigate = useNavigate();
+  const [relatedNews] = useState(() => {
+    const sameKategori = beritaData.filter(n => n._id !== '4' && n.kategori === 'Akademik');
+    const other = beritaData.filter(n => n._id !== '4' && n.kategori !== 'Akademik');
+    return [...sameKategori, ...other].sort(() => Math.random() - 0.5).slice(0,2);
+  });
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">

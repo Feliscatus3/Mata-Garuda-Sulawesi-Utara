@@ -6,7 +6,11 @@ import { beritaData } from '../data/beritaData.js';
 
 const Berita1 = () => {
   const navigate = useNavigate();
-  const [relatedNews] = useState(beritaData.filter(n => n._id !== '1' && n.kategori === 'Kegiatan').slice(0,2) || beritaData.filter(n => n._id !== '1').slice(0,2));
+  const [relatedNews] = useState(() => {
+    const sameKategori = beritaData.filter(n => n._id !== '1' && n.kategori === 'Kegiatan');
+    const other = beritaData.filter(n => n._id !== '1' && n.kategori !== 'Kegiatan');
+    return [...sameKategori, ...other].sort(() => Math.random() - 0.5).slice(0,2);
+  });
 
   return (
     <div className="pt-32 lg:pt-44 pb-24 font-urbanist bg-white min-h-screen">
