@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { dewanGuruData } from '../data/dewanGuru.js';
+// import { dewanGuruData } from '../data/dewanGuru.js'; // Disabled to avoid build error
 
 const DewanPengurus = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const DewanPengurus = () => {
   const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
-    setData(dewanGuruData);
+    setData([]); // Empty data - feature disabled
     setIsLoading(false);
   }, []);
 
