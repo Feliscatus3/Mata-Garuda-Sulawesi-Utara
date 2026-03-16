@@ -13,7 +13,6 @@ const StrukturOrganisasiPage = () => {
 
   const strukturData = {
     judul: 'Struktur Organisasi',
-    deskripsiSingkat: 'Struktur Organisasi Lengkap & Mobile Responsive.',
     keterangan: 'Hierarki organisasi yang mobile responsive dengan zoom dan animasi smooth untuk semua ukuran layar.',
   };
 
