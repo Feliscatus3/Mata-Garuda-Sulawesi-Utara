@@ -13,7 +13,7 @@ const StrukturOrganisasiPage = () => {
 
   const strukturData = {
     judul: 'Struktur Organisasi',
-    deskripsiSingkat: 'Struktur kepengurusan Mata Garuda Sulawesi Utara periode 2026-2029. Ketua → Wakil → Sekretaris → Bendahara → Kepala Bidang.',
+    deskripsiSingkat: 'Struktur Organisasi Lengkap & Mobile Responsive.',
     keterangan: 'Hierarki organisasi yang mobile responsive dengan zoom dan animasi smooth untuk semua ukuran layar.',
   };
 
