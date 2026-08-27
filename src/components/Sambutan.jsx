@@ -53,16 +53,67 @@ const Sambutan = () => {
             </p>
 
             <div className="space-y-5">
-              <p className="text-gray-500 text-sm lg:text-base leading-relaxed italic">
-                "Assalamu'alaikum Warahmatullahi Wabarakatuh,"
+            <p className="text-gray-500 text-sm lg:text-base leading-relaxed italic">
+              "Assalamu'alaikum Warahmatullahi Wabarakatuh,"
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Puji syukur kita panjatkan ke hadirat Allah SWT atas segala rahmat dan
+              karunia-Nya. Dengan penuh rasa syukur dan tanggung jawab, saya,{" "}
+              <strong>Hikam Hulwanullah</strong>, mengemban amanah sebagai{" "}
+              <strong>Ketua Mata Garuda Sulawesi Utara Periode 2026–2029</strong>.
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Amanah ini bukan sekadar sebuah jabatan, melainkan tanggung jawab untuk
+              bersama-sama membangun ruang kolaborasi, memperkuat jejaring, serta
+              menghadirkan kontribusi nyata bagi masyarakat Sulawesi Utara dan Indonesia.
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Mata Garuda merupakan rumah bagi para penerima beasiswa dan alumni LPDP
+              yang memiliki latar belakang, keahlian, serta pengalaman yang beragam.
+              Keragaman tersebut harus menjadi kekuatan untuk membangun kolaborasi lintas
+              sektor, lintas keilmuan, dan lintas generasi.
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Ke depan, kami ingin menjadikan Mata Garuda Sulawesi Utara sebagai organisasi
+              yang <strong>inklusif, kolaboratif, profesional, dan berdampak</strong>.
+              Bukan hanya menjadi wadah silaturahmi, tetapi juga ruang untuk melahirkan
+              gagasan, mempertemukan potensi, serta menghadirkan program yang memberikan
+              manfaat nyata bagi masyarakat dan pembangunan daerah.
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Saya mengajak seluruh keluarga besar Mata Garuda Sulawesi Utara untuk
+              berjalan bersama. Tidak ada satu orang yang dapat membangun organisasi
+              seorang diri. Mari kita jadikan periode 2026–2029 sebagai momentum untuk
+              memperkuat solidaritas, memperluas kolaborasi, dan meningkatkan kontribusi
+              para awardee serta alumni LPDP bagi Sulawesi Utara.
+            </p>
+
+            <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+              Dari Sulawesi Utara, kita berkarya. Dari Indonesia, kita mengabdi. Untuk
+              Indonesia, kita memberi dampak.
+            </p>
+
+            <p className="text-gray-500 text-sm lg:text-base leading-relaxed italic">
+              "Wassalamu'alaikum Warahmatullahi Wabarakatuh."
+            </p>
+
+            <div className="pt-2">
+              <p className="font-semibold text-gray-800 text-sm lg:text-base">
+                Hikam Hulwanullah
               </p>
-              <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
-                Selamat datang di website resmi Mata Garuda Sulawesi Utara. Organisasi ini merupakan wadah alumni dan penerima aktif奖学金 LPDP di Sulawesi Utara yang berfokus pada pengabdian, kolaborasi, dan kontribusi nyata bagi pembangunan daerah.
+              <p className="text-gray-500 text-sm">
+                Ketua Mata Garuda Sulawesi Utara
               </p>
-              <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
-                Kami mengajak seluruh alumni dan awardee LPDP di Sulawesi Utara untuk bersatu dalam visi "Sinergi Sam Ratulangi". Mari bersama-sama memberikan dampak positif bagi daerah dan bangsa melalui berbagai program kerja yang kreatif, progresif, dan inklusif.
+              <p className="text-gray-500 text-sm">
+                Periode 2026–2029
               </p>
             </div>
+          </div>
 
             <button 
               onClick={() => {
