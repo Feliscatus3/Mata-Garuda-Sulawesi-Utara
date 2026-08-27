@@ -113,10 +113,20 @@ const Profil = () => {
                 <div className="mt-10 lg:mt-0 lg:absolute lg:bottom-0 lg:right-0 lg:translate-y-full lg:w-[63%] lg:bg-[#B8860B] lg:text-white p-0 lg:p-12 lg:z-40 lg:rounded-xl lg:rounded-tr-none antialiased">
                    <h3 className="text-[24px] lg:text-[36px] font-[900] mb-6 tracking-tight uppercase text-white lg:text-white">MISI</h3>
                    <ul className="flex flex-col gap-4 text-[13px] lg:text-[16px] font-medium leading-relaxed tracking-tight text-gray-700 lg:text-white lg:opacity-95">
-                    <li className="flex gap-4 items-start"><span className="flex-shrink-0 font-bold text-white">1.</span><span>Menjadi katalisator kontribusi ilmu dan keahlian alumni LPDP untuk pembangunan daerah.</span></li>
-                    <li className="flex gap-4 items-start"><span className="flex-shrink-0 font-bold text-white">2.</span><span>Membangun jejaring dan kolaborasi antar alumni, pemerintah, dan sektor swasta.</span></li>
-                    <li className="flex gap-4 items-start"><span className="flex-shrink-0 font-bold text-white">3.</span><span>Mengadakan program pengabdian masyarakat dan pemberdayaan daerah.</span></li>
-                  </ul>
+                    <li className="flex gap-4 items-start">
+                      <span className="flex-shrink-0 font-bold text-white">1.</span>
+                      <span>Memperkuat sinergi dan jejaring antar-generasi alumni LPDP di Sulawesi Utara serta membangun kemitraan dengan pemerintah dan sektor swasta.</span>
+                    </li>
+
+                    <li className="flex gap-4 items-start">
+                      <span className="flex-shrink-0 font-bold text-white">2.</span>
+                      <span>Mengoptimalkan kapasitas dan kompetensi alumni LPDP melalui program pengembangan diri, pelatihan, dan mentoring untuk menghadapi tantangan global.</span>
+                    </li>
+
+                    <li className="flex gap-4 items-start">
+                      <span className="flex-shrink-0 font-bold text-white">3.</span>
+                      <span>Mendorong pengabdian masyarakat yang berdampak melalui proyek sosial, penelitian, pemberdayaan, dan inovasi untuk pembangunan Sulawesi Utara.</span>
+                    </li></ul>
                 </div>
             </div>
         </div>
@@ -142,20 +152,49 @@ const Profil = () => {
               </button>
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }} className="group relative h-[280px] lg:h-[360px] overflow-hidden cursor-pointer bg-gray-100 shadow-lg">
-                <img src="/program-1.webp" alt="MG Institute" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/90 via-[#0D1B2A]/40 to-transparent transition-opacity duration-300 flex flex-col justify-center items-center p-8 text-center">
-                  <h3 className="text-white text-2xl font-[900] uppercase mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Mata Garuda Institute</h3>
-                  <p className="text-white/90 text-sm leading-relaxed max-w-[250px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Riset dan publikasi kebijakan untuk pembangunan daerah.</p>
-                </div>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }} className="group relative h-[280px] lg:h-[360px] overflow-hidden cursor-pointer bg-gray-100 shadow-lg">
-                <img src="/basket1.webp" alt="Capacity Building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#B8860B]/90 via-[#B8860B]/40 to-transparent transition-opacity duration-300 flex flex-col justify-center items-center p-8 text-center">
-                  <h3 className="text-white text-2xl font-[900] uppercase mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Capacity Building</h3>
-                  <p className="text-white/90 text-sm leading-relaxed max-w-[250px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Mentorship karir dan pelatihan untuk pengembangan anggota.</p>
-                </div>
-              </motion.div>
+              <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="group relative h-[280px] lg:h-[360px] overflow-hidden cursor-pointer bg-gray-100 shadow-lg"
+            >
+              <img
+                src="/berkarakter.webp"
+                alt="Kolaborasi Lintas Sektor"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/90 via-[#0D1B2A]/40 to-transparent transition-opacity duration-300 flex flex-col justify-center items-center p-8 text-center">
+                <h3 className="text-white text-2xl font-[900] uppercase mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  Kolaborasi Lintas Sektor
+                </h3>
+                <p className="text-white/90 text-sm leading-relaxed max-w-[250px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                  Membangun sinergi strategis antara alumni LPDP, pemerintah, perguruan tinggi, sektor swasta, dan masyarakat untuk mendorong pembangunan daerah.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="group relative h-[280px] lg:h-[360px] overflow-hidden cursor-pointer bg-gray-100 shadow-lg"
+            >
+              <img
+                src="/berwawasan.webp"
+                alt="Pengembangan Kapasitas Alumni"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#B8860B]/90 via-[#B8860B]/40 to-transparent transition-opacity duration-300 flex flex-col justify-center items-center p-8 text-center">
+                <h3 className="text-white text-2xl font-[900] uppercase mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  Pengembangan Kapasitas Alumni
+                </h3>
+                <p className="text-white/90 text-sm leading-relaxed max-w-[250px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                  Meningkatkan kompetensi dan kapasitas alumni LPDP melalui pelatihan, mentoring, pengembangan diri, dan penguatan jejaring profesional.
+                </p>
+              </div>
+            </motion.div>
             </div>
           </div>
         </div>
