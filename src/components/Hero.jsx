@@ -49,7 +49,7 @@ const Hero = () => {
         animate="visible"
         className="absolute inset-0"
         style={{ 
-          backgroundImage: `url('/gedung-smapas.webp')`,
+          backgroundImage: `url('/gedung-lpdp.webp')`,
           backgroundSize: 'cover', 
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

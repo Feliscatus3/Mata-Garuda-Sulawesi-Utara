@@ -44,7 +44,7 @@ const Galeri = () => {
       kategori: 'fasilitas',
       judul: 'Kantor MG Sulut',
       deskripsi: 'Fasilitas kantor Mata Garuda Sulawesi Utara',
-      foto: ['/gedung-smapas.webp', '/lobby.webp']
+      foto: ['/gedung-lpdp.webp', '/lobby.webp']
     },
     {
       _id: 6,

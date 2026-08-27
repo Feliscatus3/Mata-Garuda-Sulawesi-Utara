@@ -47,7 +47,7 @@ const Profil = () => {
       {/* 2. HERO SECTION */}
       <motion.section variants={itemVariants} className="relative w-full mb-24 lg:mb-40">
         <div className="w-full h-[350px] lg:h-[600px] overflow-hidden relative z-0 bg-gray-100 rounded-br-[60px] lg:rounded-br-[150px]">
-          <img src="/gedung-smapas.webp" alt="Mata Garuda Sulawesi Utara" className="w-full h-full object-cover" />
+          <img src="/gedung-lpdp.webp" alt="Mata Garuda Sulawesi Utara" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/80 to-transparent"></div>
         </div>
         <div className="absolute inset-0 pointer-events-none">
@@ -104,7 +104,7 @@ const Profil = () => {
         <div className="relative z-20 w-full max-w-[1440px] mx-auto px-5 lg:px-[60px]">
             <div className="relative w-full flex flex-col lg:block">
                 <div className="w-full h-[250px] lg:h-[550px] overflow-hidden rounded-2xl lg:rounded-none">
-                  <img src="/gedung-smapas.webp" alt="Mata Garuda Sulawesi Utara" className="w-full h-full object-cover" />
+                  <img src="/gedung-lpdp.webp" alt="Mata Garuda Sulawesi Utara" className="w-full h-full object-cover" />
                 </div>
                 <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-12 lg:left-0 lg:max-w-[450px] lg:bg-[#0D1B2A]/85 lg:backdrop-blur-md lg:text-white p-0 lg:p-10 rounded-xl lg:z-30">
                   <h3 className="text-[24px] lg:text-[42px] font-[900] mb-3 leading-none tracking-tighter uppercase text-[#B8860B] lg:text-white">VISI</h3>
