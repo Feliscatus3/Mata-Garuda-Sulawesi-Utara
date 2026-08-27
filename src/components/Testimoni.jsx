@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 const Testimoni = () => {
   // Static data untuk Alumni Mata Garuda Sulut
-  const alumniData = [[
+  const alumniData = [
   {
     _id: 1,
     namaAlumni: "Dr. Christian Tumewu, M.Si.",
@@ -30,7 +30,7 @@ const Testimoni = () => {
     pekerjaanSaatIni: "CEO Startup Agri-Tech Sulut",
     testimoni: "Dukungan ekosistem Mata Garuda Sulut memberikan saya dorongan besar untuk kembali ke Sulut, memanfaatkan teknologi demi memodernisasi rantai pasok komoditas lokal."
   }
-]];
+];
 
   return (
     <section className="py-24 bg-white font-urbanist overflow-hidden">

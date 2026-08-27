@@ -44,7 +44,7 @@ const Footer = () => {
                 Fokus pada pengabdian masyarakat, kebijakan publik, dan pengembangan daerah.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <span className="text-[#B8860B] font-bold">Visi:</span> "Sinergi Sam Ratulangi"
+                <span className="text-[#B8860B] font-bold">Visi:</span> "Menjadikan wadah ikatan alumni dan awardee LPDP tersebut sebagai mitra strategis pemerintah daerah dalam menyelesaikan berbagai masalah kedaerahan"
               </p>
             </div>
 

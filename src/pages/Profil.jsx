@@ -55,7 +55,7 @@ const Profil = () => {
             <div className="absolute -bottom-16 lg:-bottom-24 left-5 lg:left-[60px] w-[90%] lg:w-[51%] bg-[#0D1B2A] text-white p-8 lg:p-14 rounded-br-[40px] lg:rounded-br-[100px] z-10 pointer-events-auto antialiased">
               <h2 className="text-[22px] lg:text-[32px] font-[800] mb-4 lg:mb-6 uppercase tracking-wider leading-tight">Mata Garuda Sulawesi Utara</h2>
               <p className="text-[14px] lg:text-[16px] leading-relaxed opacity-95 text-justify font-medium">
-                Wadah alumni dan penerima aktif beasiswa LPDP di Sulawesi Utara dengan visi "Sinergi Sam Ratulangi" untuk membangun daerah melalui pengabdian dan kolaborasi.
+                Wadah alumni dan penerima aktif beasiswa LPDP di Sulawesi Utara dengan visi "Menjadikan wadah ikatan alumni dan awardee LPDP tersebut sebagai mitra strategis pemerintah daerah dalam menyelesaikan berbagai masalah kedaerahan" untuk membangun daerah melalui pengabdian dan kolaborasi.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Profil = () => {
               Mata Garuda Sulawesi Utara hadir sebagai wadah alumni dan penerima aktif beasiswa LPDP di Sulawesi Utara. Kami berfokus pada pengabdian masyarakat, kebijakan publik, dan pengembangan daerah melalui berbagai program kerja yang kreatif dan berdampak.
             </p>
             <p className="text-sm lg:text-base text-[#334155] mb-10 leading-relaxed font-medium">
-              Dengan visi "Sinergi Sam Ratulangi", kami mengajak seluruh alumni dan awardee LPDP di Sulawesi Utara untuk bersatu dan berkontribusi nyata bagi pembangunan daerah tercinta.
+              Dengan visi "Menjadikan wadah ikatan alumni dan awardee LPDP tersebut sebagai mitra strategis pemerintah daerah dalam menyelesaikan berbagai masalah kedaerahan", kami mengajak seluruh alumni dan awardee LPDP di Sulawesi Utara untuk bersatu dan berkontribusi nyata bagi pembangunan daerah tercinta.
             </p>
             <button onClick={() => navigate('/struktur-organisasi')} className="bg-[#0D1B2A] hover:bg-[#1a3a5c] text-white px-6 py-2.5 rounded-md font-bold flex items-center gap-4 active:scale-95 text-[14px] transition-all">
               Lihat Struktur Organisasi
@@ -108,7 +108,7 @@ const Profil = () => {
                 </div>
                 <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-12 lg:left-0 lg:max-w-[450px] lg:bg-[#0D1B2A]/85 lg:backdrop-blur-md lg:text-white p-0 lg:p-10 rounded-xl lg:z-30">
                   <h3 className="text-[24px] lg:text-[42px] font-[900] mb-3 leading-none tracking-tighter uppercase text-[#B8860B] lg:text-white">VISI</h3>
-                  <p className="text-[14px] lg:text-[16px] leading-relaxed font-medium tracking-tight text-gray-700 lg:text-white lg:opacity-95">"Sinergi Sam Ratulangi" - Membangun collaboration dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.</p>
+                  <p className="text-[14px] lg:text-[16px] leading-relaxed font-medium tracking-tight text-gray-700 lg:text-white lg:opacity-95">"Menjadikan wadah ikatan alumni dan awardee LPDP tersebut sebagai mitra strategis pemerintah daerah dalam menyelesaikan berbagai masalah kedaerahan" - Membangun collaboration dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.</p>
                 </div>
                 <div className="mt-10 lg:mt-0 lg:absolute lg:bottom-0 lg:right-0 lg:translate-y-full lg:w-[63%] lg:bg-[#B8860B] lg:text-white p-0 lg:p-12 lg:z-40 lg:rounded-xl lg:rounded-tr-none antialiased">
                    <h3 className="text-[24px] lg:text-[36px] font-[900] mb-6 tracking-tight uppercase text-white lg:text-white">MISI</h3>

@@ -87,7 +87,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 font-medium"
           >
-            "Sinergi Sam Ratulangi"
+            "Menjadikan wadah ikatan alumni dan awardee LPDP tersebut sebagai mitra strategis pemerintah daerah dalam menyelesaikan berbagai masalah kedaerahan"
           </motion.p>
           
           <motion.div variants={itemVariants}>
