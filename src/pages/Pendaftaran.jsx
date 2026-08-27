@@ -163,7 +163,7 @@ const Pendaftaran = () => {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 font-bold uppercase">Email</p>
-                    <p className="font-bold text-gray-800">info@matagarudasulut.org</p>
+                    <p className="font-bold text-gray-800">mgsulut@gmail.com</p>
                   </div>
                 </div>
               </div>

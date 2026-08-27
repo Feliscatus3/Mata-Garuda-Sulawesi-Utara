@@ -18,8 +18,8 @@ const Kontak = () => {
     {
       icon: <Mail size={24} />,
       title: "Email",
-      value: "info@matagarudasulut.org",
-      link: "mailto:info@matagarudasulut.org",
+      value: "mgsulut@gmail.com",
+      link: "mailto:mgsulut@gmail.com",
       action: "Kirim Email",
       color: "bg-[#B8860B]"
     },

@@ -196,7 +196,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center gap-[6px] border-l border-gray-600 pl-[25px]">
                 <Mail size={14} className="text-[#B8860B]" />
-                <span className="lowercase">info@matagarudasulut.org</span>
+                <span className="lowercase">mgsulut@gmail.com</span>
               </div>
             </div>
 
