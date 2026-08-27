@@ -12,33 +12,33 @@ const PrestasiSiswa = () => {
     {
       _id: 1,
       tingkatPrestasi: "Nasional",
-      judul: "Forum Alumni LPDP 2025",
+      judul: "Sosialisasi dan Edukasi Beasiswa LPDP",
       namaSiswa: "Mata Garuda Sulut",
-      deskripsi: "Menjadi narasumber dalam Forum Alumni LPDP Nasional dengan tema Pembangunan Daerah.",
+      deskripsi: "Menyelenggarakan webinar dan seminar strategi tembus beasiswa LPDP.",
       icon: <Trophy size={40} className="text-[#B8860B]" />
     },
     {
       _id: 2,
       tingkatPrestasi: "Daerah",
-      judul: "Pengabdian Desa Bantik",
-      namaSama: "Tim MG Sulut",
-      deskripsi: "Program pengabdian masyarakat di Desa Bantik dengan fokus pada pendidikan dan pemberdayaan.",
+      judul: "Mitra Strategis Pemerintah Daerah",
+      namaSama: "Mata Garuda Sulut",
+      deskripsi: "Berperan aktif dalam agenda pembangunan berbasis pengetahuan dan riset.",
       icon: <Medal size={40} className="text-[#B8860B]" />
     },
     {
       _id: 3,
       tingkatPrestasi: "Nasional",
-      judul: "MGPreneur Award 2024",
+      judul: "Kelas Persiapan & Pelatihan",
       namaSiswa: "Mata Garuda Sulut",
-      deskripsi: "Penganugerahan program kewirausahaan terbaik bagi alumni LPDP di Sulawesi Utara.",
+      deskripsi: "Mengadakan program peningkatan kapasitas seperti TOEFL Class.",
       icon: <Star size={40} className="text-[#B8860B]" />
     },
     {
       _id: 4,
       tingkatPrestasi: "Daerah",
-      judul: "Seminar Kebijakan Publik",
-      namaSiswa: "MG Institute",
-      deskripsi: "Mengadakan seminar kebijakan publik bersama pemangku kepentingan di Sulawesi Utara.",
+      judul: "Pengabdian Masyarakat & Jejaring Sosial",
+      namaSiswa: "Mata Garuda Sulut",
+      deskripsi: "Melakukan kegiatan sosial, keilmuan, dan memperkuat kolaborasi antarpenerima beasiswa LPDP.",
       icon: <Trophy size={40} className="text-[#B8860B]" />
     }
   ];
