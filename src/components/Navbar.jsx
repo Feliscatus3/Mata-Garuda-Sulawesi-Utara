@@ -26,16 +26,6 @@ const Navbar = () => {
       ] 
     },
     { 
-      name: 'PROGRAM', 
-      dropdown: true, 
-      items: [
-{ label: 'Pengabdian Desa Bantik', path: '/program#pengabdian' },
-        { label: 'MG Institute', path: '/program#institute' },
-        { label: 'Capacity Building', path: '/program#capacity' },
-        { label: 'Prestasi Anggota', path: '/program#prestasi' }
-      ] 
-    },
-    { 
       name: 'BERITA', 
       dropdown: true, 
       items: [{ label: 'Daftar Berita', path: '/berita' }] 
