@@ -38,7 +38,7 @@ const PrestasiSiswa = () => {
       tingkatPrestasi: "Daerah",
       judul: "Pengabdian Masyarakat & Jejaring Sosial",
       namaSiswa: "Mata Garuda Sulut",
-      deskripsi: "Melakukan kegiatan sosial, keilmuan, dan memperkuat kolaborasi antarpenerima beasiswa LPDP.",
+      deskripsi: "Melakukan kegiatan sosial dan memperkuat kolaborasi antarpenerima beasiswa LPDP.",
       icon: <Trophy size={40} className="text-[#B8860B]" />
     }
   ];
