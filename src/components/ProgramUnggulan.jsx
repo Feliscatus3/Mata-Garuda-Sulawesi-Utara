@@ -5,33 +5,27 @@ const ProgramUnggulan = () => {
   const programData = [
     {
       id: 1,
-      title: "Mata Garuda Institute",
-      desc: "Melakukan riset dan publikasi kebijakan untuk memberikan rekomendasi berbasis bukti bagi pembangunan daerah Sulawesi Utara.",
+      title: "Kolaborasi Lintas Sektor",
+      desc: " Membangun kemitraan strategis dengan pemerintah daerah dan instansi untuk peningkatan kualitas SDM.",
       img: "/program-1.webp", 
     },
     {
       id: 2,
-      title: "Capacity Building",
-      desc: "Program mentorship karir, pelatihan, dan diskusi industri untuk mengembangkan potensi anggota.",
-      img: "/basket1.webp",
+      title: "Peningkatan Partisipasi Anggota",
+      desc: " Mengoptimalkan peran aktif para alumni dan awardee LPDP dalam bidang kebijakan publik, riset, serta kewirausahaan.",
+      img: "/program-2.webp",
     },
     {
       id: 3,
-      title: "Community Development",
-      desc: "Pengabdian masyarakat dan pembangunan desa untuk memberikan dampak nyata bagi masyarakat Sulawesi Utara.",
-      img: "/lab1.webp",
+      title: "Ruang Inklusif Alumni",
+      desc: "Menciptakan wadah yang mendukung pertukaran ide, pengalaman, dan kolaborasi antar alumni LPDP untuk pengembangan diri dan kontribusi sosial.",
+      img: "/program-3.webp",
     },
     {
       id: 4,
-      title: "MGPreneur (Entrepreneurship)",
-      desc: "Mengembangkan kewirausahaan dan startup untuk menciptakan lapangan kerja dan kemajuan ekonomi daerah.",
-      img: "/greenhouse.webp",
-    },
-    {
-      id: 5,
-      title: "Jejaring & Kolaborasi",
-      desc: "Membangun koneksi antar alumni LPDP dan stakeholder lainnya untuk mendukung pembangunan daerah.",
-      img: "/billingual.webp",
+      title: "Pengembangan Kapasitas",
+      desc: "Menyelenggarakan pelatihan, workshop, dan program pengembangan diri untuk meningkatkan kompetensi alumni LPDP dalam menghadapi tantangan global.",
+      img: "/program-4.webp",
     },
   ];
 
