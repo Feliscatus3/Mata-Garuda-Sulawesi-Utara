@@ -6,18 +6,18 @@ const VisiMisi = () => {
 
   const dataVisiMisi = [
     {
-      title: "Sinergi Sam Ratulangi",
-      desc: "Membangun collaboration lintas sector dan peningkatan partisipasi aktif anggota untuk kemajuan Sulawesi Utara.",
+      title: "Memperkuat Sinergi dan Jejaring (Kolaborasi)",
+      desc: "Membangun komunikasi yang solid antar-generasi alumni LPDP di Sulawesi Utara serta mempererat kemitraan dengan pemerintah daerah, sektor swasta, dan komunitas lokal.",
       img: "/unggul.webp", 
     },
     {
-      title: "Pengabdian Masyarakat",
-      desc: "Menjadi katalisator kontribusi ilmu dan keahlian alumni LPDP untuk pembangunan daerah.",
+      title: "Optimalisasi Kapasitas Alumni (Pengembangan)",
+      desc: "Meningkatkan kapasitas dan kompetensi alumni LPDP melalui program-program pengembangan diri, pelatihan, dan mentoring untuk menghadapi tantangan global.",
       img: "/berwawasan.webp",
     },
     {
-      title: "Pemberdayaan Daerah",
-      desc: "Mewujudkan pengabdian kepada bangsa melalui program-program nyata yang berdampak bagi masyarakat.",
+      title: "Pengabdian Masyarakat yang Berdampak (Kontribusi)",
+      desc: "Mendorong alumni LPDP untuk berkontribusi secara nyata dalam pembangunan Sulawesi Utara melalui proyek-proyek sosial, penelitian, dan inovasi yang bermanfaat bagi masyarakat.",
       img: "/berkarakter.webp",
     },
   ];
