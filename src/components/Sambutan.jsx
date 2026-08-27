@@ -28,7 +28,7 @@ const Sambutan = () => {
               className="relative overflow-hidden rounded-2xl shadow-lg border-4 border-white bg-gray-50"
             >
               <img 
-                src="/kepala-sekolah.webp" 
+                src="/bang-hikam.webp" 
                 alt="Hikam Hulwanullah" 
                 className="w-full h-auto object-cover max-h-[480px] hover:scale-105 transition-transform duration-700"
                 onError={(e) => { e.target.src = "https://via.placeholder.com/600x800?text=Foto+Ketua+MG+Sulut"; }}

@@ -71,7 +71,7 @@ const Profil = () => {
             <div className="relative w-full max-w-[400px] aspect-[864/1184] bg-[#0D1B2A] rounded-[40px] shadow-2xl flex-shrink-0 border-[12px] border-white overflow-hidden group">
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(white 2px, transparent 2px)', backgroundSize: '20px 20px' }}></div>
               <img 
-                src="/kepala-sekolah.webp" 
+                src="/bang-hikam.webp" 
                 alt="Hikam Hulwanullah - Ketua MG Sulut" 
                 className="absolute inset-0 w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
               />
