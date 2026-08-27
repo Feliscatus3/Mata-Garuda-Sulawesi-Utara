@@ -7,30 +7,30 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const Testimoni = () => {
-  // Static data untuk Alumni MG Sulut
-  const alumniData = [
-    {
-      _id: 1,
-      namaAlumni: "Dr. Ahmad Rizki, M.Si",
-      universitas: "Universitas Indonesia",
-      pekerjaanSaatIni: "Dosen & Peneliti",
-      testimoni: "Mata Garuda memberikan saya kesempatan untuk berkontribusi bagi daerah asal saya. Melalui program-programnya, saya dapat pulang ke Sulawesi Utara dan memberikan dampak positif bagi komunitas."
-    },
-    {
-      _id: 2,
-      namaAlumni: "Siti Nurhaliza, S.Psi",
-      universitas: "Universitas Gadjah Mada",
-      pekerjaanSaatIni: "HR Manager di Perusahaan Multinasional",
-      testimoni: "Jejaring yang dibangun oleh MG Sulut sangat valuable. Saya mendapat banyak kesempatan pengembangan karir dan bisa berkontribusi dalam berbagai program pengabdian masyarakat."
-    },
-    {
-      _id: 3,
-      namaAlumni: "Budi Santoso, S.T., M.T",
-      universitas: "Institut Teknologi Bandung",
-      pekerjaanSaatIni: "Founder Startup Teknologi",
-      testimoni: "MGPreneur memberikan saya modal pengetahuan dan jaringan untuk memulai usaha. Kini saya kembali ke Sulut untuk membangun ekosistem startup di daerah saya."
-    }
-  ];
+  // Static data untuk Alumni Mata Garuda Sulut
+  const alumniData = [[
+  {
+    _id: 1,
+    namaAlumni: "Dr. Christian Tumewu, M.Si.",
+    universitas: "Universitas Sam Ratulangi & Wageningen University",
+    pekerjaanSaatIni: "Dosen & Peneliti Kelautan",
+    testimoni: "Mata Garuda Sulut menjadi wadah kolaborasi nyata bagi saya untuk membagikan ilmu riset kelautan demi kemajuan sektor maritim di Bumi Nyiur Melambai."
+  },
+  {
+    _id: 2,
+    namaAlumni: "Gabriella Mamahit, S.Psi., M.Sc.",
+    universitas: "The University of Melbourne",
+    pekerjaanSaatIni: "HR Consultant & Founder Komunitas Edukasi",
+    testimoni: "Jejaring alumni Mata Garuda Sulut sangat suportif. Melalui wadah ini, saya dapat mendorong pengembangan SDM pemuda lokal serta aktif dalam kegiatan pengabdian masyarakat di Manado."
+  },
+  {
+    _id: 3,
+    namaAlumni: "Eko Prasetyo Utomo, S.T., M.Eng.",
+    universitas: "Institut Teknologi Bandung",
+    pekerjaanSaatIni: "CEO Startup Agri-Tech Sulut",
+    testimoni: "Dukungan ekosistem Mata Garuda Sulut memberikan saya dorongan besar untuk kembali ke Sulut, memanfaatkan teknologi demi memodernisasi rantai pasok komoditas lokal."
+  }
+]];
 
   return (
     <section className="py-24 bg-white font-urbanist overflow-hidden">
@@ -45,7 +45,7 @@ const Testimoni = () => {
             <div className="w-24 lg:w-32 h-[3px] bg-[#BCBCBC] rounded-full" />
           </div>
           <h2 className="text-[28px] lg:text-[36px] font-[900] text-black uppercase tracking-tight -ml-[2px]">
-            Alumni MG Sulut
+            Alumni Mata Garuda Sulut
           </h2>
         </div>
 
