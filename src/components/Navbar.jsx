@@ -342,23 +342,31 @@ const Navbar = () => {
       </header>
 
       {/* --- SIDEBAR MOBILE --- */}
-      <div 
-        className={`fixed inset-0 bg-black/50 transition-opacity duration-300 xl:hidden z-[150] ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-        onClick={() => setIsMobileMenuOpen(false)}
-      />
-
       <div className={`fixed top-0 right-0 h-full w-[85%] max-w-[350px] bg-white z-[200] shadow-2xl transition-transform duration-300 ease-in-out transform xl:hidden flex flex-col font-urbanist ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex justify-between items-center p-5 border-b border-gray-100 shrink-0">
-           <div className="flex items-center gap-2">
-              <div className="w-[40px] h-[40px] flex items-center justify-center bg-[#0D1B2A] rounded-full">
-                <span className="text-white font-bold">MG</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-bold">Mata Garuda</span>
-                <span className="text-xs text-[#B8860B]">Sulawesi Utara</span>
-              </div>
-           </div>
-           <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-gray-500"><X size={28} /></button>
+          
+          <div className="flex items-center gap-2">
+            <div className="w-[40px] h-[40px] flex items-center justify-center shrink-0">
+              <img
+                src="/logo-mata.svg"
+                alt="Mata Garuda Sulawesi Utara"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <span className="text-sm font-bold">Mata Garuda</span>
+              <span className="text-xs text-[#B8860B]">Sulawesi Utara</span>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 text-gray-500"
+          >
+            <X size={28} />
+          </button>
+
         </div>
 
         <div className="flex-grow overflow-y-auto p-5">
