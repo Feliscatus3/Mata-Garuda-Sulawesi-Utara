@@ -87,7 +87,7 @@ const Berita2 = () => {
             {/* Featured Image */}
             <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/sosialisasi1.jpg"
+                src="/sosialiasasi1.jpg"
                 alt="Sosialisasi Beasiswa LPDP 2026 Mata Garuda Sulawesi Utara"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
