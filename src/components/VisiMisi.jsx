@@ -6,17 +6,17 @@ const VisiMisi = () => {
 
   const dataVisiMisi = [
     {
-      title: "Memperkuat Sinergi dan Jejaring (Kolaborasi)",
+      title: "Memperkuat Sinergi dan Jejaring",
       desc: "Membangun komunikasi yang solid antar-generasi alumni LPDP di Sulawesi Utara serta mempererat kemitraan.",
       img: "/unggul.webp", 
     },
     {
-      title: "Optimalisasi Kapasitas Alumni (Pengembangan)",
+      title: "Optimalisasi Kapasitas Alumni",
       desc: "Meningkatkan kapasitas dan kompetensi alumni LPDP melalui program-program pengembangan diri, pelatihan, dan mentoring untuk menghadapi global.",
       img: "/berwawasan.webp",
     },
     {
-      title: "Pengabdian Masyarakat yang Berdampak (Kontribusi)",
+      title: "Pengabdian Masyarakat Berdampak",
       desc: "Mendorong alumni LPDP untuk berkontribusi secara nyata dalam pembangunan Sulawesi Utara melalui proyek-proyek sosial, penelitian, dan inovasi.",
       img: "/berkarakter.webp",
     },
