@@ -37,7 +37,7 @@ export const beritaData = [
   kategori: 'Pendidikan',
   tanggal: '2026-02-20',
   excerpt: 'Pemerintah Kabupaten Minahasa Utara bersama Mata Garuda dan Ruang Awardee.Id menggelar sosialisasi Beasiswa LPDP 2026 untuk memperluas akses informasi pendidikan bagi masyarakat.',
-  foto: '/sosialiasasi1.jpg',
+  foto: '/sosialiasasi2.jpg',
   hashtag: ['#MGSulut', '#LPDP2026', '#MinahasaUtara', '#RuangAwardee', '#SDMUnggul'],
   kontenFull: [
     "Dalam rangka meningkatkan kualitas sumber daya manusia di wilayah Minahasa Utara, Pemerintah Kabupaten Minahasa Utara bekerja sama dengan Mata Garuda dan Ruang Awardee.Id menyelenggarakan Sosialisasi Beasiswa LPDP 2026.",
