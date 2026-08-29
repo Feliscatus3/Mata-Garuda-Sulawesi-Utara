@@ -275,19 +275,27 @@ const Navbar = () => {
           <div className="max-w-[1440px] mx-auto h-full px-5 lg:px-[60px] flex justify-between items-center">
             
             {/* Branding Logo */}
-            <div className="flex items-center gap-[10px] lg:gap-[15px] cursor-pointer" onClick={() => handleNavigation('/')}>
-              <div className="w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] flex items-center justify-center shrink-0 bg-[#0D1B2A] rounded-full">
-                <span className="text-white font-bold text-lg lg:text-xl">MG</span>
-              </div>
-              <div className="flex flex-col justify-center text-left">
-                <h1 className="text-[16px] lg:text-[20px] font-[900] text-black leading-none uppercase tracking-tight">
-                  Mata Garuda
-                </h1>
-                <p className="text-[10px] lg:text-[12px] text-[#B8860B] font-bold italic mt-[1px]">
-                  Sulawesi Utara
-                </p>
-              </div>
+          <div
+            className="flex items-center gap-[10px] lg:gap-[15px] cursor-pointer"
+            onClick={() => handleNavigation('/')}
+          >
+            <div className="w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] flex items-center justify-center shrink-0">
+              <img
+                src="/public/logo-mata.svg"
+                alt="Mata Garuda Sulawesi Utara"
+                className="w-full h-full object-contain"
+              />
             </div>
+
+            <div className="flex flex-col justify-center text-left">
+              <h1 className="text-[16px] lg:text-[20px] font-[900] text-black leading-none uppercase tracking-tight">
+                Mata Garuda
+              </h1>
+              <p className="text-[10px] lg:text-[12px] text-[#B8860B] font-bold italic mt-[1px]">
+                Sulawesi Utara
+              </p>
+            </div>
+          </div>
 
             {/* Hamburger Button Mobile */}
             <button className="xl:hidden p-2 text-gray-700" onClick={() => setIsMobileMenuOpen(true)}>
