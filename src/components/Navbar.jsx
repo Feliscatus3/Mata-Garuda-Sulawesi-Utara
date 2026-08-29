@@ -281,7 +281,7 @@ const Navbar = () => {
           >
             <div className="w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] flex items-center justify-center shrink-0">
               <img
-                src="/public/logo.png"
+                src="/logo.png"
                 alt="Mata Garuda Sulawesi Utara"
                 className="w-full h-full object-contain"
               />
