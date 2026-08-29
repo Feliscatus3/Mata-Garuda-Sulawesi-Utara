@@ -21,7 +21,7 @@ export const beritaData = [
   kategori: 'Kegiatan',
   tanggal: '2026-02-16',
   excerpt: 'Mata Garuda Sulawesi Utara bersama Ruang Awardee menyelenggarakan sosialisasi Beasiswa LPDP 2026 untuk memberikan wawasan dan strategi kepada calon pendaftar.',
-  foto: '/sosialisasi1.jpg',
+  foto: '/sosialiasasi1.jpg',
   hashtag: ['#MGSulut', '#LPDP2026', '#BeasiswaLPDP', '#RuangAwardee', '#SDMUnggul'],
   kontenFull: [
     "Mata Garuda Sulawesi Utara bersama Ruang Awardee menyelenggarakan Sosialisasi Beasiswa LPDP 2026 sebagai bagian dari upaya mendorong peningkatan kualitas sumber daya manusia di Sulawesi Utara.",
@@ -37,7 +37,7 @@ export const beritaData = [
   kategori: 'Pendidikan',
   tanggal: '2026-02-20',
   excerpt: 'Pemerintah Kabupaten Minahasa Utara bersama Mata Garuda dan Ruang Awardee.Id menggelar sosialisasi Beasiswa LPDP 2026 untuk memperluas akses informasi pendidikan bagi masyarakat.',
-  foto: '/sosialiasasi2.jpg',
+  foto: '/sosialisasi2.jpg',
   hashtag: ['#MGSulut', '#LPDP2026', '#MinahasaUtara', '#RuangAwardee', '#SDMUnggul'],
   kontenFull: [
     "Dalam rangka meningkatkan kualitas sumber daya manusia di wilayah Minahasa Utara, Pemerintah Kabupaten Minahasa Utara bekerja sama dengan Mata Garuda dan Ruang Awardee.Id menyelenggarakan Sosialisasi Beasiswa LPDP 2026.",
